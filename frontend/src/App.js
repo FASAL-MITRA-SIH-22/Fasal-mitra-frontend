@@ -1,29 +1,40 @@
-import React from 'react';
-import Button from '@mui/material/Button';
-import './App.css';
+import React, { useEffect } from "react";
+import Home from "./components/Home/Home";
+import Dashboard from "./components/Dashboard/Dashboard";
+import Navbar from "./components/Navbar/Navbar";
+import Auth from "./components/Auth/Auth";
+import { axiosInstance } from "./axios.config";
+import { Route, Routes, useNavigate } from "react-router-dom";
+import Button from "@mui/material/Button";
+import { useSelector, useDispatch } from "react-redux";
+import "./App.css";
 
 function App() {
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
+  // console.log(user)
+
+  useEffect(() => {
+    axiosInstance
+      .get("/")
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <br/>
-        <Button variant="contained">Hello World</Button>
-        <h1 className="text-3xl font-bold underline bg-red-500">      
-      Hello world!
-    </h1>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        {/* <Route path="login" element={<Login />} /> */}
+        <Route path="/" element={<Home />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/auth" element={<Auth />} />
+      </Routes>
+    </>
   );
 }
 
