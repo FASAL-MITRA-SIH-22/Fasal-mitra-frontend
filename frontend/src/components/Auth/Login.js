@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import { axiosInstance } from "../../axios.config";
 
 let schema = yup.object().shape({
-  email: yup.string().email().required(),
+  username: yup.string().required(),
   password: yup.string().min(6).max(8).required(),
 });
 
@@ -17,10 +17,10 @@ function LogIn() {
 
   const onSubmit = (data) => {
     console.log(data);
-    axiosInstance.post('/login', data)
+    axiosInstance.post('/auth/login', data)
       .then((response) => {
         console.log(response)
-        navigate('/collab')
+        navigate('/')
       })
       .catch((error) => {
         console.log(error)
@@ -44,13 +44,13 @@ function LogIn() {
         <form className="container grid grid-rows-6 grid-flow-col content-center gap-2 my-auto" onSubmit={handleSubmit(onSubmit)} autoComplete="on">
           <div className="row-span-2 items-center py-2 mx-auto">
             <input
-              className={`shadow appearance-none border rounded w-96 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors && errors.email ? 'border-red-500' : ''}`}
-              id="email"
+              className={`shadow appearance-none border rounded w-96 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-n*one focus:shadow-outline ${errors && errors.email ? 'border-red-500' : ''}`}
+              id="username"
               type="text"
-              placeholder="Enter your Email address"
-              {...register("email")}
+              placeholder="Enter your Username"
+              {...register("username")}
             />
-            {errors && errors.email ? <p class="text-red-500 text-xs italic w-96 ml-6 py-2 px-3">{errors.email.message}</p> : <></>}
+            {errors && errors.username ? <p class="text-red-500 text-xs italic w-96 ml-6 py-2 px-3">{errors.username.message}</p> : <></>}
           </div>
           <div className="row-span-2 items-center py-2 mx-auto">
             <input
