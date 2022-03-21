@@ -6,6 +6,7 @@ import { Link, NavLink } from "react-router-dom";
 const navigation = [
   { name: "Home", href: "/", current: true },
   { name: "Dashboard", href: "/dashboard", current: false },
+  { name: "Detection", href: "/disease-detection", current: false },
 ];
 
 export default function Navbar() {
