@@ -1,7 +1,6 @@
-
 import * as yup from "yup";
 import { useEffect, useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { axiosInstance } from "../../axios.config";
@@ -12,20 +11,25 @@ let schema = yup.object().shape({
 });
 
 function LogIn() {
-  const { register, handleSubmit, formState: { errors }, } = useForm({ resolver: yupResolver(schema), });
-  const navigate = useNavigate()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ resolver: yupResolver(schema) });
+  const navigate = useNavigate();
 
   const onSubmit = (data) => {
     console.log(data);
-    axiosInstance.post('/auth/login', data)
+    axiosInstance
+      .post("/auth/login", data)
       .then((response) => {
-        console.log(response)
-        navigate('/')
+        console.log(response);
+        navigate("/");
       })
       .catch((error) => {
-        console.log(error)
-      })
-  }
+        console.log(error);
+      });
+  };
   console.log(errors);
 
   return (
@@ -41,26 +45,58 @@ function LogIn() {
         </p>
       </div>
       <div className="row-span-4">
-        <form className="container grid grid-rows-6 grid-flow-col content-center gap-2 my-auto" onSubmit={handleSubmit(onSubmit)} autoComplete="on">
+        <form
+          className="container grid grid-rows-6 grid-flow-col content-center gap-2 my-auto"
+          onSubmit={handleSubmit(onSubmit)}
+          autoComplete="on"
+        >
           <div className="row-span-2 items-center py-2 mx-auto">
+            <label
+              className="block uppercase tracking-wide text-gray-700 text-xs font-bold px-7"
+              for="username"
+            >
+              Username
+            </label>
             <input
-              className={`shadow appearance-none border rounded w-96 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-n*one focus:shadow-outline ${errors && errors.email ? 'border-red-500' : ''}`}
+              className={`shadow appearance-none border rounded w-96 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-n*one focus:shadow-outline ${
+                errors && errors.email ? "border-red-500" : ""
+              }`}
               id="username"
               type="text"
               placeholder="Enter your Username"
               {...register("username")}
             />
-            {errors && errors.username ? <p class="text-red-500 text-xs italic w-96 ml-6 py-2 px-3">{errors.username.message}</p> : <></>}
+            {errors && errors.username ? (
+              <p class="text-red-500 text-xs italic w-96 ml-6 py-2 px-3">
+                {errors.username.message}
+              </p>
+            ) : (
+              <></>
+            )}
           </div>
           <div className="row-span-2 items-center py-2 mx-auto">
+          <label
+              className="block uppercase tracking-wide text-gray-700 text-xs font-bold px-7"
+              for="password"
+            >
+              Password
+            </label>
             <input
-              className={`shadow appearance-none border rounded w-96 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors && errors.password ? 'border-red-500' : ''}`}
+              className={`shadow appearance-none border rounded w-96 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+                errors && errors.password ? "border-red-500" : ""
+              }`}
               id="password"
               type="password"
               placeholder="Enter your Password"
               {...register("password")}
             />
-            {errors && errors.password ? <p class="text-red-500 text-xs italic w-96 ml-6 py-2 px-3">{errors.password.message}</p> : <></>}
+            {errors && errors.password ? (
+              <p class="text-red-500 text-xs italic w-96 ml-6 py-2 px-3">
+                {errors.password.message}
+              </p>
+            ) : (
+              <></>
+            )}
           </div>
           <div className="row-span-2 items-center py-2 mx-auto">
             <input

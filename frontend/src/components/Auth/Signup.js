@@ -46,216 +46,190 @@ function Signup() {
   console.log(errors);
 
   return (
-    <div className="container grid grid-rows-6 grid-flow-col content-center gap-4 px-5 my-auto">
+    <div className="container grid grid-rows-5 grid-flow-col content-center gap-1 px-5 my-auto">
       <div className="row-span-1">
-        <div className="text-5xl text-emerald-500 text-center">
+        <div className="text-5xl text-emerald-500 text-center py-0">
           Create Your Account
         </div>
       </div>
-      <div className="row-span-1">
-        <p className="text-emerald-500 text-2xl text-center">
+      {/* <div className="row-span-1">
+        <p className="text-emerald-500 text-2xl text-center py-0">
           Register yourself to get the full access!
         </p>
-      </div>
+      </div> */}
       <div className="row-span-4">
         <form
-          className="container grid grid-rows-4 grid-flow-col content-center gap-2 my-auto"
+          className="container grid grid-rows-2 grid-flow-col content-center gap-2 my-auto"
           onSubmit={handleSubmit(onSubmit)}
           autoComplete="on"
         >
-          <div className="row-span-1 mx-auto">
-            <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold px-7"
-              for="firstName"
-            >
-              First Name
-            </label>
-            <input
-              className={`shadow appearance-none border rounded w-96 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                errors && errors.firstName ? "border-red-500" : ""
-              }`}
-              id="firstName"
-              type="text"
-              placeholder="Enter First Name"
-              {...register("firstName")}
-            />
-            {errors && errors.firstName ? (
-              <p class="text-red-500 text-xs italic w-96 ml-6 py-2 px-3">
-                {errors.firstName.message}
-              </p>
-            ) : (
-              <></>
-            )}
+          <div className="row-span-1">
+            <div className="flex flex-wrap content-center">
+              <div className="row-span-1 items-center mx-auto">
+                <div class="flex flex-wrap content-center  mb-6">
+                  <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label
+                      className="block uppercase tracking-wide text-gray-700 text-xs font-bold px-7"
+                      for="firstName"
+                    >
+                      First Name
+                    </label>
+                    <input
+                      className={`shadow appearance-none border rounded w-64 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+                        errors && errors.firstName ? "border-red-500" : ""
+                      }`}
+                      id="firstName"
+                      type="text"
+                      placeholder="Enter First Name"
+                      {...register("firstName")}
+                    />
+                    {errors && errors.firstName ? (
+                      <p class="text-red-500 text-xs italic w-64 ml-6 py-2 px-3">
+                        {errors.firstName.message}
+                      </p>
+                    ) : (
+                      <></>
+                    )}
+                  </div>
+                  <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label
+                      className="block uppercase tracking-wide text-gray-700 text-xs font-bold px-7"
+                      for="lastName"
+                    >
+                      Last Name
+                    </label>
+                    <input
+                      className={`shadow appearance-none border rounded w-64 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+                        errors && errors.lastName ? "border-red-500" : ""
+                      }`}
+                      id="lastName"
+                      type="text"
+                      placeholder="Enter Last Name"
+                      {...register("lastName")}
+                    />
+                    {errors && errors.lastName ? (
+                      <p class="text-red-500 text-xs italic w-64 ml-6 py-2 px-3">
+                        {errors.lastName.message}
+                      </p>
+                    ) : (
+                      <></>
+                    )}
+                  </div>
+                </div>
+              </div>
+              <div className="row-span-1 items-center mx-auto">
+                <div class="flex flex-wrap content-center  mb-6">
+                  <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label
+                      className="block uppercase tracking-wide text-gray-700 text-xs font-bold px-7"
+                      for="username"
+                    >
+                      Username
+                    </label>
+                    <input
+                      className={`shadow appearance-none border rounded w-64 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+                        errors && errors.username ? "border-red-500" : ""
+                      }`}
+                      id="username"
+                      type="text"
+                      placeholder="Enter your Username"
+                      {...register("username")}
+                    />
+                    {errors && errors.username ? (
+                      <p class="text-red-500 text-xs italic w-64 ml-6 py-2 px-3">
+                        {errors.username.message}
+                      </p>
+                    ) : (
+                      <></>
+                    )}
+                  </div>
+                  <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label
+                      className="block uppercase tracking-wide text-gray-700 text-xs font-bold px-7"
+                      for="phone"
+                    >
+                      Phone
+                    </label>
+                    <input
+                      className={`shadow appearance-none border rounded w-64 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+                        errors && errors.username ? "border-red-500" : ""
+                      }`}
+                      id="phone"
+                      type="text"
+                      placeholder="Enter your Phone Number"
+                      {...register("phone")}
+                    />
+                    {errors && errors.phone ? (
+                      <p class="text-red-500 text-xs italic w-64 ml-6 py-2 px-3">
+                        {errors.email.phone}
+                      </p>
+                    ) : (
+                      <></>
+                    )}
+                  </div>
+                </div>
+              </div>
+              <div className="row-span-1 items-center mx-auto">
+                <div class="flex flex-wrap content-center  mb-6">
+                  <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label
+                      className="block uppercase tracking-wide text-gray-700 text-xs font-bold px-7"
+                      for="password"
+                    >
+                      Password
+                    </label>
+                    <input
+                      className={`shadow appearance-none border rounded w-64 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+                        errors && errors.password ? "border-red-500" : ""
+                      }`}
+                      id="password"
+                      type="password"
+                      placeholder="Enter your Password"
+                      {...register("password")}
+                    />
+                    {errors && errors.password ? (
+                      <p class="text-red-500 text-xs italic w-64 ml-6 py-2 px-3">
+                        {errors.password.message}
+                      </p>
+                    ) : (
+                      <></>
+                    )}
+                  </div>
+                  <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label
+                      className="block uppercase tracking-wide text-gray-700 text-xs font-bold px-7"
+                      for="types"
+                    >
+                      Type
+                    </label>
+                    <select id="type" name="types" className={`shadow appearance-none border rounded w-64 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+                        errors && errors.type ? "border-red-500" : ""
+                      }`}>
+                      <option value="Farmer">Farmer</option>
+                      <option value="Expert">Expert</option>
+                    </select>
+                    {/* <input
+                      className={`shadow appearance-none border rounded w-64 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+                        errors && errors.type ? "border-red-500" : ""
+                      }`}
+                      id="type"
+                      type="types"
+                      placeholder="Enter your type"
+                      {...register("password")}
+                    /> */}
+                    {errors && errors.type ? (
+                      <p class="text-red-500 text-xs italic w-64 ml-6 py-2 px-3">
+                        {errors.type.message}
+                      </p>
+                    ) : (
+                      <></>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="row-span-1 items-center  mx-auto">
-            <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold px-7"
-              for="username"
-            >
-              Username
-            </label>
-            <input
-              className={`shadow appearance-none border rounded w-96 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                errors && errors.username ? "border-red-500" : ""
-              }`}
-              id="username"
-              type="text"
-              placeholder="Enter your Username"
-              {...register("username")}
-            />
-            {errors && errors.username ? (
-              <p class="text-red-500 text-xs italic w-96 ml-6 py-2 px-3">
-                {errors.email.username}
-              </p>
-            ) : (
-              <></>
-            )}
-          </div>
-          <div className="row-span-1 items-center mx-auto">
-            <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold px-7"
-              for="email"
-            >
-              Email
-            </label>
-            <input
-              className={`shadow appearance-none border rounded w-96 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                errors && errors.email ? "border-red-500" : ""
-              }`}
-              id="email"
-              type="text"
-              placeholder="Enter your Email"
-              {...register("email")}
-            />
-            {errors && errors.email ? (
-              <p class="text-red-500 text-xs italic w-96 ml-6 py-2 px-3">
-                {errors.email.message}
-              </p>
-            ) : (
-              <></>
-            )}
-          </div>
-          <div className="row-span-1 items-center  mx-auto">
-            <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold px-7"
-              for="phone"
-            >
-              Phone
-            </label>
-            <input
-              className={`shadow appearance-none border rounded w-96 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                errors && errors.username ? "border-red-500" : ""
-              }`}
-              id="phone"
-              type="text"
-              placeholder="Enter your Phone Number"
-              {...register("phone")}
-            />
-            {errors && errors.phone ? (
-              <p class="text-red-500 text-xs italic w-96 ml-6 py-2 px-3">
-                {errors.email.phone}
-              </p>
-            ) : (
-              <></>
-            )}
-          </div>
-          <div className="row-span-1 mx-auto">
-            <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold px-7"
-              for="lastName"
-            >
-              Last Name
-            </label>
-            <input
-              className={`shadow appearance-none border rounded w-96 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                errors && errors.lastName ? "border-red-500" : ""
-              }`}
-              id="lastName"
-              type="text"
-              placeholder="Enter Last Name"
-              {...register("lastName")}
-            />
-            {errors && errors.lastName ? (
-              <p class="text-red-500 text-xs italic w-96 ml-6 py-2 px-3">
-                {errors.lastName.message}
-              </p>
-            ) : (
-              <></>
-            )}
-          </div>
-          <div className="row-span-1 items-center mx-auto">
-            <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold px-7"
-              for="password"
-            >
-              Password
-            </label>
-            <input
-              className={`shadow appearance-none border rounded w-96 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                errors && errors.password ? "border-red-500" : ""
-              }`}
-              id="password"
-              type="password"
-              placeholder="Enter your Password"
-              {...register("password")}
-            />
-            {errors && errors.password ? (
-              <p class="text-red-500 text-xs italic w-96 ml-6 py-2 px-3">
-                {errors.password.message}
-              </p>
-            ) : (
-              <></>
-            )}
-          </div>
-          <div className="row-span-1 items-center mx-auto">
-            <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold px-7"
-              for="password1"
-            >
-              Confirm Password
-            </label>
-            <input
-              className={`shadow appearance-none border rounded w-96 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                errors && errors.password1 ? "border-red-500" : ""
-              }`}
-              id="password1"
-              type="password"
-              placeholder="Confirm your Password"
-              {...register("password")}
-            />
-            {errors && errors.password1 ? (
-              <p class="text-red-500 text-xs italic w-96 ml-6 py-2 px-3">
-                {errors.password1.message}
-              </p>
-            ) : (
-              <></>
-            )}
-          </div>
-          <div className="row-span-1 items-center mx-auto">
-            <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold px-7"
-              for="password1"
-            >
-              Type
-            </label>
-            <input
-              className={`shadow appearance-none border rounded w-96 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                errors && errors.type ? "border-red-500" : ""
-              }`}
-              id="type"
-              type="text"
-              placeholder="Enter your type"
-              {...register("password")}
-            />
-            {errors && errors.type ? (
-              <p class="text-red-500 text-xs italic w-96 ml-6 py-2 px-3">
-                {errors.type.message}
-              </p>
-            ) : (
-              <></>
-            )}
-          </div>
-          <div className="row-span-1 items-center mx-auto">
+          <div className="row-span-1 items-center mx-auto py-7">
             <input
               className="bg-emerald-500 border-2 border-emerald-500 hover:bg-white hover:text-emerald-500 text-white font-bold py-2 px-10 rounded-full w-25"
               type="submit"
