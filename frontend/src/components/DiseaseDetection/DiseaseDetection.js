@@ -2,9 +2,10 @@ import { useState, useEffect } from "react"
 import default_leaf from "./leaf.png"
 
 const DiseaseDetection = () => {
-  const [imageUploaded, setUploadedImage] = useState('');
+  const [imageUploaded, setUploadedImage] = useState();
   const [preview, setPreview] = useState();
   const [isPreview, setIsPreview] = useState(false);
+  const [location, setLocation] = useState({"latitude": "", "longitude": "", "altitude": ""});
   useEffect(() => {
     if (!imageUploaded) {
       setPreview(undefined)
@@ -19,18 +20,35 @@ const DiseaseDetection = () => {
     return () => URL.revokeObjectURL(objectUrl)
   }, [imageUploaded])
 
+  useEffect(() => {
+    position()
+  }, [])
+  const position = async () => {
+    await navigator.geolocation.getCurrentPosition(
+      function (position) {
+        console.log(position);
+      },
+      function (err) {
+        console.log(err)
+      },
+    );
+    console.log(this.state.latitude)
+  }
   const imageUploadHandler = (e) => {
     if (!e.target.files || e.target.files.length === 0) {
       setUploadedImage(undefined)
       return
-  }
+    }
     setUploadedImage(e.target.files[0])
     console.log(imageUploaded)
   }
+  const submitForm = (e) => {
+    e.preventDefault();
+  } 
   return (
     <div class="md:grid md:grid-cols-2 place-items-center">
       <div class="mt-5 md:mt-0 md:col-span-2">
-        <form action="#" method="POST">
+        <form action="#" method="POST" onSubmit={submitForm}>
           <div class="shadow sm:rounded-md sm:overflow-hidden">
             <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
 
@@ -38,8 +56,8 @@ const DiseaseDetection = () => {
                 <label for="about" class="block text-sm font-medium text-gray-700">
                   Image
                 </label>
-                <div class="mt-1">
-                  <img src={isPreview?preview:default_leaf} class="p-1 bg-white border rounded max-w-sm"></img>
+                <div class="mt-1 flex justify-center">
+                  <img src={isPreview ? preview : default_leaf} class="p-1 bg-white border rounded max-w-sm"></img>
                 </div>
                 <p class="mt-2 text-sm text-gray-500">
                   Brief description for your profile. URLs are hyperlinked.
@@ -71,7 +89,7 @@ const DiseaseDetection = () => {
             </div>
             <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
               <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500">
-                Save
+                Upload photo
               </button>
             </div>
           </div>
