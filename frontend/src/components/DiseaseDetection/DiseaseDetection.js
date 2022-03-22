@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react"
-import default_leaf from "./leaf.png"
+import default_crop from "./crop.jpg"
 
 const DiseaseDetection = () => {
   const [imageUploaded, setUploadedImage] = useState();
-  const [preview, setPreview] = useState();
-  const [isPreview, setIsPreview] = useState(false);
-  const [location, setLocation] = useState({"latitude": "", "longitude": "", "altitude": ""});
+  const [preview, setPreview] = useState(null);
+  const [isPreview, setIsPreview] = useState();
+  const [location, setLocation] = useState(null);
+  const [isLocation, setIsLocation] = useState(false);
   useEffect(() => {
     if (!imageUploaded) {
       setPreview(undefined)
@@ -26,13 +27,13 @@ const DiseaseDetection = () => {
   const position = async () => {
     await navigator.geolocation.getCurrentPosition(
       function (position) {
-        console.log(position);
+        setLocation({"latitude": position.coords.latitude, "longitude": position.coords.longitude});
+        setIsLocation(true);
       },
       function (err) {
         console.log(err)
       },
     );
-    console.log(this.state.latitude)
   }
   const imageUploadHandler = (e) => {
     if (!e.target.files || e.target.files.length === 0) {
@@ -40,10 +41,23 @@ const DiseaseDetection = () => {
       return
     }
     setUploadedImage(e.target.files[0])
-    console.log(imageUploaded)
   }
   const submitForm = (e) => {
     e.preventDefault();
+    if(preview === undefined){
+      return;
+    } 
+    if(location === null){
+      position();
+      return;
+    }
+    const userInformation = {
+      "location": location, 
+      "image": preview,
+    }
+    let data = new FormData();
+    data.append("userInformation", userInformation);
+
   } 
   return (
     <div class="md:grid md:grid-cols-2 place-items-center">
@@ -57,11 +71,15 @@ const DiseaseDetection = () => {
                   Image
                 </label>
                 <div class="mt-1 flex justify-center">
-                  <img src={isPreview ? preview : default_leaf} class="p-1 bg-white border rounded max-w-sm"></img>
+                  {!isPreview && <img src={default_crop} class="p-1 bg-white border rounded max-w-sm" required></img>}
+                  {isPreview && <img src={preview} class="p-1 bg-white border rounded max-w-sm" required></img>}
                 </div>
-                <p class="mt-2 text-sm text-gray-500">
-                  Brief description for your profile. URLs are hyperlinked.
-                </p>
+                {preview === undefined && 
+                  <label class="block text-sm font-medium text-red-700">
+                    Please upload image
+                  </label>
+                }
+                
               </div>
 
               <div>
@@ -78,7 +96,7 @@ const DiseaseDetection = () => {
                         <span>Upload a file</span>
                         <input id="file-upload" onChange={imageUploadHandler} name="file-upload" type="file" class="sr-only" accept="image/*"></input>
                       </label>
-                      <p class="pl-1">or drag and drop</p>
+                      {/* <p class="pl-1">or drag and drop</p> */}
                     </div>
                     <p class="text-xs text-gray-500">
                       PNG, JPG, GIF up to 10MB
@@ -88,6 +106,12 @@ const DiseaseDetection = () => {
               </div>
             </div>
             <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+              
+            {!isLocation && 
+            <label class="block text-sm font-medium text-red-700">
+                  Please allow access to location
+                </label>
+                }
               <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500">
                 Upload photo
               </button>
