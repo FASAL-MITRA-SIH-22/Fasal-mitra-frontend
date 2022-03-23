@@ -11,14 +11,14 @@ const navigation = [
 
 export default function Navbar() {
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-brown-600">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div className="relative flex items-center justify-between h-16">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-black hover:text-black hover:bg-brown-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -30,7 +30,13 @@ export default function Navbar() {
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
                  <Link to='/'>
-                 <img
+                  <div className="block lg:hidden h-8 w-auto">
+                      <h3 className="font-mono text-black font-bold text-xl">FM</h3>
+                  </div>
+                  <div className="hidden lg:block h-8 w-auto">
+                    <h2 className="font-mono text-black font-bold text-xl">fasal-mitra</h2>
+                  </div>
+                 {/* {<img
                     className="block lg:hidden h-8 w-auto"
                     src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
                     alt="Workflow"
@@ -39,7 +45,7 @@ export default function Navbar() {
                     className="hidden lg:block h-8 w-auto"
                     src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
                     alt="Workflow"
-                  />
+                  />} */}
                  </Link>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
@@ -51,8 +57,8 @@ export default function Navbar() {
                         className={({ isActive }) =>
                           `${
                             isActive
-                              ? "bg-gray-900 text-white"
-                              : "text-gray-300 hover:bg-gray-700 hover:text-white"
+                              ? "bg-brown-900 text-white"
+                              : "text-black hover:bg-brown-700 hover:text-white"
                           } px-3 py-2 rounded-md text-sm font-medium`
                         }
                       >
@@ -65,7 +71,7 @@ export default function Navbar() {
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <Link
                   to="/auth"
-                  className="bg-emerald-600 px-3 py-2 rounded-md text-white text-sm hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                  className="bg-brown-800 px-3 py-2 rounded-md text-white text-sm hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-white"
                 >
                   Login/Signup
                 </Link>
@@ -85,8 +91,8 @@ export default function Navbar() {
                   className={({ isActive }) =>
                     `${
                       isActive
-                        ? "bg-gray-900 text-white"
-                        : "text-gray-300 hover:bg-gray-700 hover:text-white"
+                        ? "bg-white text-black"
+                        : "text-white hover:bg-white hover:text-white"
                     } block px-3 py-2 rounded-md text-base font-medium`
                   }
                 >
