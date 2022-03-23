@@ -69,7 +69,7 @@ function LogIn(props) {
               {...register("username")}
             />
             {errors && errors.username ? (
-              <p class="text-red-500 text-xs italic w-96 ml-6 py-2 px-3">
+              <p className="text-red-500 text-xs italic w-96 ml-6 py-2 px-3">
                 {errors.username.message}
               </p>
             ) : (
@@ -93,7 +93,7 @@ function LogIn(props) {
               {...register("password")}
             />
             {errors && errors.password ? (
-              <p class="text-red-500 text-xs italic w-96 ml-6 py-2 px-3">
+              <p className="text-red-500 text-xs italic w-96 ml-6 py-2 px-3">
                 {errors.password.message}
               </p>
             ) : (
@@ -107,7 +107,7 @@ function LogIn(props) {
               value="Login"
             />
             <br></br><br></br>
-            <div class="unhide">
+            <div className="unhide">
             <button
               className="bg-emerald-500 border-2 border-emerald-500 hover:bg-white hover:text-emerald-500 text-white font-bold py-2 px-10 rounded-full w-25"
               onClick={props.handleClick}>  
