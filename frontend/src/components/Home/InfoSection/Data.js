@@ -1,8 +1,9 @@
 export const homeObjOne = {
     id: 'about',
-    lightBg: false,
+    lightBg: true,
     lightText: false,
-    lightTextDesc: true,
+    lightTextDesc: false,
+    topline: 'Fast Detection',
     headline: 'sample headline',
     description: 'sample description',
     buttonLabel: 'Get started',
@@ -11,25 +12,43 @@ export const homeObjOne = {
     alt: 'cnn + magnifying glass',
     dark: true,
     primary: true,
-    darkText: false,
+    darkText: true,
 
 };
 
 export const homeObjTwo = {
     id: 'about',
     lightBg: false,
-    lightText: false,
+    lightText: true,
     lightTextDesc: true,
-    topLine: 'Fast Detection',
+    topline: 'Fast Detection',
     headline: 'sample headline',
     description: 'sample description',
     buttonLabel: 'Get started',
     imgStart: false,
-    img: require('./images/svg-2.svg').default,
+    img: require('./images/svg-5.svg').default,
     alt: 'cnn + magnifying glass',
     dark: true,
     primary: true,
     darkText: false,
+
+};
+
+export const homeObjThree = {
+    id: 'about',
+    lightBg: true,
+    lightText: false,
+    lightTextDesc: false,
+    topline: 'Fast Detection',
+    headline: 'sample headline',
+    description: 'sample description',
+    buttonLabel: 'Get started',
+    imgStart: false,
+    img: require('./images/svg-6.svg').default,
+    alt: 'cnn + magnifying glass',
+    dark: true,
+    primary: true,
+    darkText: true,
 
 };
 

@@ -1,6 +1,6 @@
 import HeroSection from "./HeroSection/HeroSection"
 import InfoSection from './InfoSection/InfoSection';
-import { homeObjOne, homeObjTwo } from './InfoSection/Data';
+import { homeObjOne, homeObjTwo, homeObjThree } from './InfoSection/Data';
 
 const Home = () => {
   return (
@@ -8,6 +8,7 @@ const Home = () => {
       <HeroSection />
         <InfoSection {...homeObjOne} />
         <InfoSection {...homeObjTwo} />
+        <InfoSection {...homeObjThree} />
     </>
   )
 }
