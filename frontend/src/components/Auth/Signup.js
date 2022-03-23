@@ -8,11 +8,12 @@ import { useForm } from "react-hook-form";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 
+const phoneRegex = /^\d{10}$/;
 let schema = yup.object().shape({
   firstName: yup.string().required(),
   lastName: yup.string().required(),
   username: yup.string().required(),
-  phone: yup.string().required(),
+  phone: yup.string().required().matches(phoneRegex, 'Phone number is not valid'),
   password: yup.string().min(6).max(8).required(),
   type: yup.string().required(),
 });
@@ -148,11 +149,11 @@ function Signup() {
                     >
                       Phone
                     </label>
-                    <PhoneInput
+                    <input
                       className={`shadow appearance-none border rounded w-64 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
                         errors && errors.phone ? "border-red-500" : "border-emerald-500"
                       }`}
-                      defaultCountry="IN"
+                      type="text"
                       id="phone"
                       placeholder="Enter your Phone Number"
                       {...register("phone")}
@@ -208,8 +209,8 @@ function Signup() {
                       }`}
                       {...register("type")}
                     >
-                      <option value="Farmer">Farmer</option>
-                      <option value="Expert">Expert</option>
+                      <option value="farmer">Farmer</option>
+                      <option value="expert">Expert</option>
                     </select>
                     {errors && errors.type ? (
                       <p className="text-red-500 text-xs italic w-64 ml-6 py-2 px-3">
