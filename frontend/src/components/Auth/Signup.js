@@ -163,7 +163,7 @@ function Signup() {
                     />
                     {errors && errors.phone ? (
                       <p class="text-red-500 text-xs italic w-64 ml-6 py-2 px-3">
-                        {errors.email.phone}
+                        {errors.phone.message}
                       </p>
                     ) : (
                       <></>
