@@ -6,8 +6,7 @@ const DiseaseDetection = () => {
   const [preview, setPreview] = useState(null);
   const [isPreview, setIsPreview] = useState();
   const [location, setLocation] = useState(null);
-  const [isLocation, setIsLocation] = useState(false);
-  const [isImageCorrect, setIsImageCorrect] = useState(true);
+  // const [isLocation, setIsLocation] = useState(false);
   const drop = useRef(null);
   useEffect(() => {
     if (!imageUploaded) {
@@ -26,11 +25,11 @@ const DiseaseDetection = () => {
   useEffect(() => {
     position()
   }, [])
-  const position = async () => {
+    const position = async () => {
     await navigator.geolocation.getCurrentPosition(
       function (position) {
         setLocation({"latitude": position.coords.latitude, "longitude": position.coords.longitude});
-        setIsLocation(true);
+        // setIsLocation(true);
       },
       function (err) {
         console.log(err)
@@ -85,17 +84,17 @@ const DiseaseDetection = () => {
     if(preview === undefined){
       return;
     } 
-    if(location === null){
+    /* if(location === null){
       position();
       return;
-    }
+    }*/
     const userInformation = {
       "location": location, 
       "image": preview,
     }
     let data = new FormData();
     data.append("userInformation", userInformation);
-
+    console.log(userInformation);
   } 
   return (
     <div className="md:grid md:grid-cols-2 place-items-center">
@@ -145,12 +144,12 @@ const DiseaseDetection = () => {
             </div>
             <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
               
-            {!isLocation && 
-            <label className="block text-sm font-medium text-red-700">
-                  Please allow access to location
+            {/* !isLocation && 
+            <label class="block text-sm font-medium text-red-700">
+                  
                 </label>
-                }
-              <button type="submit" className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500">
+                */}
+              <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500">
                 Upload photo
               </button>
             </div>

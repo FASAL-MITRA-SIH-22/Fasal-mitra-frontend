@@ -5,8 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { FaTimesCircle } from "react-icons/fa";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import "react-phone-number-input/style.css";
-import PhoneInput from "react-phone-number-input";
 
 const phoneRegex = /^\d{10}$/;
 let schema = yup.object().shape({
