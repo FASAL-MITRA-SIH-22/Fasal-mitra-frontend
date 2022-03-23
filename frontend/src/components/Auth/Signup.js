@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { FaTimesCircle } from "react-icons/fa";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
+import 'react-phone-number-input/style.css';
+import PhoneInput from 'react-phone-number-input';
 
 let schema = yup.object().shape({
   firstName: yup.string().required(),
@@ -150,12 +152,12 @@ function Signup() {
                     >
                       Phone
                     </label>
-                    <input
+                    <PhoneInput
                       className={`shadow appearance-none border rounded w-64 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
                         errors && errors.username ? "border-red-500" : ""
                       }`}
+                      defaultCountry="IN"
                       id="phone"
-                      type="text"
                       placeholder="Enter your Phone Number"
                       {...register("phone")}
                     />

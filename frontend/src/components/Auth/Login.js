@@ -5,6 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { axiosInstance } from "../../axios.config";
 
+
 let schema = yup.object().shape({
   username: yup.string().required(),
   password: yup.string().min(6).max(8).required(),
@@ -59,7 +60,7 @@ function LogIn() {
             </label>
             <input
               className={`shadow appearance-none border rounded w-96 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-n*one focus:shadow-outline ${
-                errors && errors.email ? "border-red-500" : ""
+                errors && errors.username ? "border-red-500" : ""
               }`}
               id="username"
               type="text"
