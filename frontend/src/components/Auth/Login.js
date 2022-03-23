@@ -25,7 +25,7 @@ function LogIn() {
       .post("/auth/login", data)
       .then((response) => {
         console.log(response);
-        navigate("/");
+        navigate("/disease-detection");
       })
       .catch((error) => {
         console.log(error);
@@ -54,13 +54,13 @@ function LogIn() {
           <div className="row-span-2 items-center py-2 mx-auto">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold px-7"
-              for="username"
+              htmlFor="username"
             >
               Username
             </label>
             <input
               className={`shadow appearance-none border rounded w-96 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-n*one focus:shadow-outline ${
-                errors && errors.username ? "border-red-500" : ""
+                errors && errors.username ? "border-red-500" : "border-emerald-500"
               }`}
               id="username"
               type="text"
@@ -78,13 +78,13 @@ function LogIn() {
           <div className="row-span-2 items-center py-2 mx-auto">
           <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold px-7"
-              for="password"
+              htmlFor="password"
             >
               Password
             </label>
             <input
               className={`shadow appearance-none border rounded w-96 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                errors && errors.password ? "border-red-500" : ""
+                errors && errors.password ? "border-red-500" : "border-emerald-500"
               }`}
               id="password"
               type="password"
