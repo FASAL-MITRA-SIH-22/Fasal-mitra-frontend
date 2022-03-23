@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { FaTimesCircle } from "react-icons/fa";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
+import './Auth.css';
 
 const phoneRegex = /^\d{10}$/;
 let schema = yup.object().shape({
@@ -17,7 +18,7 @@ let schema = yup.object().shape({
 });
 
 
-function Signup() {
+function Signup(props) {
   const {
     register,
     handleSubmit,
@@ -228,6 +229,14 @@ function Signup() {
               type="submit"
               value="Confirm"
             />
+            <br></br><br></br>
+            <div class="unhide">
+            <button
+              className="bg-emerald-500 border-2 border-emerald-500 hover:bg-white hover:text-emerald-500 text-white font-bold py-2 px-10 rounded-full w-25"
+              onClick={props.handleClick}>  
+              Log in ?
+            </button>
+            </div>
           </div>
         </form>
       </div>

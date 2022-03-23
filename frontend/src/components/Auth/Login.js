@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { axiosInstance } from "../../axios.config";
+import './Auth.css';
 
 
 let schema = yup.object().shape({
@@ -11,7 +12,7 @@ let schema = yup.object().shape({
   password: yup.string().min(6).max(8).required(),
 });
 
-function LogIn() {
+function LogIn(props) {
   const {
     register,
     handleSubmit,
@@ -105,7 +106,17 @@ function LogIn() {
               type="submit"
               value="Login"
             />
+            <br></br><br></br>
+            <div class="unhide">
+            <button
+              className="bg-emerald-500 border-2 border-emerald-500 hover:bg-white hover:text-emerald-500 text-white font-bold py-2 px-10 rounded-full w-25"
+              onClick={props.handleClick}>  
+              Sign up
+            </button>
+            </div>
+             
           </div>
+          
         </form>
       </div>
     </div>
