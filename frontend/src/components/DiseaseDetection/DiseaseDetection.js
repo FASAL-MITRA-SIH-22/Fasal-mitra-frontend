@@ -88,13 +88,9 @@ const DiseaseDetection = () => {
       position();
       return;
     }*/
-    const userInformation = {
-      "location": location, 
-      "image": preview,
-    }
     let data = new FormData();
-    data.append("userInformation", userInformation);
-    console.log(userInformation);
+    data.append("location", location);
+    data.append("image", preview);
   } 
   return (
     <div className="md:grid md:grid-cols-2 place-items-center">
