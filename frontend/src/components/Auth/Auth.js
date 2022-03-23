@@ -22,7 +22,7 @@ const Transition = ({setLoginActive, set, name})=>(
 
 export default function Auth() {
   const [loginActive, setLoginActive] = useState(true);
-
+  const handleClick = () => setLoginActive(value => !value);
   return (
     <div className="grid grid-cols-6 h-screen ">
       <div className={`${loginActive? 'bg-emerald-500 col-span-2 hide': 'bg-white col-span-4'} flex `}>
@@ -33,7 +33,7 @@ export default function Auth() {
             name={"Signup"}
           />
         ) : (
-          <Signup />
+          <Signup handleClick={handleClick}/>
           
           
         )}
@@ -42,9 +42,10 @@ export default function Auth() {
       {!loginActive ? (
          <Transition setLoginActive={setLoginActive} set={true} name={"Login"}/>
         ) : (
-          <Login />
+          <Login handleClick={handleClick}/>
         )}
       </div>
+      {/* {<button onClick={handleClick}>Hello</button>} */}
     </div>
   );
 }

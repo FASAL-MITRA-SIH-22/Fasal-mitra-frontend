@@ -1,8 +1,14 @@
 .hide{
     display: flex;
 }
+.unhide{
+    display: none;
+}
 @media (max-width: 900px){
     .hide{
         display: none !important;
+    }
+    .unhide{
+        display: block !important;
     }
 }
