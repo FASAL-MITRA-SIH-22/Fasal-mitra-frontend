@@ -5,18 +5,20 @@ import { useNavigate } from "react-router-dom";
 import { FaTimesCircle } from "react-icons/fa";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import './Auth.css';
+import "./Auth.css";
 
 const phoneRegex = /^\d{10}$/;
 let schema = yup.object().shape({
   firstName: yup.string().required(),
   lastName: yup.string().required(),
   username: yup.string().required(),
-  phone: yup.string().required().matches(phoneRegex, 'Phone number is not valid'),
+  phone: yup
+    .string()
+    .required()
+    .matches(phoneRegex, "Phone number is not valid"),
   password: yup.string().min(6).max(8).required(),
   type: yup.string().required(),
 });
-
 
 function Signup(props) {
   const {
@@ -74,7 +76,9 @@ function Signup(props) {
                     </label>
                     <input
                       className={`shadow appearance-none border rounded w-64 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                        errors && errors.firstName ? "border-red-500" : "border-emerald-500"
+                        errors && errors.firstName
+                          ? "border-red-500"
+                          : "border-emerald-500"
                       }`}
                       id="firstName"
                       type="text"
@@ -98,7 +102,9 @@ function Signup(props) {
                     </label>
                     <input
                       className={`shadow appearance-none border rounded w-64 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                        errors && errors.lastName ? "border-red-500" : "border-emerald-500"
+                        errors && errors.lastName
+                          ? "border-red-500"
+                          : "border-emerald-500"
                       }`}
                       id="lastName"
                       type="text"
@@ -126,7 +132,9 @@ function Signup(props) {
                     </label>
                     <input
                       className={`shadow appearance-none border rounded w-64 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                        errors && errors.username ? "border-red-500" : "border-emerald-500"
+                        errors && errors.username
+                          ? "border-red-500"
+                          : "border-emerald-500"
                       }`}
                       id="username"
                       type="text"
@@ -150,7 +158,9 @@ function Signup(props) {
                     </label>
                     <input
                       className={`shadow appearance-none border rounded w-64 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                        errors && errors.phone ? "border-red-500" : "border-emerald-500"
+                        errors && errors.phone
+                          ? "border-red-500"
+                          : "border-emerald-500"
                       }`}
                       type="text"
                       id="phone"
@@ -178,7 +188,9 @@ function Signup(props) {
                     </label>
                     <input
                       className={`shadow appearance-none border rounded w-64 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                        errors && errors.password ? "border-red-500" : "border-emerald-500"
+                        errors && errors.password
+                          ? "border-red-500"
+                          : "border-emerald-500"
                       }`}
                       id="password"
                       type="password"
@@ -204,7 +216,9 @@ function Signup(props) {
                       id="type"
                       name="types"
                       className={`shadow appearance-none border rounded w-64 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                        errors && errors.type ? "border-red-500" : "border-emerald-500"
+                        errors && errors.type
+                          ? "border-red-500"
+                          : "border-emerald-500"
                       }`}
                       {...register("type")}
                     >
@@ -229,13 +243,15 @@ function Signup(props) {
               type="submit"
               value="Confirm"
             />
-            <br></br><br></br>
+            <br></br>
+            <br></br>
             <div className="unhide">
-            <button
-              className="bg-emerald-500 border-2 border-emerald-500 hover:bg-white hover:text-emerald-500 text-white font-bold py-2 px-10 rounded-full w-25"
-              onClick={props.handleClick}>  
-              Log in ?
-            </button>
+              <button
+                className="bg-emerald-500 border-2 border-emerald-500 hover:bg-white hover:text-emerald-500 text-white font-bold py-2 px-10 rounded-full w-25"
+                onClick={props.handleClick}
+              >
+                Login
+              </button>
             </div>
           </div>
         </form>
