@@ -1,0 +1,8 @@
+.hide{
+    display: flex;
+}
+@media (max-width: 900px){
+    .hide{
+        display: none !important;
+    }
+}
