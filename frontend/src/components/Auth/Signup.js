@@ -13,7 +13,7 @@ let schema = yup.object().shape({
   lastName: yup.string().required(),
   username: yup.string().required(),
   email: yup.string().email(),
-  //phone: yup.string().phone().required(),
+  phone: yup.string().required(),
   password: yup.string().min(6).max(8).required(),
   type: yup.string().required(),
 });
