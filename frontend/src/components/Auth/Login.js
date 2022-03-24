@@ -102,18 +102,18 @@ function LogIn(props) {
           </div>
           <div className="row-span-2 items-center py-2 mx-auto">
             <input
-              className="bg-emerald-500 border-2 border-emerald-500 hover:bg-white hover:text-emerald-500 text-white font-bold py-2 px-10 rounded-full w-40"
+              className="bg-emerald-500 border-2 border-emerald-500 hover:bg-white hover:text-emerald-500 text-white font-bold py-2 px-10 rounded-full w-25"
               type="submit"
               value="Login"
             />
             <br></br><br></br>
-            <span className="unhide">
+            <div className="unhide">
             <button
-              className="bg-emerald-500 border-2 border-emerald-500 hover:bg-white hover:text-emerald-500 text-white font-bold py-2 px-10 rounded-full w-40"
+              className="bg-emerald-500 border-2 border-emerald-500 hover:bg-white hover:text-emerald-500 text-white font-bold py-2 px-10 rounded-full w-25"
               onClick={props.handleClick}>  
               Sign up
             </button>
-            </span>
+            </div>
              
           </div>
           
