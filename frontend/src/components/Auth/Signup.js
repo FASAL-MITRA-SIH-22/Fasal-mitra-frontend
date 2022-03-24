@@ -51,13 +51,13 @@ function Signup(props) {
   console.log(errors);
 
   return (
-    <div className="container grid grid-rows-5 grid-flow-col content-center gap-1 px-5 my-auto">
-      <div className="row-span-1">
+    <div className="container grid grid-rows-5 grid-flow-col gap-1 px-5 my-auto">
+      <div className="row-span-1 object-fill">
         <div className="text-5xl text-emerald-500 text-center py-0">
           Create Your Account
         </div>
       </div>
-      <div className="row-span-4">
+      <div className="row-span-4 w-full md:w-auto">
         <form
           className="container grid grid-rows-2 grid-flow-col content-center gap-2 my-auto"
           onSubmit={handleSubmit(onSubmit)}
