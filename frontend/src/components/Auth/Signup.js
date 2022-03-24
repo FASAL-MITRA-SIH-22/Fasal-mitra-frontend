@@ -59,7 +59,7 @@ function Signup(props) {
       </div>
       <div className="row-span-4">
         <form
-          className="grid grid-rows-2 grid-flow-col content-center gap-4 mx-auto"
+          className="grid grid-rows-3 grid-flow-col content-center gap-4 mx-auto"
           onSubmit={handleSubmit(onSubmit)}
           autoComplete="on"
         >
