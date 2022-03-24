@@ -239,7 +239,7 @@ function Signup(props) {
           </div>
           <div className="row-span-1 items-center mx-auto py-7">
             <input
-              className="bg-emerald-500 border-2 border-emerald-500 hover:bg-white hover:text-emerald-500 text-white font-bold py-2 px-10 rounded-full w-40"
+              className="bg-emerald-500 border-2 border-emerald-500 hover:bg-white hover:text-emerald-500 text-white font-bold py-2 px-10 rounded-full w-25"
               type="submit"
               value="Confirm"
             />
@@ -247,7 +247,7 @@ function Signup(props) {
             <br></br>
             <div className="unhide">
               <button
-                className="bg-emerald-500 border-2 border-emerald-500 hover:bg-white hover:text-emerald-500 text-white font-bold py-2 px-10 rounded-full w-40"
+                className="bg-emerald-500 border-2 border-emerald-500 hover:bg-white hover:text-emerald-500 text-white font-bold py-2 px-10 rounded-full w-25"
                 onClick={props.handleClick}
               >
                 Login
