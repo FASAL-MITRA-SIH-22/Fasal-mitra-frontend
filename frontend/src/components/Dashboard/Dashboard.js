@@ -2,55 +2,43 @@ import React, { useEffect, useState } from "react";
 import Map from "./Map";
 import {axiosInstance} from "../../axios.config";
 import PlantNDisease from "./PlantNDisease";
+import CustomBar from "./CustomBar";
 
 function Dashboard() {
   const [mapData, setMapData] = useState([]);
-  const [plantData, setPlantData] = useState([]);
-  const [diseaseData, setDiseaseData] = useState([]);
+  const [plantData, setPlantData] = useState(null);
+  const [diseaseData, setDiseaseData] = useState(null);
 
   useEffect(() => {
+    let componentMounted = true;
+
     const getData = async () => {
       const res = await axiosInstance.get("/dashboard");
       const data = res.data;
-      setMapData(data.mapData);
+      if (!data) return;
 
-      const plants = {
-        labels: data.plantData.legends,
-        datasets: [
-          {
-            label: 'Plant',
-            backgroundColor: 'rgba(75,192,192,1)',
-            borderColor: 'rgba(0,0,0,1)',
-            borderWidth: 2,
-            data: data.data.plantData.data
-          }
-        ]
-      }
-
-      const diseases = {
-        labels: data.diseaseData.legends,
-        datasets: [
-          {
-            label: 'Disease',
-            backgroundColor: 'rgba(75,192,192,1)',
-            borderColor: 'rgba(0,0,0,1)',
-            borderWidth: 2,
-            data: data.diseaseData.data
-          }
-        ]
-      }
-
-      setPlantData(plants);
-      setDiseaseData(diseases);
+      componentMounted && setMapData(data.mapData);
+      
+      componentMounted && setDiseaseData(data.diseaseData);
+      componentMounted && setPlantData(data.plantData);
     };
 
     getData();
+
+    return () => {
+      componentMounted = false;
+    };
   }, []);
 
   return (
     <div>
+      <h2 className="text-3xl font-semibold text-center">Outbreak Detection</h2>
       <Map mapData={mapData} />
-      <PlantNDisease plantData={plantData} diseaseData={diseaseData} />
+      <br />
+      <div className="grid grid-cols-2 gap-x-4">
+      <CustomBar data={diseaseData} labelName="Disease" LegendName="Distribution of Disease Wise Detection" />
+      <CustomBar data={plantData} labelName="Plant" LegendName="Distribution of Plant Wise Detection" />
+      </div>
     </div>
   );
 }

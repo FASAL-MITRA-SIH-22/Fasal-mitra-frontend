@@ -23,6 +23,7 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.26.1",
     "capacitor": "^0.5.5",
+    "chart.js": "^3.7.1",
     "d3-scale": "^4.0.2",
     "express": "^4.17.3",
     "ionic": "^5.4.16",

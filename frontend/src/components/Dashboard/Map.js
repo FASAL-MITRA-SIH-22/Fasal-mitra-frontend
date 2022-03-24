@@ -16,7 +16,7 @@ const data = [{ id: "AP", state: "Andhra Pradesh", value: getRandomInt() }];
 
 const PROJECTION_CONFIG = {
   scale: 800,
-  center: [75.9629, 17.5937] 
+  center: [75.9629, 17.5937],
 };
 
 // Red Variants
@@ -49,17 +49,19 @@ const geographyStyle = {
 };
 
 function Map(props) {
-  const { mapData} = props;
+  const { mapData } = props;
   const [tooltipContent, setTooltipContent] = useState("");
 
   const onMouseEnter = (geo, current = { value: "NA" }) => {
     return () => {
-      setTooltipContent(`${geo.properties.name}: ${current.value}`);
+      setTooltipContent(
+        `${geo.properties.name}: ${current?.numberOfValue ?? "0"}`
+      );
     };
   };
 
   const colorScale = scaleQuantile()
-    .domain(mapData.map((d) => d.value))
+    .domain(mapData?.map((d) => d?.numberOfValue ?? "0"))
     .range(COLOR_RANGE);
 
   const onMouseLeave = () => {
@@ -79,7 +81,7 @@ function Map(props) {
         <Geographies geography={INDIA_TOPO_JSON}>
           {({ geographies }) =>
             geographies.map((geo) => {
-              const current = mapData.find((s) => s.id === geo.id);
+              const current = mapData.find((s) => s._id === geo.id);
               return (
                 <Geography
                   key={geo.rsmKey}
