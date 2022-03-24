@@ -9,7 +9,6 @@ import Peer from "simple-peer";
 import io from "socket.io-client";
 import "../../App.css";
 
-const socket = io.connect('http://localhost:5000');
 
 const Teleconsulting = () => {
     const [ me, setMe ] = useState("")
@@ -24,8 +23,11 @@ const Teleconsulting = () => {
 	const myVideo = useRef()
 	const userVideo = useRef()
 	const connectionRef= useRef()
+	var socket;
 
 	useEffect(() => {
+		socket = io.connect('http://localhost:5000');
+
 		navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then((stream) => {
 			setStream(stream)
 				myVideo.current.srcObject = stream
@@ -41,6 +43,9 @@ const Teleconsulting = () => {
 			setName(data.name)
 			setCallerSignal(data.signal)
 		})
+		return ()=>{
+			socket.disconnect()
+		}
 	}, [])
 
 	const callUser = (id) => {

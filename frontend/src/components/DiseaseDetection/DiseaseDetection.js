@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import default_crop from "./crop.jpg";
+import { axiosInstance } from "../../axios.config";
 
 const DiseaseDetection = () => {
   const [imageUploaded, setUploadedImage] = useState();
@@ -88,6 +89,17 @@ const DiseaseDetection = () => {
     let data = new FormData();
     data.append("location", location);
     data.append("image", preview);
+    axiosInstance
+      .post("/dl/detection", data)
+      .then((response) => {
+        console.log(response);
+        // navigate("/disease-detection");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+
   };
   return (
     <div className="md:grid md:grid-cols-2 place-items-center">

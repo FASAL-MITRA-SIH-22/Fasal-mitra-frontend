@@ -37,7 +37,6 @@ function Signup(props) {
     data["avatar"] = `https://ui-avatars.com/api/?name=${firstName}+${
       lastName || " "
     }&color=${randomColor}&background=ffd4d4&bold=true&size=256`;
-    console.log(data);
     axiosInstance
       .post("/auth/account", data)
       .then((response) => {
@@ -48,7 +47,6 @@ function Signup(props) {
         console.log(error);
       });
   };
-  console.log(errors);
 
   return (
     <div className="container grid grid-rows-5 grid-flow-col gap-4 px-5 my-auto top1">

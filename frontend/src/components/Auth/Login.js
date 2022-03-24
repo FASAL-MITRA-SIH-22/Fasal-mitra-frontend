@@ -6,7 +6,6 @@ import { useForm } from "react-hook-form";
 import { axiosInstance } from "../../axios.config";
 import './Auth.css';
 
-
 let schema = yup.object().shape({
   username: yup.string().required(),
   password: yup.string().min(6).max(8).required(),
@@ -21,7 +20,6 @@ function LogIn(props) {
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
-    console.log(data);
     axiosInstance
       .post("/auth/login", data)
       .then((response) => {
@@ -35,7 +33,7 @@ function LogIn(props) {
   console.log(errors);
 
   return (
-    <div className="container grid grid-rows-6 grid-flow-col gap-4 px-5 my-auto top">
+    <div className="container grid grid-rows-6 grid-flow-col gap-4 px-auto my-auto top">
       <div className="row-span-1 inside1">
         <div className="text-5xl text-emerald-500 text-center">
           Welcome Back!
