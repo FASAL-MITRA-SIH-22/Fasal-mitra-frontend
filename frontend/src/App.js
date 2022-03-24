@@ -41,7 +41,6 @@ function App() {
         <Route path="/disease-detection" element={<DiseaseDetection />} />
         <Route path="/teleconsulting" element={<Teleconsulting />} />
       </Routes>
-      <Footer/>
     </>
   );
 }

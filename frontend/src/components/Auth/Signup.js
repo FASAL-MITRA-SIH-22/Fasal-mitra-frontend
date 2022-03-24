@@ -51,15 +51,15 @@ function Signup(props) {
   console.log(errors);
 
   return (
-    <div className="grid grid-rows-5 grid-flow-col gap-3 px-5 my-auto">
+    <div className="container grid grid-rows-5 grid-flow-col gap-4 px-5 my-auto">
       <div className="row-span-1">
-        <div className="text-5xl text-emerald-500 text-center py-0">
-          Create Your Account
+        <div className="text-5xl text-emerald-500 text-center">
+          Create your account!
         </div>
       </div>
       <div className="row-span-4">
         <form
-          className="grid grid-rows-3 grid-flow-col content-center gap-4 mx-auto"
+          className="grid grid-rows-2 grid-flow-col gap-4 mx-auto"
           onSubmit={handleSubmit(onSubmit)}
           autoComplete="on"
         >
