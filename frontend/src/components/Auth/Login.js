@@ -35,13 +35,13 @@ function LogIn(props) {
   console.log(errors);
 
   return (
-    <div className="container grid grid-rows-6 grid-flow-col gap-4 px-5 my-auto">
-      <div className="row-span-1">
+    <div className="container grid grid-rows-6 grid-flow-col gap-4 px-5 my-auto top">
+      <div className="row-span-1 inside1">
         <div className="text-5xl text-emerald-500 text-center">
           Welcome Back!
         </div>
       </div>
-      <div className="row-span-1">
+      <div className="row-span-1 inside1">
         <p className="text-emerald-500 text-2xl text-center">
           Login to get started
         </p>
@@ -60,7 +60,7 @@ function LogIn(props) {
               Username
             </label>
             <input
-              className={`shadow appearance-none border rounded w-96 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-n*one focus:shadow-outline ${
+              className={`shadow appearance-none border rounded w-64 sm:w-96 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-n*one focus:shadow-outline ${
                 errors && errors.username ? "border-red-500" : "border-emerald-500"
               }`}
               id="username"
@@ -69,7 +69,7 @@ function LogIn(props) {
               {...register("username")}
             />
             {errors && errors.username ? (
-              <p className="text-red-500 text-xs italic w-96 ml-6 py-2 px-3">
+              <p className="text-red-500 text-xs italic w-64 sm:w-96 ml-6 py-2 px-3">
                 {errors.username.message}
               </p>
             ) : (
@@ -84,7 +84,7 @@ function LogIn(props) {
               Password
             </label>
             <input
-              className={`shadow appearance-none border rounded w-96 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+              className={`shadow appearance-none border rounded w-64 sm:w-96 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
                 errors && errors.password ? "border-red-500" : "border-emerald-500"
               }`}
               id="password"
@@ -93,7 +93,7 @@ function LogIn(props) {
               {...register("password")}
             />
             {errors && errors.password ? (
-              <p className="text-red-500 text-xs italic w-96 ml-6 py-2 px-3">
+              <p className="text-red-500 text-xs italic w-64 sm:w-96 ml-6 py-2 px-3">
                 {errors.password.message}
               </p>
             ) : (
@@ -111,7 +111,7 @@ function LogIn(props) {
             <button
               className="bg-emerald-500 border-2 border-emerald-500 hover:bg-white hover:text-emerald-500 text-white font-bold py-2 px-10 rounded-full w-40"
               onClick={props.handleClick}>  
-              Sign up
+              Signup
             </button>
             </div>
              

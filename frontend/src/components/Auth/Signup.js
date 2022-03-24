@@ -51,9 +51,9 @@ function Signup(props) {
   console.log(errors);
 
   return (
-    <div className="container grid grid-rows-5 grid-flow-col gap-4 px-5 my-auto">
+    <div className="container grid grid-rows-5 grid-flow-col gap-4 px-5 my-auto top1">
       <div className="row-span-1">
-        <div className="text-5xl text-emerald-500 text-center">
+        <div className="text-5xl text-emerald-500 text-center insidetop">
           Create your account!
         </div>
       </div>
