@@ -24,7 +24,7 @@ export default function Auth() {
   const [loginActive, setLoginActive] = useState(true);
   const handleClick = () => setLoginActive(value => !value);
   return (
-    <div className="grid lg:grid-cols-6 md:gid-cols-2 sm:grid-cols-2 h-screen ">
+    <div className="grid lg:grid-cols-6 md:gid-cols-6 sm:grid-cols-2 h-screen ">
       <div className={`${loginActive? 'bg-emerald-500 col-span-2 hide': 'bg-white col-span-4'} flex `}>
         {loginActive ? (
           <Transition

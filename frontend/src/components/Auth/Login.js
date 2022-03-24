@@ -35,7 +35,7 @@ function LogIn(props) {
   console.log(errors);
 
   return (
-    <div className="container grid grid-rows-6 grid-flow-col gap-4 px-5 my-auto">
+    <div className="grid grid-rows-6 grid-flow-col gap-4 px-5 my-auto">
       <div className="row-span-1">
         <div className="text-5xl text-emerald-500 text-center">
           Welcome Back!
