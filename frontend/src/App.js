@@ -11,6 +11,7 @@ import Button from "@mui/material/Button";
 import { useSelector, useDispatch } from "react-redux";
 import {login} from "./store/features/userSlice"
 import "./App.css";
+import Teleconsulting from "./components/Teleconsulting/Teleconsulting";
 
 function App() {
   const dispatch = useDispatch();
@@ -38,6 +39,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/auth" element={<Auth />} />
         <Route path="/disease-detection" element={<DiseaseDetection />} />
+        <Route path="/teleconsulting" element={<Teleconsulting />} />
       </Routes>
       <Footer/>
     </>
