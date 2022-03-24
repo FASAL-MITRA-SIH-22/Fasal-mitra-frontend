@@ -28,10 +28,7 @@ const DiseaseDetection = () => {
   const position = async () => {
     await navigator.geolocation.getCurrentPosition(
       function (position) {
-        setLocation({
-          latitude: position.coords.latitude,
-          longitude: position.coords.longitude,
-        });
+        setLocation({"lat": position.coords.latitude, "lon": position.coords.longitude});
         // setIsLocation(true);
       },
       function (err) {

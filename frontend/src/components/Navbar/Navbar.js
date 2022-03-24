@@ -7,6 +7,7 @@ const navigation = [
   { name: "Home", href: "/", current: true },
   { name: "Dashboard", href: "/dashboard", current: false },
   { name: "Detection", href: "/disease-detection", current: false },
+  { name: "Teleconsulting", href: "/teleconsulting", current: false },
 ];
 
 export default function Navbar() {
