@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import ReactTooltip from "react-tooltip";
 import { scaleQuantile } from "d3-scale";
+import INDIA_TOPO_JSON from "./india.topo.json";
 
-const INDIA_TOPO_JSON =
-  "https://rawgit.com/Anujarya300/bubble_maps/master/data/geography-data/india.topo.json";
+// const INDIA_TOPO_JSON =
+//   "https://rawgit.com/Anujarya300/bubble_maps/master/data/geography-data/india.topo.json";
 // const INDIA_TOPO_JSON =
 //   "https://raw.githubusercontent.com/deldersveld/topojson/master/countries/india/india-districts.json";
 
