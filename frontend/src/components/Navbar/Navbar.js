@@ -1,7 +1,13 @@
-import { Fragment } from "react";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
-import { Link, NavLink } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { Disclosure } from '@headlessui/react'
+import { MenuIcon, XIcon } from '@heroicons/react/outline'
+import { Link, NavLink } from 'react-router-dom';
+// import logo from '../../utils/Images/logo.png'
+
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
 
 const navigation = [
   { name: "Home", href: "/", current: true },
@@ -11,14 +17,16 @@ const navigation = [
 ];
 
 export default function Navbar() {
+
   return (
     <Disclosure as="nav" className="bg-brown-600">
       {({ open }) => (
         <>
-          <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 ">
             <div className="relative flex items-center justify-between h-16">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
+
                 <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-black hover:text-black hover:bg-brown-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
@@ -30,24 +38,12 @@ export default function Navbar() {
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
-                 <Link to='/'>
-                  <div className="block lg:hidden h-8 w-auto">
-                      <h3 className="font-mono text-black font-bold text-xl">FM</h3>
-                  </div>
-                  <div className="hidden lg:block h-8 w-auto">
-                    <h2 className="font-mono text-black font-bold text-xl">fasal-mitra</h2>
-                  </div>
-                 {/* {<img
-                    className="block lg:hidden h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                    alt="Workflow"
-                  />
-                  <img
-                    className="hidden lg:block h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-                    alt="Workflow"
-                  />} */}
-                 </Link>
+                  <Link to='/'>
+                    <img
+                      className="block h-8 w-auto"
+                      src={`https://uilogos.co/img/logotype/circle.png`}
+                      alt="NFA to DFA converter"
+                    /></Link>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
@@ -56,10 +52,9 @@ export default function Navbar() {
                         key={item.name}
                         to={item.href}
                         className={({ isActive }) =>
-                          `${
-                            isActive
-                              ? "bg-brown-900 text-white"
-                              : "text-black hover:bg-brown-700 hover:text-white"
+                          `${isActive
+                            ? "bg-brown-900 text-white"
+                            : "text-black hover:bg-brown-700 hover:text-white"
                           } px-3 py-2 rounded-md text-sm font-medium`
                         }
                       >
@@ -85,25 +80,25 @@ export default function Navbar() {
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navigation.map((item) => (
-                <NavLink
+                <Disclosure.Button
                   key={item.name}
                   as={NavLink}
                   to={item.href}
                   className={({ isActive }) =>
-                    `${
-                      isActive
-                        ? "bg-white text-black"
-                        : "text-white hover:bg-white hover:text-white"
+                    `${isActive
+                      ? "bg-white text-black"
+                      : "text-white hover:bg-brown-700 hover:text-white"
                     } block px-3 py-2 rounded-md text-base font-medium`
                   }
                 >
                   {item.name}
-                </NavLink>
+                </Disclosure.Button>
               ))}
+
             </div>
           </Disclosure.Panel>
         </>
       )}
     </Disclosure>
-  );
+  )
 }
