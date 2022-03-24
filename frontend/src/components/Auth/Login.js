@@ -35,7 +35,7 @@ function LogIn(props) {
   console.log(errors);
 
   return (
-    <div className="container grid grid-rows-6 grid-flow-col content-center gap-4 px-5 my-auto">
+    <div className="container grid grid-rows-6 grid-flow-col gap-4 px-5 my-auto">
       <div className="row-span-1">
         <div className="text-5xl text-emerald-500 text-center">
           Welcome Back!
@@ -102,14 +102,14 @@ function LogIn(props) {
           </div>
           <div className="row-span-2 items-center py-2 mx-auto">
             <input
-              className="bg-emerald-500 border-2 border-emerald-500 hover:bg-white hover:text-emerald-500 text-white font-bold py-2 px-10 rounded-full w-25"
+              className="bg-emerald-500 border-2 border-emerald-500 hover:bg-white hover:text-emerald-500 text-white font-bold py-2 px-10 rounded-full w-40"
               type="submit"
               value="Login"
             />
             <br></br><br></br>
             <div className="unhide">
             <button
-              className="bg-emerald-500 border-2 border-emerald-500 hover:bg-white hover:text-emerald-500 text-white font-bold py-2 px-10 rounded-full w-25"
+              className="bg-emerald-500 border-2 border-emerald-500 hover:bg-white hover:text-emerald-500 text-white font-bold py-2 px-10 rounded-full w-40"
               onClick={props.handleClick}>  
               Sign up
             </button>
