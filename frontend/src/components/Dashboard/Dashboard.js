@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Map from "./Map";
 import {axiosInstance} from "../../axios.config";
-import PlantNDisease from "./PlantNDisease";
 import CustomBar from "./CustomBar";
 
 function Dashboard() {

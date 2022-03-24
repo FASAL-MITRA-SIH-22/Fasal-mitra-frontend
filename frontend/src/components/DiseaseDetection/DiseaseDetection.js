@@ -1,6 +1,16 @@
 import { useState, useEffect, useRef } from "react";
 import default_crop from "./crop.jpg";
-import { axiosInstance } from "../../axios.config";
+// import { axiosInstance } from "../../axios.config";
+import axios from "axios";
+
+export const baseURL = "http://localhost:5000/";
+axios.defaults.withCredentials = true;
+
+export const axiosInstance = axios.create({
+  baseURL: baseURL,
+  timeout: 300000,
+  withCredentials: true,
+});
 
 const DiseaseDetection = () => {
   const [imageUploaded, setUploadedImage] = useState();
@@ -29,7 +39,7 @@ const DiseaseDetection = () => {
   const position = async () => {
     await navigator.geolocation.getCurrentPosition(
       function (position) {
-        setLocation({"lat": position.coords.latitude, "lon": position.coords.longitude});
+        setLocation({ "lat": position.coords.latitude, "lon": position.coords.longitude });
         // setIsLocation(true);
       },
       function (err) {
@@ -86,11 +96,15 @@ const DiseaseDetection = () => {
       position();
       return;
     }*/
-    let data = new FormData();
-    data.append("location", location);
-    data.append("image", preview);
+    var data = new FormData()
+
+    data.append("image", imageUploaded);
     axiosInstance
-      .post("/dl/detection", data)
+      .post("/", data, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      })
       .then((response) => {
         console.log(response);
         // navigate("/disease-detection");
