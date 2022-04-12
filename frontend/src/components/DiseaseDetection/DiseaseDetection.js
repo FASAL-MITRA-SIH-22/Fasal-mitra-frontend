@@ -220,43 +220,43 @@ const DiseaseDetection = () => {
         </div>
       </div>
       {successData && (
-        <div class="flex flex-col w-11/12 mx-auto mb-6">
-          <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-            <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-              <div class="overflow-hidden">
-                <table class="min-w-full">
+        <div className="flex flex-col w-11/12 mx-auto mb-6">
+          <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
+            <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+              <div className="overflow-hidden">
+                <table className="min-w-full">
                   <tbody>
-                    <tr class="bg-gray-100 border-b">
+                    <tr className="bg-gray-100 border-b">
                       <th
                         scope="col"
-                        class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                       >
                         Plant / Crop Name
                       </th>
                       <td>{successData.detection.split("__")[0]}</td>
                     </tr>
-                    <tr class="bg-gray-100 border-b">
+                    <tr className="bg-gray-100 border-b">
                       <th
                         scope="col"
-                        class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                       >
                         Scientific Name
                       </th>
                       <td>{successData.plant.scientificName}</td>
                     </tr>
-                    <tr class="bg-gray-100 border-b">
+                    <tr className="bg-gray-100 border-b">
                       <th
                         scope="col"
-                        class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                       >
                         Plant Description
                       </th>
                       <td>{successData.plant.description}</td>
                     </tr>
-                    <tr class="bg-gray-100 border-b">
+                    <tr className="bg-gray-100 border-b">
                       <th
                         scope="col"
-                        class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                       >
                         Disease Name
                       </th>
@@ -267,37 +267,37 @@ const DiseaseDetection = () => {
                           .join(" ")}
                       </td>
                     </tr>
-                    <tr class="bg-gray-100 border-b">
+                    <tr className="bg-gray-100 border-b">
                       <th
                         scope="col"
-                        class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                       >
                         Symptoms
                       </th>
                       <td>{successData.disease.symptoms}</td>
                     </tr>
-                    <tr class="bg-gray-100 border-b">
+                    <tr className="bg-gray-100 border-b">
                       <th
                         scope="col"
-                        class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                       >
                         Trigger
                       </th>
                       <td>{successData.disease.trigger}</td>
                     </tr>
-                    <tr class="bg-gray-100 border-b">
+                    <tr className="bg-gray-100 border-b">
                       <th
                         scope="col"
-                        class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                       >
                         Control using organic method
                       </th>
                       <td>{successData.disease.organic}</td>
                     </tr>
-                    <tr class="bg-gray-100 border-b">
+                    <tr className="bg-gray-100 border-b">
                       <th
                         scope="col"
-                        class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                       >
                         Control using chemical method
                       </th>
