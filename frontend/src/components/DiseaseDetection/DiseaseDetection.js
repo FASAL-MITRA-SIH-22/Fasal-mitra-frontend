@@ -1,16 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import default_crop from "./crop.jpg";
-// import { axiosInstance } from "../../axios.config";
-import axios from "axios";
-
-export const baseURL = "http://localhost:5000/";
-axios.defaults.withCredentials = true;
-
-export const axiosInstance = axios.create({
-  baseURL: baseURL,
-  timeout: 300000,
-  withCredentials: true,
-});
+import { axiosInstance } from "../../axios.config";
 
 const DiseaseDetection = () => {
   const [imageUploaded, setUploadedImage] = useState();
@@ -105,7 +95,7 @@ const DiseaseDetection = () => {
 
     data.append("image", imageUploaded);
     axiosInstance
-      .post("/", data, {
+      .post("dl/detection", data, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
