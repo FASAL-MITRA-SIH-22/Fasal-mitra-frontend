@@ -210,88 +210,88 @@ const DiseaseDetection = () => {
         </div>
       </div>
       {successData && (
-        <div className="flex flex-col w-11/12 mx-auto mb-6">
+        <div className="flex flex-col w-11/12 mx-auto mb-6 p-6">
           <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-              <div className="overflow-hidden">
-                <table className="min-w-full">
+              <div className="overflow-hidden sm:rounded-lg">
+                <table className="min-w-full table-auto">
                   <tbody>
-                    <tr className="bg-gray-100 border-b">
+                    <tr className="bg-gray-100 border-b hover:bg-yellow-100">
                       <th
                         scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="text-sm bg-teal-400 font-medium text-white px-6 py-4 text-left"
                       >
                         Plant / Crop Name
                       </th>
-                      <td>{successData.detection.split("__")[0]}</td>
+                      <td className="px-4">{successData.detection.split("__")[0]}</td>
                     </tr>
-                    <tr className="bg-gray-100 border-b">
+                    <tr className="bg-gray-100 border-b hover:bg-yellow-100">
                       <th
                         scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="text-sm bg-teal-400 font-medium text-white px-6 py-4 text-left"
                       >
                         Scientific Name
                       </th>
-                      <td>{successData.plant.scientificName}</td>
+                      <td className="px-4">{successData.plant.scientificName}</td>
                     </tr>
-                    <tr className="bg-gray-100 border-b">
+                    <tr className="bg-gray-100 border-b hover:bg-yellow-100">
                       <th
                         scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="text-sm bg-teal-400 font-medium text-white px-6 py-4 text-left"
                       >
                         Plant Description
                       </th>
-                      <td>{successData.plant.description}</td>
+                      <td className="px-4">{successData.plant.description}</td>
                     </tr>
-                    <tr className="bg-gray-100 border-b">
+                    <tr className="bg-gray-100 border-b hover:bg-yellow-100">
                       <th
                         scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="text-sm bg-teal-400 font-medium text-white px-6 py-4 text-left"
                       >
                         Disease Name
                       </th>
-                      <td>
+                      <td className="px-4">
                         {successData.detection
                           .split("__")[1]
                           .split("_")
                           .join(" ")}
                       </td>
                     </tr>
-                    <tr className="bg-gray-100 border-b">
+                    <tr className="bg-gray-100 border-b hover:bg-yellow-100">
                       <th
                         scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="text-sm bg-teal-400 font-medium text-white px-6 py-4 text-left"
                       >
                         Symptoms
                       </th>
-                      <td>{successData.disease.symptoms}</td>
+                      <td className="px-4">{successData.disease.symptoms}</td>
                     </tr>
-                    <tr className="bg-gray-100 border-b">
+                    <tr className="bg-gray-100 border-b hover:bg-yellow-100">
                       <th
                         scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="text-sm bg-teal-400 font-medium text-white px-6 py-4 text-left"
                       >
                         Trigger
                       </th>
-                      <td>{successData.disease.trigger}</td>
+                      <td className="px-4">{successData.disease.trigger}</td>
                     </tr>
-                    <tr className="bg-gray-100 border-b">
+                    <tr className="bg-gray-100 border-b hover:bg-yellow-100">
                       <th
                         scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="text-sm bg-teal-400 font-medium text-white px-6 py-4 text-left"
                       >
                         Control using organic method
                       </th>
-                      <td>{successData.disease.organic}</td>
+                      <td className="px-4">{successData.disease.organic}</td>
                     </tr>
-                    <tr className="bg-gray-100 border-b">
+                    <tr className="bg-gray-100 border-b hover:bg-yellow-100">
                       <th
                         scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="text-sm bg-teal-400 font-medium text-white px-6 py-4 text-left"
                       >
                         Control using chemical method
                       </th>
-                      <td>{successData.disease.chemical}</td>
+                      <td className="px-4">{successData.disease.chemical}</td>
                     </tr>
                   </tbody>
                 </table>
