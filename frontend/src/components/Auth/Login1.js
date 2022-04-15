@@ -35,7 +35,6 @@ function LogIn(props) {
         console.log(error);
       });
   };
-  console.log(errors);
 
   return (
     <div className="container grid grid-rows-6 grid-flow-col gap-4 px-auto my-auto top">

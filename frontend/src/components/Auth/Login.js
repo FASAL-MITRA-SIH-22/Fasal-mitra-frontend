@@ -3,6 +3,9 @@ import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
+import { axiosInstance } from "../../axios.config";
+import {login} from '../../store/features/userSlice'
+import {useDispatch} from "react-redux";
 
 let schema = yup.object().shape({
     username: yup.string().required(),
@@ -11,13 +14,25 @@ let schema = yup.object().shape({
 
 function Login() {
     const submitHandler = (data) => {
-        console.log(data)
+        axiosInstance
+            .post("/auth/login", data)
+            .then((response) => {
+                console.log(response);
+                dispatch(login(response.data.user))
+                navigate("/disease-detection");
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     }
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm({ resolver: yupResolver(schema) });
+    const navigate = useNavigate();
+
+    const dispatch = useDispatch();
     console.log(errors);
 
 
@@ -27,11 +42,11 @@ function Login() {
 
             onSubmit={handleSubmit(submitHandler)}>
             <div className="row-span-2">
-            <label className="block">
+                <label className="block">
                     <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                         Username
                     </span>
-                    <input type="username" name="username" className={`mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none  block w-full rounded-md sm:text-sm focus:ring-1 ${errors && errors.username ? "border-red-400 focus:border-red-500 focus:ring-red-500" :"focus:border-teal-500 focus:ring-teal-500"}`} placeholde="******" {...register('username')} />
+                    <input type="username" name="username" className={`mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none  block w-full rounded-md sm:text-sm focus:ring-1 ${errors && errors.username ? "border-red-400 focus:border-red-500 focus:ring-red-500" : "focus:border-teal-500 focus:ring-teal-500"}`} placeholde="******" {...register('username')} />
                 </label>
                 {errors && errors.username ? (
                     <p className="text-red-500 text-sm italic ml-6 py-2">
@@ -46,7 +61,7 @@ function Login() {
                     <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                         Password
                     </span>
-                    <input type="password" name="password" className={`mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none  block w-full rounded-md sm:text-sm focus:ring-1 ${errors && errors.password ? "border-red-400 focus:border-red-500 focus:ring-red-500" :"focus:border-teal-500 focus:ring-teal-500"}`} placeholde="******" {...register('password')} />
+                    <input type="password" name="password" className={`mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none  block w-full rounded-md sm:text-sm focus:ring-1 ${errors && errors.password ? "border-red-400 focus:border-red-500 focus:ring-red-500" : "focus:border-teal-500 focus:ring-teal-500"}`} placeholde="******" {...register('password')} />
                 </label>
                 {errors && errors.password ? (
                     <p className="text-red-500 text-sm italic ml-6 py-2">

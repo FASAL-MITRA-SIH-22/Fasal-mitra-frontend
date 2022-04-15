@@ -25,8 +25,6 @@ export default function Navbar() {
   const navigate = useNavigate();
   console.log(user);
 
-
-
   const handleLogout = async () => {
     await axiosInstance.get('/auth/logout')
       .then(response => {
@@ -67,8 +65,10 @@ export default function Navbar() {
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
-                    {navigation.map((item) => (
-                      <NavLink
+                    {navigation.map((item) => {
+                      if (!user && (item.name === 'Detection' || item.name === 'Teleconsulting'))
+                        return (<></>)
+                      return (<NavLink
                         key={item.name}
                         to={item.href}
                         className={({ isActive }) =>
@@ -79,8 +79,8 @@ export default function Navbar() {
                         }
                       >
                         {item.name}
-                      </NavLink>
-                    ))}
+                      </NavLink>)
+                    })}
                   </div>
                 </div>
               </div>
@@ -145,8 +145,10 @@ export default function Navbar() {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {navigation.map((item) => (
-                <Disclosure.Button
+              {navigation.map((item) => {
+                if (!user && (item.name != 'Detection' || item.name != 'Teleconsulting'))
+                  return (<></>)
+                return (<Disclosure.Button
                   key={item.name}
                   as={NavLink}
                   to={item.href}
@@ -159,8 +161,9 @@ export default function Navbar() {
                   }
                 >
                   {item.name}
-                </Disclosure.Button>
-              ))}
+                </Disclosure.Button>)
+
+              })}
 
             </div>
           </Disclosure.Panel>

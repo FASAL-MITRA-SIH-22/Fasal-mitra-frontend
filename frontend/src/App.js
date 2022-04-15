@@ -50,7 +50,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/auth" element={<Auth />} />
             <Route path="/auth1" element={<Auth1 />} />
-            <Route path="/disease-detection" element={<DiseaseDetection />} />
+            {user ? <Route path="/disease-detection" element={<DiseaseDetection />} /> : <></>}
             <Route path="/teleconsulting" element={<Teleconsulting />} />
           </Routes>
         </div>
