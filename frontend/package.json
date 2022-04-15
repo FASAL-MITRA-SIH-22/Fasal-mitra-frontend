@@ -14,7 +14,7 @@
     "@hookform/resolvers": "^2.8.8",
     "@ionic/react": "^6.0.12",
     "@material-ui/core": "^4.12.3",
-    "@material-ui/icons": "^4.11.2",
+    "@material-ui/icons": "^4.11.3",
     "@mui/material": "^5.5.1",
     "@mui/styled-engine-sc": "^5.4.2",
     "@reduxjs/toolkit": "^1.8.0",
