@@ -152,9 +152,10 @@ export default function Navbar() {
                   to={item.href}
                   className={({ isActive }) =>
                     `${isActive
-                      ? "bg-white text-black"
-                      : "text-white hover:bg-emerald-400 hover:text-white"
+                      ? "text-emerald-400 border-b-2 border-emerald-400"
+                      : "text-black hover:text-gray-400"
                     } block px-3 py-2 rounded-md text-base font-medium`
+
                   }
                 >
                   {item.name}

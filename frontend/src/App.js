@@ -13,7 +13,10 @@ import { login } from "./store/features/userSlice"
 import "./App.css";
 import Teleconsulting from "./components/Teleconsulting/Teleconsulting";
 import GoogleTranslate from "./components/GoogleTranslate";
-import LoadingBar from 'react-top-loading-bar'
+import LoadingBar from 'react-top-loading-bar';
+
+import "./components/i18n/i18n";
+
 
 function App() {
   const dispatch = useDispatch();
@@ -38,7 +41,7 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* <GoogleTranslate/> */}
-      <LoadingBar color='#ff2b2b' ref={ref} height='3px' />
+      <LoadingBar color='#22E089' ref={ref} height='3px' />
       <Navbar />
       <div className="flex flex-grow">
         <div className="col p-0 m-0 w-full">

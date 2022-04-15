@@ -4,6 +4,8 @@ import bg1 from './smart-agriculture-iot-with-hand-planting-tree-background.jpg'
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { MdKeyboardArrowRight, MdArrowForward } from 'react-icons/md';
+import { useTranslation, Trans } from 'react-i18next';
+
 
 const Home = () => {
   const [hover, setHover] = useState(false)
@@ -11,16 +13,33 @@ const Home = () => {
   const onHover = () => {
     setHover(!hover)
   }
+  const { t, i18n } = useTranslation();
+  const lngs = {
+    en: { nativeName: 'English' },
+    hi: { nativeName: 'Hindi' },
+  };
+  console.log(t('description.part1.0'));
+  console.log(homeObjOne);
+  homeObjOne["lngs"] = lngs;
+  homeObjOne["t"] = t;
+  homeObjOne["i18n"] = i18n;
+  homeObjTwo["lngs"] = lngs;
+  homeObjTwo["t"] = t;
+  homeObjTwo["i18n"] = i18n;
+  homeObjThree["lngs"] = lngs;
+  homeObjThree["t"] = t;
+  homeObjThree["i18n"] = i18n;
+
   return (
     <>
       {/* <HeroSection /> */}
       <div className="flex-row h-fit">
         <div className="col-span-12 h-fit">
           <div className="col-span-12 flex flex-row relative">
-            <div className="bg-gradient-to-r bg-emerald-700 rounded-r-[900px] w-2/5 absolute h-full" style={{ borderRadius: '54% 46% 100% 0% / 0% 100% 0% 100% ', width: '45%' }}></div>
-            <div className="bg-gradient-to-r bg-emerald-600 rounded-r-[900px] absolute h-full " style={{ flexBasis: '40%' }} style={{ borderRadius: '45% 55% 100% 0% / 0% 100% 0% 100% ', width: '44%' }}></div>
-            <div className="absolute h-full w-1/4 text-white z-10 font-mono flex">
-              <div className="my-auto ml-auto w-3/4 text-2xl flex flex-col">
+            <div className="bg-gradient-to-r bg-emerald-700 rounded-r-[900px] absolute h-full" style={{ borderRadius: '54% 46% 100% 0% / 0% 100% 0% 100% ', width: '45%' }}></div>
+            <div className="bg-gradient-to-r bg-emerald-600 rounded-r-[900px] absolute h-full " style={{ borderRadius: '45% 55% 100% 0% / 0% 100% 0% 100% ', width: '44%' }}></div>
+            <div className="absolute h-full px-6 md:px-0 md:w-1/4 text-white z-10 font-mono flex">
+              <div className="my-auto ml-auto md:w-3/4 text-2xl flex flex-col">
                 <p className="my-2 align text-center text-6xl font-extrabold text-cyan-900">
                   YOUR CROP DOCTOR
                 </p>
@@ -30,7 +49,7 @@ const Home = () => {
                 </p>
                 <Link to='/auth' className="border rounded-full my-6 px-5 py-2 mx-auto hover:bg-white ease-in-out duration-300 hover:text-emerald-600 font-bold text-3xl truncate" onMouseEnter={onHover}
                   onMouseLeave={onHover}>
-                   Join Us {hover ? <MdArrowForward className='inline-block'/> : <MdKeyboardArrowRight className='inline-block' />}
+                  Join Us {hover ? <MdArrowForward className='inline-block' /> : <MdKeyboardArrowRight className='inline-block' />}
                 </Link>
 
               </div>
@@ -55,6 +74,14 @@ const Home = () => {
         </div>
       </div>
 
+      {Object.keys(lngs).map((lng) => (
+        <button key={lng} style={{ fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal' }} type="submit" onClick={() => i18n.changeLanguage(lng)}>
+          {lngs[lng].nativeName}
+        </button>
+      ))}
+      <InfoSection {...homeObjOne} />
+      <InfoSection {...homeObjTwo} />
+      <InfoSection {...homeObjThree} />
     </>
   )
 }

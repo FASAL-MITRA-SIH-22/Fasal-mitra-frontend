@@ -1,8 +1,27 @@
 import { useState, useEffect, useRef } from "react";
 import default_crop from "./crop.jpg";
-import { axiosInstance } from "../../axios.config";
+// import { axiosInstance } from "../../axios.config";
+import axios from "axios";
+
+import { useTranslation, Trans } from 'react-i18next';
+
+
+export const baseURL = "http://localhost:5000/";
+axios.defaults.withCredentials = true;
+
+export const axiosInstance = axios.create({
+  baseURL: baseURL,
+  timeout: 300000,
+  withCredentials: true,
+});
+
+const lngs = {
+  en: { nativeName: 'English' },
+  de: { nativeName: 'Deutsch' }
+};
 
 const DiseaseDetection = () => {
+  const { t, i18n } = useTranslation();
   const [imageUploaded, setUploadedImage] = useState();
   const [preview, setPreview] = useState(null);
   const [isPreview, setIsPreview] = useState();
@@ -82,6 +101,9 @@ const DiseaseDetection = () => {
       }
     }
   };
+  const goBackHandler = () => {
+    setSuccessData(false);
+  }
   const submitForm = (e) => {
     e.preventDefault();
     if (preview === undefined) {
@@ -91,11 +113,12 @@ const DiseaseDetection = () => {
       position();
       return;
     }*/
+
     var data = new FormData()
 
     data.append("image", imageUploaded);
     axiosInstance
-      .post("dl/detection", data, {
+      .post("/", data, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -110,7 +133,7 @@ const DiseaseDetection = () => {
   };
   return (
     <>
-      <div className="md:grid md:grid-cols-2 place-items-center">
+      {!successData && <div className="md:grid md:grid-cols-2 place-items-center">
         <div className="mt-5 md:mt-0 md:col-span-2">
           <form action="#" method="POST" onSubmit={submitForm}>
             <div className="shadow sm:rounded-md sm:overflow-hidden">
@@ -207,94 +230,121 @@ const DiseaseDetection = () => {
               </div>
             </div>
           </form>
+          {/*<div>
+          {Object.keys(lngs).map((lng) => (
+            <button key={lng} style={{ fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal' }} type="submit" onClick={() => i18n.changeLanguage(lng)}>
+              {lngs[lng].nativeName}
+            </button>
+          ))}
         </div>
-      </div>
+          <p>
+            <Trans i18nKey="description.part1">
+              Edit <code>src/App.js</code> and save to reload.
+            </Trans>
+          </p>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t('description.part2')}
+          </a>*/}
+          </div>
+      </div>}
       {successData && (
-        <div className="flex flex-col w-11/12 mx-auto mb-6 p-6">
+        <div className="flex flex-col w-11/12 mx-auto mb-6">
           <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-              <div className="overflow-hidden sm:rounded-lg">
-                <table className="min-w-full table-auto">
+              <div className="overflow-hidden">
+                <table className="min-w-full">
                   <tbody>
-                    <tr className="bg-gray-100 border-b hover:bg-yellow-100">
+                    <tr className="bg-gray-100 border-b">
                       <th
                         scope="col"
-                        className="text-sm bg-teal-400 font-medium text-white px-6 py-4 text-left"
+                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                       >
                         Plant / Crop Name
                       </th>
-                      <td className="px-4">{successData.detection.split("__")[0]}</td>
+                      <td>{successData.detection.split("__")[0]}</td>
                     </tr>
-                    <tr className="bg-gray-100 border-b hover:bg-yellow-100">
+                    <tr className="bg-gray-100 border-b">
                       <th
                         scope="col"
-                        className="text-sm bg-teal-400 font-medium text-white px-6 py-4 text-left"
+                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                       >
                         Scientific Name
                       </th>
-                      <td className="px-4">{successData.plant.scientificName}</td>
+                      <td>{successData.plant.scientificName}</td>
                     </tr>
-                    <tr className="bg-gray-100 border-b hover:bg-yellow-100">
+                    <tr className="bg-gray-100 border-b">
                       <th
                         scope="col"
-                        className="text-sm bg-teal-400 font-medium text-white px-6 py-4 text-left"
+                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                       >
                         Plant Description
                       </th>
-                      <td className="px-4">{successData.plant.description}</td>
+                      <td>{successData.plant.description}</td>
                     </tr>
-                    <tr className="bg-gray-100 border-b hover:bg-yellow-100">
+                    <tr className="bg-gray-100 border-b">
                       <th
                         scope="col"
-                        className="text-sm bg-teal-400 font-medium text-white px-6 py-4 text-left"
+                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                       >
                         Disease Name
                       </th>
-                      <td className="px-4">
+                      <td>
                         {successData.detection
                           .split("__")[1]
                           .split("_")
                           .join(" ")}
                       </td>
                     </tr>
-                    <tr className="bg-gray-100 border-b hover:bg-yellow-100">
+                    <tr className="bg-gray-100 border-b">
                       <th
                         scope="col"
-                        className="text-sm bg-teal-400 font-medium text-white px-6 py-4 text-left"
+                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                       >
                         Symptoms
                       </th>
-                      <td className="px-4">{successData.disease.symptoms}</td>
+                      <td>{successData.disease.symptoms}</td>
                     </tr>
-                    <tr className="bg-gray-100 border-b hover:bg-yellow-100">
+                    <tr className="bg-gray-100 border-b">
                       <th
                         scope="col"
-                        className="text-sm bg-teal-400 font-medium text-white px-6 py-4 text-left"
+                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                       >
                         Trigger
                       </th>
-                      <td className="px-4">{successData.disease.trigger}</td>
+                      <td>{successData.disease.trigger}</td>
                     </tr>
-                    <tr className="bg-gray-100 border-b hover:bg-yellow-100">
+                    <tr className="bg-gray-100 border-b">
                       <th
                         scope="col"
-                        className="text-sm bg-teal-400 font-medium text-white px-6 py-4 text-left"
+                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                       >
                         Control using organic method
                       </th>
-                      <td className="px-4">{successData.disease.organic}</td>
+                      <td>{successData.disease.organic}</td>
                     </tr>
-                    <tr className="bg-gray-100 border-b hover:bg-yellow-100">
+                    <tr className="bg-gray-100 border-b">
                       <th
                         scope="col"
-                        className="text-sm bg-teal-400 font-medium text-white px-6 py-4 text-left"
+                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                       >
                         Control using chemical method
                       </th>
-                      <td className="px-4">{successData.disease.chemical}</td>
+                      <td>{successData.disease.chemical}</td>
                     </tr>
                   </tbody>
                 </table>
+                <button
+                  type="submit"
+                  className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
+                  onClick={goBackHandler}
+                >
+                  Try again
+                </button>
               </div>
             </div>
           </div>
