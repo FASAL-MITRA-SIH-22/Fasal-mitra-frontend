@@ -41,6 +41,7 @@
     "react-scroll": "^1.8.6",
     "react-simple-maps": "^2.3.0",
     "react-tooltip": "^4.2.21",
+    "react-top-loading-bar": "^2.1.0",
     "react-webcam": "^7.0.0",
     "simple-peer": "^9.11.1",
     "socket.io-client": "^4.4.1",
