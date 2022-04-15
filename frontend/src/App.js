@@ -13,7 +13,10 @@ import { login } from "./store/features/userSlice"
 import "./App.css";
 import Teleconsulting from "./components/Teleconsulting/Teleconsulting";
 import GoogleTranslate from "./components/GoogleTranslate";
-import LoadingBar from 'react-top-loading-bar'
+import LoadingBar from 'react-top-loading-bar';
+
+import "./components/i18n/i18n";
+
 
 function App() {
   const dispatch = useDispatch();
