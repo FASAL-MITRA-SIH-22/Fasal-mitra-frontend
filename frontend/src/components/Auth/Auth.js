@@ -19,7 +19,7 @@ function Auth() {
             backgroundRepeat: 'no-repeat',
         }}>
             <div className="col-span-4 md:col-start-3 md:col-span-2 py-auto flex justify-center align-middle">
-                <div className="mx-auto w-3/4 sm:w-1/2 md:w-3/5 xl:w-1/3 my-auto">
+                <div className="mx-auto w-3/4 sm:w-1/2 md:w-3/5 xl:w-2/3 my-auto">
                     <div className="grid grid-rows-6 grid-flow-col gap-4 h-1/2 rounded-lg border-1 bg-gray-500 bg-opacity-30 border-black px-4">
                         <div className="row-span-1 flex justify-center">
                             <Switch checked={enabled} onChange={setEnabled}>

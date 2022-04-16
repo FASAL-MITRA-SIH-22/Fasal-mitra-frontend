@@ -39,7 +39,7 @@ function Login() {
 
 
     return (
-        <form className="grid grid-rows-6 grid-flow-col gap-4 h-full"
+        <form className="grid grid-rows-6 grid-flow-col gap-4 h-full w-2/3 mx-auto"
             autoComplete="true"
 
             onSubmit={handleSubmit(submitHandler)}>
