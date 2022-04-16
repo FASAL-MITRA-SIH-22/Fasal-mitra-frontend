@@ -23,12 +23,22 @@ function Auth() {
                     <div className="grid grid-rows-6 grid-flow-col gap-4 h-1/2 rounded-lg border-1 bg-gray-500 bg-opacity-30 border-black px-4">
                         <div className="row-span-1 flex justify-center">
                             <Switch checked={enabled} onChange={setEnabled}>
-                                <span className="bg-white rounded-full shadow p-0.5 h-10 w-48 flex">
+                                <span className="bg-gray-500 rounded-full h-10 w-48 flex relative shadow-inner shadow-black">
                                     <span
-                                        className={`flex justify-center items-center h-full w-1/2 rounded-full transition duration-300 ease-in-out transform bg-teal-500 text-white ${enabled ? " translate-x-full" : ""
+                                        className={`mr-auto flex justify-center items-center h-full w-1/2 rounded-full transition duration-300 ease-in-out transform bg-transparent text-white`}
+                                    >
+                                        {t('description.auth.2')}
+                                    </span>
+                                    <span
+                                        className={`z-20 absolute flex justify-center items-center h-full w-1/2 rounded-full transition duration-300 ease-in-out transform bg-teal-500 text-white ${enabled ? " translate-x-full" : ""
                                             }`}
                                     >
                                         {enabled ? t('description.auth.3') : t('description.auth.2')}
+                                    </span>
+                                    <span
+                                        className={`ml-auto flex justify-center items-center h-full w-1/2 rounded-full transition duration-300 ease-in-out transform bg-transparent text-white`}
+                                    >
+                                        {t('description.auth.3')}
                                     </span>
                                 </span>
                             </Switch>

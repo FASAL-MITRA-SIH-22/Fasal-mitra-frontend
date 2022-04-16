@@ -69,8 +69,8 @@ export default function Navbar() {
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
-                    {navigation.map((item) => {
-                      if (!user && (item.name === t('description.nav.2') || item.name === t('description.nav.3')))
+                    {navigation.map((item,key) => {
+                      if (!user && (key>1))
                         return (<></>)
                       return (<NavLink
                         key={item.name}
@@ -150,8 +150,8 @@ export default function Navbar() {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {navigation.map((item) => {
-                if (!user && (item.name != 'Detection' || item.name != 'Teleconsulting'))
+              {navigation.map((item,key) => {
+                if (!user && (key>1))
                   return (<></>)
                 return (<Disclosure.Button
                   key={item.name}

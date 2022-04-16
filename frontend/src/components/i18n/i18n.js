@@ -25,6 +25,8 @@ i18n
               'Dashboard',
               'Detection',
               'Teleconsulting',
+              'Your Profile',
+              'Sign out',
               'Login/Signup',
             ],
             heading: [
