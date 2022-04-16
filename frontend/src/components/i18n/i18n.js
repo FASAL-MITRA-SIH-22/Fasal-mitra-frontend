@@ -17,14 +17,17 @@ i18n
       escapeValue: false, // not needed for react as it escapes by default
     },
     resources: {
-      en: {
+      EN: {
         translation: {
           description: {
             nav: [
               'Home',
               'Dashboard',
               'Detection',
-              'Teleconsulting'
+              'Teleconsulting',
+              'Your Profile',
+              'Sign out',
+              'Login/Signup',
             ],
             heading: [
               'YOUR CROP DOCTOR',
@@ -52,15 +55,21 @@ i18n
               'Upload a file',
               'or drag and drop',
               'up to 10MB',
+            ],
+            auth: [
+              'Username',
+              'Password',
+              'Signup',
+              'Login',
             ]
           }
         }
       },
-      hi: {
+      ह: {
         translation: {
           description: {
             nav: [
-              'होम', 'डैशबोर्ड', 'डिटेक्शन', 'टेलीकॉन्सुलटिंग'
+              'होम', 'डैशबोर्ड', 'डिटेक्शन', 'टेलीकॉन्सुलटिंग', 'आपकी प्रोफाइल', 'साइन आउट','लॉगिन/साइन अप'
             ],  
             heading: [
               'आपका फसल डॉक्टर',
@@ -88,15 +97,21 @@ i18n
               'एक फ़ाइल अपलोड करें',
               'या खींचें और छोड़ें',
               '10 एमबी तक',
+            ],
+            auth: [
+              'यूजरनाम',
+              'पासवर्ड',
+              'साइन अप',
+              'लॉगिन'
             ]
           }
         }
       },
-      mr: {
+      म: {
         translation: {
           description: {
             nav: [
-              'होम', 'डैशबोर्ड', 'डिटेक्शन', 'टेलीकॉन्सुलटिंग'
+              'होम', 'डैशबोर्ड', 'डिटेक्शन', 'टेलीकॉन्सुलटिंग', 'तुमचे प्रोफाइल', 'साइन आउट', 'लॉगिन/साइन अप'
             ], 
             heading: [
               'तुमचे पीक डॉक्टर',
@@ -124,6 +139,12 @@ i18n
               'फाइल अपलोड करा',
               'किंवा ड्रॅग अँड ड्रॉप',
               '10MB पर्यंत',
+            ],
+            auth: [
+              'यूजरनाम',
+              'पासवर्ड',
+              'साइन अप',
+              'लॉगिन'
             ]
           }
         }

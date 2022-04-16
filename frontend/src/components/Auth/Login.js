@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { axiosInstance } from "../../axios.config";
 import {login} from '../../store/features/userSlice'
 import {useDispatch} from "react-redux";
+import { useTranslation, Trans } from 'react-i18next';
 
 let schema = yup.object().shape({
     username: yup.string().required(),
@@ -13,6 +14,7 @@ let schema = yup.object().shape({
 });
 
 function Login() {
+    const { t, i18n } = useTranslation();
     const submitHandler = (data) => {
         axiosInstance
             .post("/auth/login", data)
@@ -44,7 +46,7 @@ function Login() {
             <div className="row-span-2">
                 <label className="block">
                     <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
-                        Username
+                    {t('description.auth.0')}
                     </span>
                     <input type="username" name="username" className={`mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none  block w-full rounded-md sm:text-sm focus:ring-1 ${errors && errors.username ? "border-red-400 focus:border-red-500 focus:ring-red-500" : "focus:border-teal-500 focus:ring-teal-500"}`} placeholde="******" {...register('username')} />
                 </label>
@@ -59,7 +61,7 @@ function Login() {
             <div className="row-span-2">
                 <label className="block">
                     <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
-                        Password
+                    {t('description.auth.1')}
                     </span>
                     <input type="password" name="password" className={`mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none  block w-full rounded-md sm:text-sm focus:ring-1 ${errors && errors.password ? "border-red-400 focus:border-red-500 focus:ring-red-500" : "focus:border-teal-500 focus:ring-teal-500"}`} placeholde="******" {...register('password')} />
                 </label>
@@ -72,7 +74,7 @@ function Login() {
                 )}
             </div>
             <div className="flex row-span-2">
-                <input type="submit" value="Login" className='mx-auto h-11 w-44 bg-teal-500 text-white rounded-xl hover:bg-teal-600 cursor-pointer' />
+                <input type="submit" value={t('description.auth.3')} className='mx-auto h-11 w-44 bg-teal-500 text-white rounded-xl hover:bg-teal-600 cursor-pointer' />
             </div>
         </form>
     )
