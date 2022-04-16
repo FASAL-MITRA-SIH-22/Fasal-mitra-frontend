@@ -92,12 +92,12 @@ const DiseaseDetection = () => {
     setSuccessData(false);
   }
   const submitForm = (e) => {
-    ref.current.continuousStart()
-
     e.preventDefault();
     if (preview === undefined) {
       return;
     }
+        ref.current.continuousStart();
+
     /* if(location === null){
       position();
       return;
@@ -211,7 +211,7 @@ const DiseaseDetection = () => {
                 type="submit"
                 className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-md rounded-b-md text-white bg-emerald-500 hover:bg-emerald-600 font-extrabold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 w-full"
               >
-                <span>Detect &nbsp;<BsSearch className='inline-block' /> </span>
+                <span>{t('description.diseaseDetection.6')} &nbsp;<BsSearch className='inline-block' /> </span>
               </button>
             </div>
           </form>
