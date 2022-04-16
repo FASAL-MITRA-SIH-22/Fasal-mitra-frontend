@@ -246,10 +246,10 @@ const DiseaseDetection = () => {
               <div className="overflow-hidden sm:rounded-lg">
                 <button
                   type="submit"
-                  className="mb-4 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
+                  className="mb-4 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-md font-medium rounded-md text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
                   onClick={goBackHandler}
                 >
-                  <IoReloadOutline size={20} />{t('description.diseaseDetection.7')}
+                  {t('description.diseaseDetection.7')} &nbsp; <IoReloadOutline size={20} />
                 </button>
                 <table className="min-w-full table-auto">
                   <tbody>
