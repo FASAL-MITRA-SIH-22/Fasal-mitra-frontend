@@ -47,4 +47,8 @@
 
 ::selection {
 	background: rgba(0,0,0,0.15);
-  }
+}
+
+::-moz-selection{
+	background: rgba(0,0,0,0.15);
+}

@@ -2,15 +2,14 @@ import { useEffect, useState, Fragment } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { Link, NavLink } from 'react-router-dom';
-// import logo from '../../utils/Images/logo.png'
+// import logo from '../../assets/Images/logo.png'
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../store/features/userSlice"
 import { axiosInstance } from '../../axios.config'
 import { useNavigate } from "react-router-dom";
 import LanguageSelector from '../LangaugeSelector'
 import { useTranslation, Trans } from 'react-i18next';
-import leaf from '../../utils/images/sprout.png'
-import { DescriptionTwoTone } from '@material-ui/icons';
+import leaf from '../../assets/images/sprout.png'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')

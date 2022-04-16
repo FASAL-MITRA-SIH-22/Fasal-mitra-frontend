@@ -1,6 +1,6 @@
 import InfoSection from './InfoSection/InfoSection';
 import { homeObjOne, homeObjTwo, homeObjThree } from './InfoSection/Data';
-import bg1 from './smart-agriculture-iot-with-hand-planting-tree-background.jpg'
+import bg1 from '../../assets/images/HomePage/smart-agriculture-iot-with-hand-planting-tree-background.jpg'
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { MdKeyboardArrowRight, MdArrowForward } from 'react-icons/md';
@@ -20,7 +20,6 @@ const Home = () => {
 
   return (
     <>
-      {/* <HeroSection /> */}
       <div className="flex-row h-fit">
         <div className="col-span-12 h-fit">
           <div className="col-span-12 flex flex-row relative">
