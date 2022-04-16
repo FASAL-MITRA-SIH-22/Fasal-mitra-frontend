@@ -17,7 +17,7 @@ const Home = () => {
   const lngs = {
     en: { nativeName: 'English' },
     hi: { nativeName: 'Hindi' },
-    mar: {nativeName: 'Marathi'},
+    mr: {nativeName: 'Marathi'},
   };
   homeObjOne["t"] = t('description.home', {returnObjects: true}).slice(0, 4);
   homeObjTwo["t"] = t('description.home', {returnObjects: true}).slice(4, 8);
@@ -34,15 +34,14 @@ const Home = () => {
             <div className="absolute h-full px-6 md:px-0 md:w-1/4 text-white z-10 font-mono flex">
               <div className="my-auto ml-auto md:w-3/4 text-2xl flex flex-col">
                 <p className="my-2 align text-center text-6xl font-extrabold text-cyan-900">
-                  YOUR CROP DOCTOR
+                  {t('description.heading.0')}
                 </p>
                 <p className="my-6 align text-justify">
-                  Crop disease detection made easy
-                  Sign up with us today!
+                  {t('description.heading.1')}
                 </p>
                 <Link to='/auth' className="border rounded-full my-6 px-5 py-2 mx-auto hover:bg-white ease-in-out duration-300 hover:text-emerald-600 font-bold text-3xl truncate" onMouseEnter={onHover}
                   onMouseLeave={onHover}>
-                  Join Us {hover ? <MdArrowForward className='inline-block' /> : <MdKeyboardArrowRight className='inline-block' />}
+                  {t('description.heading.2')} {hover ? <MdArrowForward className='inline-block' /> : <MdKeyboardArrowRight className='inline-block' />}
                 </Link>
 
               </div>
@@ -57,11 +56,11 @@ const Home = () => {
             }}></div>
           </div>
         </div>
-        {Object.keys(lngs).map((lng) => (
+        {/* Object.keys(lngs).map((lng) => (
         <button key={lng} style={{ fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal' }} type="submit" onClick={() => i18n.changeLanguage(lng)}>
           {lngs[lng].nativeName}
         </button>
-      ))}
+        ))*/}
         <div className="col-span-12 h-fit">
           <InfoSection {...homeObjOne} />
         </div>

@@ -20,6 +20,17 @@ i18n
       en: {
         translation: {
           description: {
+            nav: [
+              'Home',
+              'Dashboard',
+              'Detection',
+              'Teleconsulting'
+            ],
+            heading: [
+              'YOUR CROP DOCTOR',
+              'Crop disease detection made easy Sign up with us today!',
+              'Join Us',
+            ],
             home: [
               'Crop Losses due to diseases',
               'Indian Farmers lose upto ₹ 90,000 crores annually',
@@ -33,6 +44,14 @@ i18n
               'Knowing the exact crop disease is important before treating it.',
               'Not all farmers possess enough technological literacy to carry out independent research about crop diseases and their solutions; they’re often taken advantage of by traders who make them spend money on large quantities of unnecessary chemicals, pesticides and insecticides, which are detrimental to the soil and environment.',
               'Get started',
+            ],
+            diseaseDetection: [
+              'Image',
+              'Please upload a photo',
+              'Upload photo of diseased sapling',
+              'Upload a file',
+              'or drag and drop',
+              'up to 10MB',
             ]
           }
         }
@@ -40,6 +59,14 @@ i18n
       hi: {
         translation: {
           description: {
+            nav: [
+              'होम', 'डैशबोर्ड', 'डिटेक्शन', 'टेलीकॉन्सुलटिंग'
+            ],  
+            heading: [
+              'आपका फसल डॉक्टर',
+              'फसल रोग का पता लगाना आसान हुआ आज ही हमारे साथ साइन अप करें!',
+              'हमसे जुड़ें',
+            ],
             home: [
               "रोगों के कारण फसल का नुकसान",
               "भारतीय किसानों को सालाना ₹90,000 करोड़ तक का नुकसान",
@@ -53,13 +80,29 @@ i18n
               'उपचार करने से पहले फसल की सही बीमारी जानना जरूरी है।',
               'सभी किसानों के पास फसल रोगों और उनके समाधान के बारे में स्वतंत्र शोध करने के लिए पर्याप्त तकनीकी साक्षरता नहीं है; उनका अक्सर व्यापारियों द्वारा फायदा उठाया जाता है जो उन्हें बड़ी मात्रा में अनावश्यक रसायनों, कीटनाशकों और कीटनाशकों पर पैसा खर्च करते हैं, जो मिट्टी और पर्यावरण के लिए हानिकारक हैं।',
               "शुरू हो जाओ",
+            ],
+            diseaseDetection: [
+              'छवि',
+              'कृपया एक फोटो अपलोड करें',
+              'रोगग्रस्त पौधे की फोटो अपलोड करें',
+              'एक फ़ाइल अपलोड करें',
+              'या खींचें और छोड़ें',
+              '10 एमबी तक',
             ]
           }
         }
       },
-      mar: {
+      mr: {
         translation: {
           description: {
+            nav: [
+              'होम', 'डैशबोर्ड', 'डिटेक्शन', 'टेलीकॉन्सुलटिंग'
+            ], 
+            heading: [
+              'तुमचे पीक डॉक्टर',
+              'पीक रोग शोधणे सोपे झाले आजच आमच्यासोबत साइन अप करा!',
+              'आमच्यात सामील व्हा',
+            ],
             home: [
               'रोगांमुळे पिकांचे नुकसान',
               'भारतीय शेतकऱ्यांचे वार्षिक 90,000 कोटी रुपयांचे नुकसान',
@@ -73,6 +116,14 @@ i18n
               'उपचार करण्यापूर्वी पिकावरील नेमका रोग जाणून घेणे महत्त्वाचे आहे.',
               'सर्व शेतकऱ्यांकडे पीक रोग आणि त्यांच्या उपायांबद्दल स्वतंत्र संशोधन करण्यासाठी पुरेशी तांत्रिक साक्षरता नसते; त्यांचा फायदा अनेकदा व्यापारी घेतात जे त्यांना मोठ्या प्रमाणात अनावश्यक रसायने, कीटकनाशके आणि कीटकनाशकांवर पैसे खर्च करतात, जे माती आणि पर्यावरणास हानिकारक आहेत.',
               'सुरु करूया',
+            ],
+            diseaseDetection: [
+              'प्रतिमा',
+              'कृपया फोटो अपलोड करा',
+              'रोगग्रस्त रोपट्याचा फोटो अपलोड करा',
+              'फाइल अपलोड करा',
+              'किंवा ड्रॅग अँड ड्रॉप',
+              '10MB पर्यंत',
             ]
           }
         }
