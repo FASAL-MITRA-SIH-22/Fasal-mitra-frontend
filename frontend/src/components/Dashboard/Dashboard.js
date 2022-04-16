@@ -2,16 +2,42 @@ import React, { useEffect, useState, useRef } from "react";
 import Map from "./Map";
 import { axiosInstance } from "../../axios.config";
 import CustomBar from "./CustomBar";
-
+import CountUp, { useCountUp } from 'react-countup';
+import ApexChart from "./ApexChart";
+import ApexBarChart from "./ApexBarChart";
+import PieChart from './PieChart';
+import {GiCorn} from 'react-icons/gi'
 const defaultMaps = [
   {
     _id: "MH",
     numberOfValue: 24,
+  }, {
+    _id: "GJ",
+    numberOfValue: 46,
+  }, {
+    _id: "TN",
+    numberOfValue: 44,
   },
-  // {
-  //   _id: "GJ",
-  //   numberOfValue: 4,
-  // },
+  {
+    _id: "KA",
+    numberOfValue: 120,
+  },
+  {
+    _id: "PB",
+    numberOfValue: 10,
+  },
+  {
+    _id: "TS",
+    numberOfValue: 80,
+  },
+  {
+    _id: "WB",
+    numberOfValue: 60,
+  },
+  {
+    _id: "OD",
+    numberOfValue: 35,
+  },
 ];
 
 const defaultPlants = {
@@ -73,10 +99,9 @@ function Dashboard() {
     <>
       <div>
         <h2 className="text-3xl font-semibold text-center">Outbreak Detection</h2>
-        <Map mapData={mapData} />
         <br />
         <div className="grid grid-cols-2 gap-x-4">
-          <CustomBar
+          {/* <CustomBar
             data={diseaseData}
             labelName="Disease"
             legendName="Distribution of Disease Wise Detection"
@@ -85,56 +110,76 @@ function Dashboard() {
             data={plantData}
             labelName="Plant"
             legendName="Distribution of Plant Wise Detection"
-          />
+          /> */}
         </div>
       </div>
       <div>
         <div>
           <div className="grid grid-rows-6 grid-flow-col">
-            <div className="col-span-12 row-span-1 bg-slate-700 rounded-xl m-2 shadow-xl p-4 flex items-center justify-start gap-2">
-              <div className=" bg-white h-full w-1/6">
-                <p>Total Visitors</p>
-                <p>
-
+            <div className="col-span-12 row-span-1 bg-slate-700 rounded-xl m-2 shado shadow-slate-900w-xl p-4 flex items-center justify-around gap-2">
+              <div className="h-full w-1/6 rounded-xl grid grid-rows-6 bg-gradient-to-r from-green-700 to-emerald-300 text-white">
+                <p className="row-span-3 text-center flex justify-center">
+                  <span className="text-6xl font-bold font-mono my-auto">
+                    <CountUp end={127} />
+                  </span>
                 </p>
+                <p className="row-span-3 text-center">
+                  <span className="text text-3xl font-mono"> Total Visitors</span>
+                </p>
+              </div>
+              <div className="h-full w-1/6 rounded-xl grid grid-rows-6 bg-gradient-to-r from-sky-700 to-slate-600 text-white">
+                <p className="row-span-3 text-center flex justify-center">
+                  <span className="text-6xl font-bold font-mono my-auto">
+                    <CountUp end={450} />
+                  </span>
+                </p>
+                <p className="row-span-3 text-center">
+                  <span className="text text-3xl font-mono"> Total Predictions</span>
+                </p>
+              </div>
+              <div className="h-full w-1/6 rounded-xl grid grid-rows-6 bg-gradient-to-r from-amber-500 to-yellow-400 text-white">
+                <p className="row-span-3 text-center flex justify-center">
+                  <span className="text-7xl font-bold font-mono my-auto">
+                  <GiCorn className="inline"/> Corn
+                  </span>
+                </p>
+                <p className="row-span-3 text-center">
+                  <span className="text text-3xl font-mono"> Plant With most Diseases Today</span>
+                </p>
+              </div>
+              <div className="h-full w-1/6 rounded-xl grid grid-rows-6 bg-gradient-to-r from-red-700 to-pink-400 text-white">
+                <p className="row-span-3 text-center flex justify-center">
+                  <span className="text-6xl font-bold font-mono my-auto">
+                    <CountUp end={127} />
+                  </span>
+                </p>
+                <p className="row-span-3 text-center">
+                  <span className="text text-3xl font-mono"> Total Visitors</span>
+                </p>
+              </div>
 
-              </div>
-              <div className="bg-white h-full w-1/6">
-
-              </div>
-              <div className="bg-white h-full w-1/6">
-              </div>
-              <div className="bg-white h-full w-1/6">
-              </div>
               <div>
               </div>
             </div>
-            <div className="row-span-5 col-span-12 ... bg-red-700 rounded-xl m-2 shadow-xl grid grid-rows-6 grid-flow-col">
-              <div className="row-span-6 col-span-4 ... bg-slate-700 rounded-xl m-2 shadow-xl p-4 py-8">
-
+            <div className="row-span-5 col-span-12 rounded-xl m-2 shadow-xl grid grid-cols-12 grid-flow-row gap-8">
+              <div className=" bg-slate-700 rounded-xl shadow-xl shadow-slate-900 row-span-2 col-span-2">
               </div>
-              <div className="row-span-6 col-span-4 ... bg-slate-700 rounded-xl m-2 shadow-xl p-4">
+              <div className=" bg-slate-700 rounded-xl shadow-xl shadow-slate-900 row-span-2 col-span-5">
+                <ApexBarChart />
               </div>
-              <div className="row-span-2 col-span-4 ... bg-slate-700 rounded-xl m-2 shadow-xl">
+              <div className=" bg-slate-700 rounded-xl shadow-xl shadow-slate-900 row-span-2 col-span-5">
+                <ApexChart />
+              </div>
+              <div className=" bg-slate-700 rounded-xl shadow-xl shadow-slate-900 row-span-2 col-span-4 flex justify-center items-center">
+                <PieChart />
+              </div>
+              <div className=" bg-slate-700 rounded-xl shadow-xl shadow-slate-900 row-span-2 col-span-4 flex justify-center items-center">
+                <ApexChart />
+              </div>
+              <div className=" bg-slate-700 rounded-xl shadow-xl shadow-slate-900 row-span-2 col-span-4">
                 <Map mapData={mapData} />
               </div>
-              <div className="row-span-2 col-span-4 ... bg-slate-700 rounded-xl m-2 shadow-xl p-4 flex items-center justify-center">
-                <CustomBar
-                  data={diseaseData}
-                  labelName="Disease"
-                  legendName="Distribution of Disease Wise Detection"
-                />
-              </div>
-              <div className="row-span-2 col-span-4 ... bg-slate-700 rounded-xl m-2 shadow-xl p-4 flex items-center justify-center">
-                <CustomBar
-                  data={plantData}
-                  labelName="Plant"
-                  legendName="Distribution of Plant Wise Detection"
-                />
-              </div>
             </div>
-
-
           </div>
         </div>
       </div>
@@ -142,4 +187,21 @@ function Dashboard() {
   );
 }
 
+
+
 export default Dashboard;
+
+
+{/* <CustomBar
+                  data={plantData}
+                  labelName="Plant"
+                  legendName="Distribution of Plant Wise Detection"
+                /> */}
+
+
+{/* <CustomBar
+                  data={diseaseData}
+                  labelName="Disease"
+                  legendName="Distribution of Disease Wise Detection"
+                /> */}
+{/* <Map mapData={mapData} /> */ }

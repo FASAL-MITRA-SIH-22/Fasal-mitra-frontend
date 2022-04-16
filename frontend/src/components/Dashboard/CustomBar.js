@@ -52,27 +52,26 @@ function CustomBar({ data, labelName, legendName }) {
   }, [data, labelName]);
 
   return (
-    <div className="w-full">
-      <Bar
-        data={barData}
-        options={{
-          maintainAspectRatio: false,
-          scales: {
-            x: { grid: { display: false } },
-            y: { grid: { display: false } },
-          },
-          title: {
-            display: true,
-            text: { LegendName: legendName },
-            fontSize: 20,
-          },
-          legend: {
-            display: true,
-            position: "right",
-          },
-        }}
-      />
-    </div>
+    <Bar
+      data={barData}
+      options={{
+        responsive: true,
+        maintainAspectRatio: true,
+        scales: {
+          x: { grid: { display: false } },
+          y: { grid: { display: false } },
+        },
+        title: {
+          display: true,
+          text: { LegendName: legendName },
+          fontSize: 20,
+        },
+        legend: {
+          display: true,
+          position: "right",
+        },
+      }}
+    />
   );
 }
 

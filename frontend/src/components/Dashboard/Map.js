@@ -9,11 +9,12 @@ import INDIA_TOPO_JSON from "./india.topo.json";
 //   "https://raw.githubusercontent.com/deldersveld/topojson/master/countries/india/india-districts.json";
 
 const PROJECTION_CONFIG = {
-  scale: 800,
-  center: [75.9629, 17.5937],
+  scale: 1350,
+  center: [78.9629, 22.5937]
 };
 
 const DEFAULT_COLOR = "#EEE";
+const COLORS = ['#1fff6b', '#37ed6f', '#4ace73', '#52ae76', '#539877', '#538e78', '#538578', '#527f78 ', '#517878', '#507178', '#4e6b78 ', '#4d6478', '#4b5e78', '#495777', '#464e77', '#414377', '#3b3876', '#332a75', '#291b74', '#180672']
 
 const geographyStyle = {
   default: {
@@ -46,24 +47,25 @@ function Map(props) {
   };
 
   return (
-    <div className="mt-5">
+    <div className="">
       <ReactTooltip>{tooltipContent}</ReactTooltip>
       <ComposableMap
         projectionConfig={PROJECTION_CONFIG}
         projection="geoMercator"
-        width={window.innerWidth}
-        height={700}
+        width={1000}
+        height={1000}
         data-tip=""
       >
         <Geographies geography={INDIA_TOPO_JSON}>
           {({ geographies }) =>
             geographies.map((geo) => {
               const current = mapData.find((s) => s._id === geo.id);
+              console.log((current? current.numberOfValue:'0') / 10)
               return (
                 <Geography
                   key={geo.rsmKey}
                   geography={geo}
-                  fill={current ? "red" : DEFAULT_COLOR}
+                  fill={current ? COLORS[parseInt((current? current.numberOfValue:'0') / 10)] : DEFAULT_COLOR}
                   style={geographyStyle}
                   onMouseEnter={onMouseEnter(geo, current)}
                   onMouseLeave={onMouseLeave}
