@@ -6,7 +6,10 @@ import googlePlus from '../../utils/images/loginSignupPage/google-plus.png'
 import facebook from '../../utils/images/loginSignupPage/facebook.png'
 import twitter from '../../utils/images/loginSignupPage/twitter.png'
 import cropbg from '../../utils/images/loginSignupPage/crop-background.jpg'
+import { useTranslation, Trans } from 'react-i18next';
+
 function Auth() {
+    const { t, i18n } = useTranslation();
     const [enabled, setEnabled] = useState(false)
     return (
         <div className="grid grid-cols-4 h-full bg-blend-darken" style={{
@@ -24,18 +27,18 @@ function Auth() {
                                     <span
                                         className={`mr-auto flex justify-center items-center h-full w-1/2 rounded-full transition duration-300 ease-in-out transform bg-transparent text-white`}
                                     >
-                                        Sign Up
+                                        {t('description.auth.2')}
                                     </span>
                                     <span
                                         className={`z-20 absolute flex justify-center items-center h-full w-1/2 rounded-full transition duration-300 ease-in-out transform bg-teal-500 text-white ${enabled ? " translate-x-full" : ""
                                             }`}
                                     >
-                                        {enabled ? "Login" : "Sign Up"}
+                                        {enabled ? t('description.auth.3') : t('description.auth.2')}
                                     </span>
                                     <span
                                         className={`ml-auto flex justify-center items-center h-full w-1/2 rounded-full transition duration-300 ease-in-out transform bg-transparent text-white`}
                                     >
-                                        Login
+                                        {t('description.auth.3')}
                                     </span>
                                 </span>
                             </Switch>

@@ -31,7 +31,7 @@ const initial = {
   ],
 };
 
-function CustomBar({ data, labelName, LegendName }) {
+function CustomBar({ data, labelName, legendName }) {
   const [barData, setBarData] = useState(initial);
 
   useEffect(() => {
@@ -42,23 +42,27 @@ function CustomBar({ data, labelName, LegendName }) {
       datasets: [
         {
           label: labelName,
-          backgroundColor: "rgba(75,192,192,1)",
-          borderColor: "rgba(0,0,0,1)",
-          borderWidth: 2,
+          backgroundColor: "#6FD399",
+          borderColor: "#333",
+          borderWidth: 1,
           data: data?.data,
         },
       ],
     });
-  }, [data]);
+  }, [data, labelName]);
 
   return (
     <div>
       <Bar
         data={barData}
         options={{
+          scales:{
+            x: {grid: {display: false}},
+            y: {grid: {display: false}},
+          },
           title: {
             display: true,
-            text: {LegendName},
+            text: {LegendName: legendName},
             fontSize: 20,
           },
           legend: {

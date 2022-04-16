@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import ReactTooltip from "react-tooltip";
-import { scaleQuantile } from "d3-scale";
 import INDIA_TOPO_JSON from "./india.topo.json";
 
 // const INDIA_TOPO_JSON =
@@ -9,29 +8,10 @@ import INDIA_TOPO_JSON from "./india.topo.json";
 // const INDIA_TOPO_JSON =
 //   "https://raw.githubusercontent.com/deldersveld/topojson/master/countries/india/india-districts.json";
 
-const getRandomInt = () => {
-  return Math.floor(Math.random() * 100);
-};
-
-const data = [{ id: "AP", state: "Andhra Pradesh", value: getRandomInt() }];
-
 const PROJECTION_CONFIG = {
   scale: 800,
   center: [75.9629, 17.5937],
 };
-
-// Red Variants
-const COLOR_RANGE = [
-  "#ffedea",
-  "#ffcec5",
-  "#ffad9f",
-  "#ff8a75",
-  "#ff5533",
-  "#e2492d",
-  "#be3d26",
-  "#9a311f",
-  "#782618",
-];
 
 const DEFAULT_COLOR = "#EEE";
 
@@ -61,10 +41,6 @@ function Map(props) {
     };
   };
 
-  const colorScale = scaleQuantile()
-    .domain(mapData?.map((d) => d?.numberOfValue ?? "0"))
-    .range(COLOR_RANGE);
-
   const onMouseLeave = () => {
     setTooltipContent("");
   };
@@ -87,7 +63,7 @@ function Map(props) {
                 <Geography
                   key={geo.rsmKey}
                   geography={geo}
-                  fill={current ? colorScale(current.value) : DEFAULT_COLOR}
+                  fill={current ? "red" : DEFAULT_COLOR}
                   style={geographyStyle}
                   onMouseEnter={onMouseEnter(geo, current)}
                   onMouseLeave={onMouseLeave}

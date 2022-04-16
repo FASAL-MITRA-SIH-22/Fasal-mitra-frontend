@@ -10,6 +10,8 @@ import { useNavigate } from "react-router-dom";
 import LanguageSelector from '../LangaugeSelector'
 import { useTranslation, Trans } from 'react-i18next';
 import leaf from '../../utils/images/sprout.png'
+import { DescriptionTwoTone } from '@material-ui/icons';
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
@@ -121,7 +123,7 @@ export default function Navbar() {
                                 href="#"
                                 className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                               >
-                                Your Profile
+                                {t('description.nav.4')}
                               </a>
                             )}
                           </Menu.Item>
@@ -130,7 +132,7 @@ export default function Navbar() {
                               className={'button block px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-slate-100'}
                               onClick={handleLogout}
                             >
-                              Sign out
+                              {t('description.nav.5')}
                             </div>
                           </Menu.Item>
                         </Menu.Items>
@@ -140,7 +142,7 @@ export default function Navbar() {
                     to="/auth"
                     className="border-emerald-500 border-2 text-emerald-500 px-3 py-2 rounded-xl text-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-white hover:bg-emerald-500 hover:text-white"
                   >
-                    Login/Signup
+                    {t('description.nav.6')}
                   </Link>
                 }
 
