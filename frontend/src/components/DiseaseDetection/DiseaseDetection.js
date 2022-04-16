@@ -15,13 +15,9 @@ export const axiosInstance = axios.create({
   withCredentials: true,
 });
 
-const lngs = {
-  en: { nativeName: 'English' },
-  de: { nativeName: 'Deutsch' }
-};
-
 const DiseaseDetection = () => {
-  const { t, i18n } = useTranslation();
+  const {t, i18n} = useTranslation();
+
   const [imageUploaded, setUploadedImage] = useState();
   const [preview, setPreview] = useState(null);
   const [isPreview, setIsPreview] = useState();
@@ -143,7 +139,7 @@ const DiseaseDetection = () => {
                     htmlFor="about"
                     className="block text-sm font-medium text-gray-700"
                   >
-                    Image
+                    {t('description.diseaseDetection.0')}
                   </label>
                   <div className="mt-1 flex justify-center">
                     {!isPreview && (
@@ -163,14 +159,14 @@ const DiseaseDetection = () => {
                   </div>
                   {!isPreview && (
                     <label className="block text-sm font-medium text-red-700">
-                      Please upload a photo
+                      {t('description.diseaseDetection.1')}
                     </label>
                   )}
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700">
-                    Upload photo of diseased sapling
+                    {t('description.diseaseDetection.2')}
                   </label>
                   <div
                     ref={drop}
@@ -196,7 +192,7 @@ const DiseaseDetection = () => {
                           htmlFor="file-upload"
                           className="relative cursor-pointer bg-white rounded-md font-medium text-emerald-600 hover:text-emerald-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-emerald-500"
                         >
-                          <span>Upload a file</span>
+                          <span>{t('description.diseaseDetection.3')}</span>
                           <input
                             id="file-upload"
                             onChange={imageUploadHandler}
@@ -206,10 +202,10 @@ const DiseaseDetection = () => {
                             accept="image/*"
                           ></input>
                         </label>
-                        <p className="pl-1">or drag and drop</p>
+                        <p className="pl-1">{t('description.diseaseDetection.4')}</p>
                       </div>
                       <p className="text-xs text-gray-500">
-                        PNG, JPG, GIF up to 10MB
+                        PNG, JPG, GIF {t('description.diseaseDetection.5')}
                       </p>
                     </div>
                   </div>
