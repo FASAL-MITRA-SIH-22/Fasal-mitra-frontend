@@ -47,6 +47,7 @@ const Home = () => {
 
               </div>
             </div>
+
             <div className="ml-auto basis-5/6" style={{
               backgroundImage: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url(' + bg1 + ')',
               backgroundPosition: 'center',
@@ -56,6 +57,11 @@ const Home = () => {
             }}></div>
           </div>
         </div>
+        {Object.keys(lngs).map((lng) => (
+        <button key={lng} style={{ fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal' }} type="submit" onClick={() => i18n.changeLanguage(lng)}>
+          {lngs[lng].nativeName}
+        </button>
+      ))}
         <div className="col-span-12 h-fit">
           <InfoSection {...homeObjOne} />
         </div>
@@ -66,15 +72,6 @@ const Home = () => {
           <InfoSection {...homeObjThree} />
         </div>
       </div>
-
-      {Object.keys(lngs).map((lng) => (
-        <button key={lng} style={{ fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal' }} type="submit" onClick={() => i18n.changeLanguage(lng)}>
-          {lngs[lng].nativeName}
-        </button>
-      ))}
-      <InfoSection {...homeObjOne} />
-      <InfoSection {...homeObjTwo} />
-      <InfoSection {...homeObjThree} />
     </>
   )
 }
