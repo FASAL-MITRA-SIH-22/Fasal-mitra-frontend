@@ -21,6 +21,8 @@ const languages = [
         code: 'EN'
     },
 ]
+
+
 export default function LanguageSelector() {
     return (
         <Menu as="div" className="relative inline-block text-left ">
