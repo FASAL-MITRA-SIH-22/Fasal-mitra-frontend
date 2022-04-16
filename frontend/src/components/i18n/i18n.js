@@ -19,44 +19,64 @@ i18n
     resources: {
       en: {
         translation: {
-            description: {
-                home: [
-                    'Crop Losses due to diseases',
-                    'Indian Farmers lose upto ₹ 90,000 crores annually',
-                    '10 to 30 percent of crop production are lost due to diseases, pests and weeds thus, decreasing the productivity and affecting the economy of the country.',
-                    'Get started',
-                    'Aiding Indian Farmers',
-                    'One-Stop Solution for Crop Related Issues',
-                    'Detection and Reliable Solutions, Teleconsulting with Experts and a Community Forum for Farmers.',
-                    'Get started',
-                    'Problems faced by Farmers',
-                    'Knowing the exact crop disease is important before treating it.',
-                    'Not all farmers possess enough technological literacy to carry out independent research about crop diseases and their solutions; they’re often taken advantage of by traders who make them spend money on large quantities of unnecessary chemicals, pesticides and insecticides, which are detrimental to the soil and environment.',
-                    'Get started',
-                ]
-              }
+          description: {
+            home: [
+              'Crop Losses due to diseases',
+              'Indian Farmers lose upto ₹ 90,000 crores annually',
+              '10 to 30 percent of crop production are lost due to diseases, pests and weeds thus, decreasing the productivity and affecting the economy of the country.',
+              'Get started',
+              'Aiding Indian Farmers',
+              'One-Stop Solution for Crop Related Issues',
+              'Detection and Reliable Solutions, Teleconsulting with Experts and a Community Forum for Farmers.',
+              'Get started',
+              'Problems faced by Farmers',
+              'Knowing the exact crop disease is important before treating it.',
+              'Not all farmers possess enough technological literacy to carry out independent research about crop diseases and their solutions; they’re often taken advantage of by traders who make them spend money on large quantities of unnecessary chemicals, pesticides and insecticides, which are detrimental to the soil and environment.',
+              'Get started',
+            ]
+          }
         }
       },
       hi: {
         translation: {
           description: {
             home: [
-                "रोगों के कारण फसल का नुकसान",
-                "भारतीय किसानों को सालाना ₹90,000 करोड़ तक का नुकसान",
-                "फसल उत्पादन का 10 से 30 प्रतिशत हिस्सा बीमारियों, कीटों और खरपतवारों के कारण नष्ट हो जाता है, जिससे उत्पादकता कम हो जाती है और देश की अर्थव्यवस्था प्रभावित होती है",
-                "शुरू हो जाओ",
-                'भारतीय किसानों की सहायता करना',
-                'फसल से संबंधित मुद्दों के लिए वन-स्टॉप समाधान',
-                'पता लगाने और विश्वसनीय समाधान, विशेषज्ञों के साथ टेलीकंसल्टिंग और किसानों के लिए एक सामुदायिक मंच',
-                "शुरू हो जाओ",
-                'किसानों की समस्या',
-                'उपचार करने से पहले फसल की सही बीमारी जानना जरूरी है।',
-                'सभी किसानों के पास फसल रोगों और उनके समाधान के बारे में स्वतंत्र शोध करने के लिए पर्याप्त तकनीकी साक्षरता नहीं है; उनका अक्सर व्यापारियों द्वारा फायदा उठाया जाता है जो उन्हें बड़ी मात्रा में अनावश्यक रसायनों, कीटनाशकों और कीटनाशकों पर पैसा खर्च करते हैं, जो मिट्टी और पर्यावरण के लिए हानिकारक हैं।',      
-                "शुरू हो जाओ",
+              "रोगों के कारण फसल का नुकसान",
+              "भारतीय किसानों को सालाना ₹90,000 करोड़ तक का नुकसान",
+              "फसल उत्पादन का 10 से 30 प्रतिशत हिस्सा बीमारियों, कीटों और खरपतवारों के कारण नष्ट हो जाता है, जिससे उत्पादकता कम हो जाती है और देश की अर्थव्यवस्था प्रभावित होती है",
+              "शुरू हो जाओ",
+              'भारतीय किसानों की सहायता करना',
+              'फसल से संबंधित मुद्दों के लिए वन-स्टॉप समाधान',
+              'पता लगाने और विश्वसनीय समाधान, विशेषज्ञों के साथ टेलीकंसल्टिंग और किसानों के लिए एक सामुदायिक मंच',
+              "शुरू हो जाओ",
+              'किसानों की समस्या',
+              'उपचार करने से पहले फसल की सही बीमारी जानना जरूरी है।',
+              'सभी किसानों के पास फसल रोगों और उनके समाधान के बारे में स्वतंत्र शोध करने के लिए पर्याप्त तकनीकी साक्षरता नहीं है; उनका अक्सर व्यापारियों द्वारा फायदा उठाया जाता है जो उन्हें बड़ी मात्रा में अनावश्यक रसायनों, कीटनाशकों और कीटनाशकों पर पैसा खर्च करते हैं, जो मिट्टी और पर्यावरण के लिए हानिकारक हैं।',
+              "शुरू हो जाओ",
             ]
           }
         }
       },
+      mar: {
+        translation: {
+          description: {
+            home: [
+              'रोगांमुळे पिकांचे नुकसान',
+              'भारतीय शेतकऱ्यांचे वार्षिक 90,000 कोटी रुपयांचे नुकसान',
+              'रोग, कीड आणि तणांमुळे 10 ते 30 टक्के पीक उत्पादन नष्ट होते, त्यामुळे उत्पादकता कमी होते आणि देशाच्या अर्थव्यवस्थेवर परिणाम होतो.',
+              'सुरु करूया',
+              'भारतीय शेतकऱ्यांना मदत करणे',
+              'पीक संबंधित समस्यांसाठी वन-स्टॉप सोल्युशन',
+              'डिटेक्शन आणि रिलायबल सोल्युशन्स, तज्ज्ञांसोबत दूरसंचार आणि शेतकऱ्यांसाठी एक समुदाय मंच.',
+              'सुरु करूया',
+              'शेतकऱ्यांना भेडसावणाऱ्या समस्या',
+              'उपचार करण्यापूर्वी पिकावरील नेमका रोग जाणून घेणे महत्त्वाचे आहे.',
+              'सर्व शेतकऱ्यांकडे पीक रोग आणि त्यांच्या उपायांबद्दल स्वतंत्र संशोधन करण्यासाठी पुरेशी तांत्रिक साक्षरता नसते; त्यांचा फायदा अनेकदा व्यापारी घेतात जे त्यांना मोठ्या प्रमाणात अनावश्यक रसायने, कीटकनाशके आणि कीटकनाशकांवर पैसे खर्च करतात, जे माती आणि पर्यावरणास हानिकारक आहेत.',
+              'सुरु करूया',
+            ]
+          }
+        }
+      }
     }
   });
 

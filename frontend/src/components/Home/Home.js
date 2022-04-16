@@ -10,6 +10,7 @@ const Home = () => {
   const lngs = {
     en: { nativeName: 'English' },
     hi: { nativeName: 'Hindi' },
+    mar: {nativeName: 'Marathi'},
   };
   homeObjOne["t"] = t('description.home', {returnObjects: true}).slice(0, 4);
   homeObjTwo["t"] = t('description.home', {returnObjects: true}).slice(4, 8);
