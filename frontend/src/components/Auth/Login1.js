@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { axiosInstance } from "../../axios.config";
-import {login} from '../../store/features/userSlice'
-import './Auth.css';
-import {useDispatch} from "react-redux";
+import { login } from "../../store/features/userSlice";
+import "./Auth.css";
+import { useDispatch } from "react-redux";
 
 let schema = yup.object().shape({
   username: yup.string().required(),
@@ -22,13 +22,13 @@ function LogIn(props) {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
-  
+
   const onSubmit = (data) => {
     axiosInstance
       .post("/auth/login", data)
       .then((response) => {
         console.log(response);
-        dispatch(login(response.data.user))
+        dispatch(login(response.data.user));
         navigate("/disease-detection");
       })
       .catch((error) => {
@@ -63,7 +63,9 @@ function LogIn(props) {
             </label>
             <input
               className={`shadow appearance-none border rounded w-64 sm:w-96 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-n*one focus:shadow-outline ${
-                errors && errors.username ? "border-red-500" : "border-emerald-500"
+                errors && errors.username
+                  ? "border-red-500"
+                  : "border-emerald-500"
               }`}
               id="username"
               type="text"
@@ -79,7 +81,7 @@ function LogIn(props) {
             )}
           </div>
           <div className="row-span-2 items-center py-2 mx-auto">
-          <label
+            <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold px-7"
               htmlFor="password"
             >
@@ -87,7 +89,9 @@ function LogIn(props) {
             </label>
             <input
               className={`shadow appearance-none border rounded w-64 sm:w-96 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-                errors && errors.password ? "border-red-500" : "border-emerald-500"
+                errors && errors.password
+                  ? "border-red-500"
+                  : "border-emerald-500"
               }`}
               id="password"
               type="password"
@@ -108,17 +112,17 @@ function LogIn(props) {
               type="submit"
               value="Login"
             />
-            <br></br><br></br>
+            <br></br>
+            <br></br>
             <div className="unhide">
-            <button
-              className="bg-emerald-500 border-2 border-emerald-500 hover:bg-white hover:text-emerald-500 text-white font-bold py-2 px-10 rounded-full w-40"
-              onClick={props.handleClick}>  
-              Signup
-            </button>
+              <button
+                className="bg-emerald-500 border-2 border-emerald-500 hover:bg-white hover:text-emerald-500 text-white font-bold py-2 px-10 rounded-full w-40"
+                onClick={props.handleClick}
+              >
+                Signup
+              </button>
             </div>
-             
           </div>
-          
         </form>
       </div>
     </div>

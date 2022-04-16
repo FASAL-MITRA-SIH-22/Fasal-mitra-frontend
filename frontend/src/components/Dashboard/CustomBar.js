@@ -7,8 +7,8 @@ import {
   Title,
   Tooltip,
   Legend,
-} from 'chart.js';
-import { Bar } from 'react-chartjs-2';
+} from "chart.js";
+import { Bar } from "react-chartjs-2";
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -56,13 +56,13 @@ function CustomBar({ data, labelName, legendName }) {
       <Bar
         data={barData}
         options={{
-          scales:{
-            x: {grid: {display: false}},
-            y: {grid: {display: false}},
+          scales: {
+            x: { grid: { display: false } },
+            y: { grid: { display: false } },
           },
           title: {
             display: true,
-            text: {LegendName: legendName},
+            text: { LegendName: legendName },
             fontSize: 20,
           },
           legend: {

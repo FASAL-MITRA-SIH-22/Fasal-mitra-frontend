@@ -13,7 +13,7 @@ function Auth() {
   const [enabled, setEnabled] = useState(false);
   return (
     <div
-      className="grid grid-cols-4 h-full bg-blend-darken"
+      className="grid grid-cols-4 h-full bg-blend-darken relative"
       style={{
         backgroundImage: "url(" + cropbg + ")",
         backgroundPosition: "center",
@@ -22,22 +22,22 @@ function Auth() {
       }}
     >
       <div
-        className="bg-gradient-to-r bg-emerald-700 rounded-r-[900px] absolute h-5/6"
+        className="bg-gradient-to-r bg-emerald-700 rounded-r-[900px] absolute h-full"
         style={{
           borderRadius: "54% 46% 100% 0% / 0% 100% 0% 100% ",
           width: "45%",
         }}
       ></div>
       <div
-        className="bg-gradient-to-r bg-emerald-600 rounded-r-[900px] absolute h-5/6"
+        className="bg-gradient-to-r bg-emerald-600 rounded-r-[900px] absolute h-full"
         style={{
           borderRadius: "45% 55% 100% 0% / 0% 100% 0% 100% ",
           width: "44%",
         }}
       ></div>
-      <div className="col-span-4 md:col-start-3 md:col-span-2 py-auto flex justify-center align-middle">
+      <div className="col-span-4 md:col-start-3 md:col-span-2 py-auto flex justify-center align-middle z-10">
         <div className="mx-auto w-3/4 sm:w-1/2 md:w-3/5 xl:w-2/3 my-auto">
-          <div className="grid grid-rows-6 grid-flow-col gap-4 h-1/2 rounded-lg border-1 bg-gray-500 bg-opacity-30 border-black px-4">
+          <div className="grid grid-rows-6 grid-flow-col gap-4 h-1/2 rounded-lg border-1 bg-gray-800 bg-opacity-50 border-black px-4">
             <div className="row-span-1 flex justify-center">
               <Switch checked={enabled} onChange={setEnabled}>
                 <span className="bg-gray-500 rounded-full h-10 w-48 flex relative shadow-inner shadow-black">
@@ -72,21 +72,21 @@ function Auth() {
                 <div className="col-span-4 cursor-pointer hover:opacity-75">
                   <img
                     src={google}
-                    alt="Google Plus"
+                    alt="Google Logo"
                     className="h-10 mx-auto"
                   />
                 </div>
                 <div className="col-span-4 cursor-pointer hover:opacity-75">
                   <img
                     src={facebook}
-                    alt="Google Plus"
+                    alt="Facebook Logo"
                     className="h-10 mx-auto"
                   />
                 </div>
                 <div className="col-span-4 cursor-pointer hover:opacity-75">
                   <img
                     src={twitter}
-                    alt="Google Plus"
+                    alt="Twitter Logo"
                     className="h-10 mx-auto"
                   />
                 </div>

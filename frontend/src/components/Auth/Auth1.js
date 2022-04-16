@@ -1,9 +1,9 @@
 import { useState } from "react";
-import Signup from "./Signup2";
+import Signup from "./Signup1";
 import Login from "./Login1";
-import './Auth.css'
+import "./Auth.css";
 
-const Transition = ({setLoginActive, set, name})=>(
+const Transition = ({ setLoginActive, set, name }) => (
   <div className="container grid grid-rows-3 grid-flow-col content-center gap-4 px-5 my-auto">
     <div className="text-5xl text-white text-center">Proceed to {name} !</div>
     <p className="text-white text-center">
@@ -22,10 +22,14 @@ const Transition = ({setLoginActive, set, name})=>(
 
 export default function Auth() {
   const [loginActive, setLoginActive] = useState(true);
-  const handleClick = () => setLoginActive(value => !value);
+  const handleClick = () => setLoginActive((value) => !value);
   return (
     <div className="grid lg:grid-cols-6 md:gid-cols-6 sm:grid-cols-2 h-screen ">
-      <div className={`${loginActive? 'bg-emerald-500 col-span-2 hide': 'bg-white col-span-4'} flex `}>
+      <div
+        className={`${
+          loginActive ? "bg-emerald-500 col-span-2 hide" : "bg-white col-span-4"
+        } flex `}
+      >
         {loginActive ? (
           <Transition
             setLoginActive={setLoginActive}
@@ -33,16 +37,24 @@ export default function Auth() {
             name={"Signup"}
           />
         ) : (
-          <Signup handleClick={handleClick}/>
-          
-          
+          <Signup handleClick={handleClick} />
         )}
       </div>
-      <div className={`${!loginActive? 'bg-emerald-500 col-span-2 hide': 'bg-white col-span-4'} flex content-center`}>
-      {!loginActive ? (
-         <Transition setLoginActive={setLoginActive} set={true} name={"Login"}/>
+      <div
+        className={`${
+          !loginActive
+            ? "bg-emerald-500 col-span-2 hide"
+            : "bg-white col-span-4"
+        } flex content-center`}
+      >
+        {!loginActive ? (
+          <Transition
+            setLoginActive={setLoginActive}
+            set={true}
+            name={"Login"}
+          />
         ) : (
-          <Login handleClick={handleClick}/>
+          <Login handleClick={handleClick} />
         )}
       </div>
       {/* {<button onClick={handleClick}>Hello</button>} */}

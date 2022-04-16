@@ -34,8 +34,9 @@ function Signup(props) {
     var randomColor = "000000".replace(/0/g, function () {
       return (~~(Math.random() * 16)).toString(16);
     });
-    data["avatar"] = `https://ui-avatars.com/api/?name=${firstName}+${lastName || " "
-      }&color=${randomColor}&background=ffd4d4&bold=true&size=256`;
+    data["avatar"] = `https://ui-avatars.com/api/?name=${firstName}+${
+      lastName || " "
+    }&color=${randomColor}&background=ffd4d4&bold=true&size=256`;
     axiosInstance
       .post("/auth/account", data)
       .then((response) => {
@@ -72,10 +73,11 @@ function Signup(props) {
                       First Name
                     </label>
                     <input
-                      className={`shadow appearance-none border rounded w-64 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors && errors.firstName
+                      className={`shadow appearance-none border rounded w-64 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+                        errors && errors.firstName
                           ? "border-red-500"
                           : "border-emerald-500"
-                        }`}
+                      }`}
                       id="firstName"
                       type="text"
                       placeholder="Enter First Name"
@@ -97,10 +99,11 @@ function Signup(props) {
                       Last Name
                     </label>
                     <input
-                      className={`shadow appearance-none border rounded w-64 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors && errors.lastName
+                      className={`shadow appearance-none border rounded w-64 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+                        errors && errors.lastName
                           ? "border-red-500"
                           : "border-emerald-500"
-                        }`}
+                      }`}
                       id="lastName"
                       type="text"
                       placeholder="Enter Last Name"
@@ -126,10 +129,11 @@ function Signup(props) {
                       Username
                     </label>
                     <input
-                      className={`shadow appearance-none border rounded w-64 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors && errors.username
+                      className={`shadow appearance-none border rounded w-64 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+                        errors && errors.username
                           ? "border-red-500"
                           : "border-emerald-500"
-                        }`}
+                      }`}
                       id="username"
                       type="text"
                       placeholder="Enter your Username"
@@ -151,10 +155,11 @@ function Signup(props) {
                       Phone
                     </label>
                     <input
-                      className={`shadow appearance-none border rounded w-64 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors && errors.phone
+                      className={`shadow appearance-none border rounded w-64 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+                        errors && errors.phone
                           ? "border-red-500"
                           : "border-emerald-500"
-                        }`}
+                      }`}
                       type="text"
                       id="phone"
                       placeholder="Enter your Phone Number"
@@ -180,10 +185,11 @@ function Signup(props) {
                       Password
                     </label>
                     <input
-                      className={`shadow appearance-none border rounded w-64 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors && errors.password
+                      className={`shadow appearance-none border rounded w-64 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+                        errors && errors.password
                           ? "border-red-500"
                           : "border-emerald-500"
-                        }`}
+                      }`}
                       id="password"
                       type="password"
                       placeholder="Enter your Password"
@@ -207,10 +213,11 @@ function Signup(props) {
                     <select
                       id="type"
                       name="types"
-                      className={`shadow appearance-none border rounded w-64 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors && errors.type
+                      className={`shadow appearance-none border rounded w-64 ml-6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+                        errors && errors.type
                           ? "border-red-500"
                           : "border-emerald-500"
-                        }`}
+                      }`}
                       {...register("type")}
                     >
                       <option value="farmer">Farmer</option>

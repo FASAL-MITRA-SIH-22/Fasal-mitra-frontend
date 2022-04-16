@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import default_crop from "./crop.jpg";
 import { axiosInstance } from "../../axios.config";
-import { useTranslation, Trans } from 'react-i18next';
-import LoadingBar from 'react-top-loading-bar';
-import { BsSearch } from 'react-icons/bs'
-import { IoReloadOutline } from 'react-icons/io5';
+import { useTranslation, Trans } from "react-i18next";
+import LoadingBar from "react-top-loading-bar";
+import { BsSearch } from "react-icons/bs";
+import { IoReloadOutline } from "react-icons/io5";
 
 const DiseaseDetection = () => {
   const { t, i18n } = useTranslation();
@@ -91,7 +91,7 @@ const DiseaseDetection = () => {
   };
   const goBackHandler = () => {
     setSuccessData(false);
-  }
+  };
   const submitForm = (e) => {
     e.preventDefault();
     if (preview === undefined) {
@@ -104,120 +104,125 @@ const DiseaseDetection = () => {
       return;
     }*/
 
-    var data = new FormData()
+    var data = new FormData();
 
     data.append("image", imageUploaded);
     axiosInstance
       .post("/dl/detection", data, {
         headers: {
-          'Content-Type': 'multipart/form-data'
-        }
+          "Content-Type": "multipart/form-data",
+        },
       })
       .then((response) => {
         console.log(response);
         setSuccessData(response.data);
-        ref.current.complete()
+        ref.current.complete();
       })
       .catch((error) => {
         console.log(error);
-        ref.current.complete()
+        ref.current.complete();
       });
   };
   return (
     <>
-      <LoadingBar color='#22E089' ref={ref} height='3px' />
-      {!successData && <div className="md:grid md:grid-cols-2 place-items-center bg-gray-100">
-
-        <div className="mt-5 md:mt-0 md:col-span-2">
-          <form action="#" method="POST" onSubmit={submitForm}>
-            <div className="shadow-2xl my-6 sm:rounded-md sm:overflow-hidden">
-              <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
-                <div>
-                  <label
-                    htmlFor="about"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    {t('description.diseaseDetection.0')}
-                  </label>
-                  <div className="mt-1 flex justify-center">
+      <LoadingBar color="#22E089" ref={ref} height="3px" />
+      {!successData && (
+        <div className="md:grid md:grid-cols-2 place-items-center bg-gray-100">
+          <div className="mt-5 md:mt-0 md:col-span-2">
+            <form action="#" method="POST" onSubmit={submitForm}>
+              <div className="shadow-2xl my-6 sm:rounded-md sm:overflow-hidden">
+                <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
+                  <div>
+                    <label
+                      htmlFor="about"
+                      className="block text-sm font-medium text-gray-700"
+                    >
+                      {t("description.diseaseDetection.0")}
+                    </label>
+                    <div className="mt-1 flex justify-center">
+                      {!isPreview && (
+                        <img
+                          src={default_crop}
+                          className="p-1 bg-white border rounded max-w-sm opacity-50"
+                          required
+                        ></img>
+                      )}
+                      {isPreview && (
+                        <img
+                          src={preview}
+                          className="p-1 bg-white border rounded max-w-sm"
+                          required
+                        ></img>
+                      )}
+                    </div>
                     {!isPreview && (
-                      <img
-                        src={default_crop}
-                        className="p-1 bg-white border rounded max-w-sm opacity-50"
-                        required
-                      ></img>
-                    )}
-                    {isPreview && (
-                      <img
-                        src={preview}
-                        className="p-1 bg-white border rounded max-w-sm"
-                        required
-                      ></img>
+                      <label className="block text-sm font-medium text-red-700">
+                        {t("description.diseaseDetection.1")}
+                      </label>
                     )}
                   </div>
-                  {!isPreview && (
-                    <label className="block text-sm font-medium text-red-700">
-                      {t('description.diseaseDetection.1')}
-                    </label>
-                  )}
-                </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">
-                    {t('description.diseaseDetection.2')}
-                  </label>
-                  <div
-                    ref={drop}
-                    className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md"
-                  >
-                    <div className="space-y-1 text-center">
-                      <svg
-                        className="mx-auto h-12 w-12 text-gray-400"
-                        stroke="currentColor"
-                        fill="none"
-                        viewBox="0 0 48 48"
-                        aria-hidden="True"
-                      >
-                        <path
-                          d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                      <div className="flex text-sm text-gray-600">
-                        <label
-                          htmlFor="file-upload"
-                          className="relative cursor-pointer bg-white rounded-md font-medium text-emerald-600 hover:text-emerald-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-emerald-500"
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700">
+                      {t("description.diseaseDetection.2")}
+                    </label>
+                    <div
+                      ref={drop}
+                      className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md"
+                    >
+                      <div className="space-y-1 text-center">
+                        <svg
+                          className="mx-auto h-12 w-12 text-gray-400"
+                          stroke="currentColor"
+                          fill="none"
+                          viewBox="0 0 48 48"
+                          aria-hidden="True"
                         >
-                          <span>{t('description.diseaseDetection.3')}</span>
-                          <input
-                            id="file-upload"
-                            onChange={imageUploadHandler}
-                            name="file-upload"
-                            type="file"
-                            className="sr-only"
-                            accept="image/*"
-                          ></input>
-                        </label>
-                        <p className="pl-1">{t('description.diseaseDetection.4')}</p>
+                          <path
+                            d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                        <div className="flex text-sm text-gray-600">
+                          <label
+                            htmlFor="file-upload"
+                            className="relative cursor-pointer bg-white rounded-md font-medium text-emerald-600 hover:text-emerald-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-emerald-500"
+                          >
+                            <span>{t("description.diseaseDetection.3")}</span>
+                            <input
+                              id="file-upload"
+                              onChange={imageUploadHandler}
+                              name="file-upload"
+                              type="file"
+                              className="sr-only"
+                              accept="image/*"
+                            ></input>
+                          </label>
+                          <p className="pl-1">
+                            {t("description.diseaseDetection.4")}
+                          </p>
+                        </div>
+                        <p className="text-xs text-gray-500">
+                          PNG, JPG, GIF {t("description.diseaseDetection.5")}
+                        </p>
                       </div>
-                      <p className="text-xs text-gray-500">
-                        PNG, JPG, GIF {t('description.diseaseDetection.5')}
-                      </p>
                     </div>
                   </div>
                 </div>
+                <button
+                  type="submit"
+                  className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-md rounded-b-md text-white bg-emerald-500 hover:bg-emerald-600 font-extrabold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 w-full"
+                >
+                  <span>
+                    {t("description.diseaseDetection.6")} &nbsp;
+                    <BsSearch className="inline-block" />{" "}
+                  </span>
+                </button>
               </div>
-              <button
-                type="submit"
-                className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-md rounded-b-md text-white bg-emerald-500 hover:bg-emerald-600 font-extrabold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 w-full"
-              >
-                <span>{t('description.diseaseDetection.6')} &nbsp;<BsSearch className='inline-block' /> </span>
-              </button>
-            </div>
-          </form>
-          {/*<div>
+            </form>
+            {/*<div>
           {Object.keys(lngs).map((lng) => (
             <button key={lng} style={{ fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal' }} type="submit" onClick={() => i18n.changeLanguage(lng)}>
               {lngs[lng].nativeName}
@@ -237,8 +242,9 @@ const DiseaseDetection = () => {
           >
             {t('description.part2')}
           </a>*/}
+          </div>
         </div>
-      </div>}
+      )}
       {successData && (
         <div className="flex flex-col w-11/12 mx-auto mb-6 p-6">
           <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -249,7 +255,8 @@ const DiseaseDetection = () => {
                   className="mb-4 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-md font-medium rounded-md text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
                   onClick={goBackHandler}
                 >
-                  {t('description.diseaseDetection.7')} &nbsp; <IoReloadOutline size={20} />
+                  {t("description.diseaseDetection.7")} &nbsp;{" "}
+                  <IoReloadOutline size={20} />
                 </button>
                 <table className="min-w-full table-auto">
                   <tbody>
@@ -260,7 +267,9 @@ const DiseaseDetection = () => {
                       >
                         Plant / Crop Name
                       </th>
-                      <td className="px-4">{successData.detection.split("__")[0]}</td>
+                      <td className="px-4">
+                        {successData.detection.split("__")[0]}
+                      </td>
                     </tr>
                     <tr className="bg-gray-100 border-b hover:bg-yellow-100">
                       <th
@@ -269,7 +278,9 @@ const DiseaseDetection = () => {
                       >
                         Scientific Name
                       </th>
-                      <td className="px-4">{successData.plant.scientificName}</td>
+                      <td className="px-4">
+                        {successData.plant.scientificName}
+                      </td>
                     </tr>
                     <tr className="bg-gray-100 border-b hover:bg-yellow-100">
                       <th
