@@ -52,10 +52,11 @@ function CustomBar({ data, labelName, legendName }) {
   }, [data, labelName]);
 
   return (
-    <div>
+    <div className="w-full">
       <Bar
         data={barData}
         options={{
+          maintainAspectRatio: false,
           scales: {
             x: { grid: { display: false } },
             y: { grid: { display: false } },

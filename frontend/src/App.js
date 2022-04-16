@@ -2,12 +2,11 @@ import React, { useEffect, useRef } from "react";
 import Home from "./components/Home/Home";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Navbar from "./components/Navbar/Navbar";
-import Auth1 from "./components/Auth/Auth1";
 import Auth from "./components/Auth/Auth";
 import Footer from "./components/Footer/Footer";
 import DiseaseDetection from "./components/DiseaseDetection/DiseaseDetection";
 import { axiosInstance } from "./axios.config";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes} from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { login } from "./store/features/userSlice";
 import "./App.css";
@@ -59,7 +58,6 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/auth" element={<Auth />} />
-            <Route path="/auth1" element={<Auth1 />} />
             {user ? (
               <Route path="/disease-detection" element={<DiseaseDetection />} />
             ) : (
