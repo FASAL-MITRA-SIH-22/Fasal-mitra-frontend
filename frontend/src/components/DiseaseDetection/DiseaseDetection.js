@@ -4,6 +4,7 @@ import { axiosInstance } from "../../axios.config";
 import { useTranslation, Trans } from 'react-i18next';
 import LoadingBar from 'react-top-loading-bar';
 import { BsSearch } from 'react-icons/bs'
+import { IoReloadOutline } from 'react-icons/io5';
 
 const DiseaseDetection = () => {
   const { t, i18n } = useTranslation();
@@ -92,12 +93,12 @@ const DiseaseDetection = () => {
     setSuccessData(false);
   }
   const submitForm = (e) => {
-    ref.current.continuousStart()
-
     e.preventDefault();
     if (preview === undefined) {
       return;
     }
+    ref.current.continuousStart();
+
     /* if(location === null){
       position();
       return;
@@ -126,6 +127,7 @@ const DiseaseDetection = () => {
     <>
       <LoadingBar color='#22E089' ref={ref} height='3px' />
       {!successData && <div className="md:grid md:grid-cols-2 place-items-center bg-gray-100">
+
         <div className="mt-5 md:mt-0 md:col-span-2">
           <form action="#" method="POST" onSubmit={submitForm}>
             <div className="shadow-2xl my-6 sm:rounded-md sm:overflow-hidden">
@@ -211,7 +213,7 @@ const DiseaseDetection = () => {
                 type="submit"
                 className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-md rounded-b-md text-white bg-emerald-500 hover:bg-emerald-600 font-extrabold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 w-full"
               >
-                <span>Detect &nbsp;<BsSearch className='inline-block' /> </span>
+                <span>{t('description.diseaseDetection.6')} &nbsp;<BsSearch className='inline-block' /> </span>
               </button>
             </div>
           </form>
@@ -247,7 +249,7 @@ const DiseaseDetection = () => {
                   className="mb-4 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
                   onClick={goBackHandler}
                 >
-                  Try again
+                  <IoReloadOutline size={20} />{t('description.diseaseDetection.7')}
                 </button>
                 <table className="min-w-full table-auto">
                   <tbody>
