@@ -3,6 +3,7 @@ import default_crop from "./crop.jpg";
 import { axiosInstance } from "../../axios.config";
 import { useTranslation, Trans } from 'react-i18next';
 import LoadingBar from 'react-top-loading-bar';
+import { BsSearch } from 'react-icons/bs'
 
 const DiseaseDetection = () => {
   const { t, i18n } = useTranslation();
@@ -124,10 +125,10 @@ const DiseaseDetection = () => {
   return (
     <>
       <LoadingBar color='#22E089' ref={ref} height='3px' />
-      {!successData && <div className="md:grid md:grid-cols-2 place-items-center">
+      {!successData && <div className="md:grid md:grid-cols-2 place-items-center bg-gray-100">
         <div className="mt-5 md:mt-0 md:col-span-2">
           <form action="#" method="POST" onSubmit={submitForm}>
-            <div className="shadow sm:rounded-md sm:overflow-hidden">
+            <div className="shadow-2xl my-6 sm:rounded-md sm:overflow-hidden">
               <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
                 <div>
                   <label
@@ -206,19 +207,12 @@ const DiseaseDetection = () => {
                   </div>
                 </div>
               </div>
-              <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                {/* !isLocation && 
-            <label className="block text-sm font-medium text-red-700">
-                  
-                </label>
-                */}
-                <button
-                  type="submit"
-                  className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
-                >
-                  Upload photo
-                </button>
-              </div>
+              <button
+                type="submit"
+                className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-md rounded-b-md text-white bg-emerald-500 hover:bg-emerald-600 font-extrabold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 w-full"
+              >
+                <span>Detect &nbsp;<BsSearch className='inline-block' /> </span>
+              </button>
             </div>
           </form>
           {/*<div>
