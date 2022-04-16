@@ -11,9 +11,9 @@ function classNames(...classes) {
 }
 
 const lngs = {
-    en: { nativeName: 'English' },
-    hi: { nativeName: 'Hindi' },
-    mr: { nativeName: 'Marathi' },
+    EN: { nativeName: 'English'},
+    ह: { nativeName: 'Hindi'},
+    म: { nativeName: 'Marathi'},
 };
 
 export default function LanguageSelector() {
