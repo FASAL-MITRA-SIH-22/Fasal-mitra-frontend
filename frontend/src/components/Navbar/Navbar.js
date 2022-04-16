@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../store/features/userSlice"
 import { axiosInstance } from '../../axios.config'
 import { useNavigate } from "react-router-dom";
-
+import LanguageSelector from '../LangaugeSelector'
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
@@ -18,6 +18,7 @@ const navigation = [
   { name: "Detection", href: "/disease-detection", current: false },
   { name: "Teleconsulting", href: "/teleconsulting", current: false },
 ];
+
 
 export default function Navbar() {
   const user = useSelector((state) => state.user.user);
@@ -84,6 +85,7 @@ export default function Navbar() {
                   </div>
                 </div>
               </div>
+              <LanguageSelector />
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 {user ?
                   <>
