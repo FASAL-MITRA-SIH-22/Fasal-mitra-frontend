@@ -44,3 +44,7 @@
 	text-align: center;
 	color: #fff;
 }
+
+::selection {
+	background: rgba(0,0,0,0.15);
+  }
