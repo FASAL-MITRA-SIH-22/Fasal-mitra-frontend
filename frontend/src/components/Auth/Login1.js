@@ -4,7 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { axiosInstance } from "../../axios.config";
+import {login} from '../../store/features/userSlice'
 import './Auth.css';
+import {useDispatch} from "react-redux";
 
 let schema = yup.object().shape({
   username: yup.string().required(),
@@ -19,18 +21,20 @@ function LogIn(props) {
   } = useForm({ resolver: yupResolver(schema) });
   const navigate = useNavigate();
 
+  const dispatch = useDispatch();
+  
   const onSubmit = (data) => {
     axiosInstance
       .post("/auth/login", data)
       .then((response) => {
         console.log(response);
+        dispatch(login(response.data.user))
         navigate("/disease-detection");
       })
       .catch((error) => {
         console.log(error);
       });
   };
-  console.log(errors);
 
   return (
     <div className="container grid grid-rows-6 grid-flow-col gap-4 px-auto my-auto top">

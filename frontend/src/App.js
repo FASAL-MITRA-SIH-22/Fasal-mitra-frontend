@@ -20,7 +20,7 @@ import "./components/i18n/i18n";
 
 function App() {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user.user);
   const ref = useRef(null)
 
   useEffect(() => {
@@ -28,18 +28,20 @@ function App() {
     axiosInstance
       .get("/auth/account")
       .then((response) => {
-        console.log(response.data.user);
+        console.log(response.data.user)
         dispatch(login(response.data.user))
+        ref.current.complete()
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error)
         ref.current.complete()
       });
   }, []);
 
   return (
     <div className="min-h-screen flex flex-col">
-      <LoadingBar color='#ff2b2b' ref={ref} height='3px' />
+      {/* <GoogleTranslate/> */}
+      <LoadingBar color='#22E089' ref={ref} height='3px' />
       <Navbar />
       <div className="flex flex-grow">
         <div className="col p-0 m-0 w-full">
@@ -48,7 +50,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/auth" element={<Auth />} />
             <Route path="/auth1" element={<Auth1 />} />
-            <Route path="/disease-detection" element={<DiseaseDetection />} />
+            {user ? <Route path="/disease-detection" element={<DiseaseDetection />} /> : <></>}
             <Route path="/teleconsulting" element={<Teleconsulting />} />
           </Routes>
         </div>

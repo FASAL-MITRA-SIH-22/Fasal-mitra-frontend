@@ -4,9 +4,17 @@ import { useNavigate } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 
+const phoneRegex = /^\d{10}$/;
 let schema = yup.object().shape({
-    username: yup.string().required(),
-    password: yup.string().min(6).max(8).required(),
+  firstName: yup.string().required(),
+  lastName: yup.string().required(),
+  username: yup.string().required(),
+  phone: yup
+    .string()
+    .required()
+    .matches(phoneRegex, "Phone number is not valid"),
+  password: yup.string().min(6).max(8).required(),
+  type: yup.string().required(),
 });
 
 function Signup() {

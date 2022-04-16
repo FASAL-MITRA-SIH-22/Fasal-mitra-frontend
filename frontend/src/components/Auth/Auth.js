@@ -10,7 +10,7 @@ function Auth() {
     const [enabled, setEnabled] = useState(false)
     return (
         <div className="grid grid-cols-4 h-full bg-blend-darken" style={{
-            backgroundImage: 'url('+cropbg+')',
+            backgroundImage: 'url(' + cropbg + ')',
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
@@ -51,9 +51,7 @@ function Auth() {
                     </div>
                 </div>
             </div>
-
         </div>
-
     )
 }
 
