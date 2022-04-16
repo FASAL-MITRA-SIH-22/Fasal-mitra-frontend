@@ -55,7 +55,7 @@ function Signup() {
       <div className="row-span-1 grid grid-cols-6 gap-4">
         <label className="block col-span-3">
           <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-white">
-            First Name
+            {t("description.auth.4")}
           </span>
           <input
             type="firstName"
@@ -78,7 +78,7 @@ function Signup() {
         )}
         <label className="block col-span-3">
           <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-white">
-            Last Name
+            {t("description.auth.5")}
           </span>
           <input
             type="lastName"
@@ -153,7 +153,7 @@ function Signup() {
       <div className="row-span-1">
         <label className="block">
           <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-white">
-            Phone
+            {t("description.auth.6")}
           </span>
           <input
             type="phone"
@@ -192,8 +192,8 @@ function Signup() {
             placeholde="******"
             {...register("type")}
           >
-            <option value="farmer">Farmer</option>
-            <option value="expert">Expert</option>
+            <option value="farmer">{t("description.auth.7")}</option>
+            <option value="expert">{t("description.auth.8")}</option>
           </select>
         </label>
         {errors && errors.type ? (
