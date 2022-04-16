@@ -18,7 +18,7 @@ const lngs = {
 
 export default function LanguageSelector() {
     const { t, i18n } = useTranslation();
-    const [activeLanguage, setActiveLanguage] = useState(i18n.language.toUpperCase());
+    const [activeLanguage, setActiveLanguage] = useState(i18n.resolvedLanguage.toUpperCase());
     const changeLanguage = (lng) => {
         setActiveLanguage(lng.toUpperCase());
         i18n.changeLanguage(lng);

@@ -9,6 +9,7 @@ import { axiosInstance } from '../../axios.config'
 import { useNavigate } from "react-router-dom";
 import LanguageSelector from '../LangaugeSelector'
 import { useTranslation, Trans } from 'react-i18next';
+import leaf from '../../utils/images/sprout.png'
 import { DescriptionTwoTone } from '@material-ui/icons';
 
 function classNames(...classes) {
@@ -60,17 +61,20 @@ export default function Navbar() {
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
-                  <Link to='/'>
+
+                  <span><Link to='/'>
                     <img
-                      className="block h-8 w-auto"
-                      src={user?.avatar || `https://uilogos.co/img/logotype/circle.png`}
+                      className="block h-10 w-auto"
+                      src={leaf}
                       alt="test logo"
-                    /></Link>
+                    />
+                  </Link>
+                  </span>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
-                    {navigation.map((item,key) => {
-                      if (!user && (key>1))
+                    {navigation.map((item, key) => {
+                      if (!user && (key > 1))
                         return (<></>)
                       return (<NavLink
                         key={item.name}
@@ -150,8 +154,8 @@ export default function Navbar() {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {navigation.map((item,key) => {
-                if (!user && (key>1))
+              {navigation.map((item, key) => {
+                if (!user && (key > 1))
                   return (<></>)
                 return (<Disclosure.Button
                   key={item.name}

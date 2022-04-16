@@ -1,28 +1,18 @@
 import { useState, useEffect, useRef } from "react";
 import default_crop from "./crop.jpg";
-// import { axiosInstance } from "../../axios.config";
-import axios from "axios";
-
+import { axiosInstance } from "../../axios.config";
 import { useTranslation, Trans } from 'react-i18next';
-
-
-export const baseURL = "http://localhost:5000/";
-axios.defaults.withCredentials = true;
-
-export const axiosInstance = axios.create({
-  baseURL: baseURL,
-  timeout: 300000,
-  withCredentials: true,
-});
+import LoadingBar from 'react-top-loading-bar';
 
 const DiseaseDetection = () => {
-  const {t, i18n} = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const [imageUploaded, setUploadedImage] = useState();
   const [preview, setPreview] = useState(null);
   const [isPreview, setIsPreview] = useState();
   const [location, setLocation] = useState(null);
   const [successData, setSuccessData] = useState(null);
+  const ref = useRef();
 
   // const [isLocation, setIsLocation] = useState(false);
   const drop = useRef(null);
@@ -114,21 +104,25 @@ const DiseaseDetection = () => {
 
     data.append("image", imageUploaded);
     axiosInstance
-      .post("/", data, {
+      .post("/dl/detection", data, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
       })
       .then((response) => {
+        ref.current.continuousStart()
         console.log(response);
         setSuccessData(response.data);
+        ref.current.complete()
       })
       .catch((error) => {
         console.log(error);
+        ref.current.complete()
       });
   };
   return (
     <>
+      <LoadingBar color='#22E089' ref={ref} height='3px' />
       {!successData && <div className="md:grid md:grid-cols-2 place-items-center">
         <div className="mt-5 md:mt-0 md:col-span-2">
           <form action="#" method="POST" onSubmit={submitForm}>
@@ -246,7 +240,7 @@ const DiseaseDetection = () => {
           >
             {t('description.part2')}
           </a>*/}
-          </div>
+        </div>
       </div>}
       {successData && (
         <div className="flex flex-col w-11/12 mx-auto mb-6">
