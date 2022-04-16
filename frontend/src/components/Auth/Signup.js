@@ -54,7 +54,7 @@ function Signup() {
             <div className="row-span-1 grid grid-cols-6 gap-4">
                 <label className="block col-span-3">
                     <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
-                        First Name
+                    {t('description.auth.4')}
                     </span>
                     <input type="firstName" name="firstName" className={`mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none  block w-full rounded-md sm:text-sm focus:ring-1 ${errors && errors.firstName ? "border-red-400 focus:border-red-500 focus:ring-red-500" : "focus:border-emerald-500 focus:ring-emerald-500"}`} placeholde="******" {...register('firstName')} />
                 </label>
@@ -67,7 +67,7 @@ function Signup() {
                 )}
                 <label className="block col-span-3">
                     <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
-                        Last Name
+                    {t('description.auth.5')}
                     </span>
                     <input type="lastName" name="lastName" className={`mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none  block w-full rounded-md sm:text-sm focus:ring-1 ${errors && errors.lastName ? "border-red-400 focus:border-red-500 focus:ring-red-500" : "focus:border-emerald-500 focus:ring-emerald-500"}`} placeholde="******" {...register('lastName')} />
                 </label>
@@ -112,7 +112,7 @@ function Signup() {
             <div className="row-span-1">
                 <label className="block">
                     <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
-                        Phone
+                    {t('description.auth.6')}
                     </span>
                     <input type="phone" name="phone" className={`mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none  block w-full rounded-md sm:text-sm focus:ring-1 ${errors && errors.phone ? "border-red-400 focus:border-red-500 focus:ring-red-500" : "focus:border-emerald-500 focus:ring-emerald-500"}`} placeholde="******" {...register('phone')} />
                 </label>
@@ -130,8 +130,8 @@ function Signup() {
                         Type
                     </span>
                     <select name="type" id="type" defaultValue="farmer" className={`mt-1 px-3 py-2  focus:outline-none  block w-full rounded-md sm:text-sm focus:ring-1 ${errors && errors.type ? "border-red-400 focus:border-red-500 focus:ring-red-500" : "focus:border-emerald-500 focus:ring-emerald-500"}`} placeholde="******" {...register('type')} >
-                        <option value="farmer">Farmer</option>
-                        <option value="expert">Expert</option>
+                        <option value="farmer">{t('description.auth.7')}</option>
+                        <option value="expert">{t('description.auth.8')}</option>
                     </select>
                 </label>
                 {errors && errors.type ? (
