@@ -116,7 +116,7 @@ function Dashboard() {
       <div>
         <div>
           <div className="grid grid-rows-6 grid-flow-col">
-            <div className="col-span-12 row-span-1 bg-slate-700 rounded-xl m-2 shado shadow-slate-900w-xl p-4 flex items-center justify-around gap-2">
+            <div className="col-span-12 row-span-1 bg-slate-900 rounded-xl m-2 shado shadow-slate-900w-xl p-4 flex items-center justify-around gap-2">
               <div className="h-full w-1/6 rounded-xl grid grid-rows-6 bg-gradient-to-r from-green-700 to-emerald-300 text-white">
                 <p className="row-span-3 text-center flex justify-center">
                   <span className="text-6xl font-bold font-mono my-auto">
@@ -162,21 +162,21 @@ function Dashboard() {
               </div>
             </div>
             <div className="row-span-5 col-span-12 rounded-xl m-2 shadow-xl grid grid-cols-12 grid-flow-row gap-8">
-              <div className=" bg-slate-700 rounded-xl shadow-xl shadow-slate-900 row-span-2 col-span-2">
+              <div className=" bg-slate-900 rounded-xl shadow-xl shadow-slate-900 row-span-2 col-span-2">
               </div>
-              <div className=" bg-slate-700 rounded-xl shadow-xl shadow-slate-900 row-span-2 col-span-5">
+              <div className=" bg-slate-900 rounded-xl shadow-xl shadow-slate-900 row-span-2 col-span-5">
                 <ApexBarChart />
               </div>
-              <div className=" bg-slate-700 rounded-xl shadow-xl shadow-slate-900 row-span-2 col-span-5">
+              <div className=" bg-slate-900 rounded-xl shadow-xl shadow-slate-900 row-span-2 col-span-5">
                 <ApexChart />
               </div>
-              <div className=" bg-slate-700 rounded-xl shadow-xl shadow-slate-900 row-span-2 col-span-4 flex justify-center items-center">
+              <div className=" bg-slate-900 rounded-xl shadow-xl shadow-slate-900 row-span-2 col-span-4 flex justify-center items-center">
                 <PieChart />
               </div>
-              <div className=" bg-slate-700 rounded-xl shadow-xl shadow-slate-900 row-span-2 col-span-4 flex justify-center items-center">
+              <div className=" bg-slate-900 rounded-xl shadow-xl shadow-slate-900 row-span-2 col-span-4 flex justify-center items-center">
                 <ApexChart />
               </div>
-              <div className=" bg-slate-700 rounded-xl shadow-xl shadow-slate-900 row-span-2 col-span-4">
+              <div className=" bg-slate-900 rounded-xl shadow-xl shadow-slate-900 row-span-2 col-span-4">
                 <Map mapData={mapData} />
               </div>
             </div>
