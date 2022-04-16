@@ -10,9 +10,9 @@ const InfoSection = ({ lightBg, id, imgStart, lightText, topline, headline, dark
           <InfoRow imgStart={imgStart}>
             <Column1>
               <TextWrapper>
-                <TopLine>{t('description.part1.0')}</TopLine>
-                <Heading lightText={lightText}>{t('description.part1.1')}</Heading>
-                <Subtitle darkText={darkText}>{t('description.part1.2')}</Subtitle>
+                <TopLine>{t[0]}</TopLine>
+                <Heading lightText={lightText}>{t[1]}</Heading>
+                <Subtitle darkText={darkText}>{t[2]}</Subtitle>
                 <BtnWrap>
                   <Button
                     to='/'
@@ -25,7 +25,7 @@ const InfoSection = ({ lightBg, id, imgStart, lightText, topline, headline, dark
                     dark={dark ? 1 : 0}
                     dark2={dark2 ? 1 : 0}
                   >
-                    {t('description.part1.3')}</Button>
+                    {t[3]}</Button>
                 </BtnWrap>
                 {/*<TopLine>{topline}</TopLine>
                           <Heading lightText={lightText}>{headline}</Heading>

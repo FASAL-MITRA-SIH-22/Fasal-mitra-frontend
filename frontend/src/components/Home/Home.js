@@ -11,17 +11,9 @@ const Home = () => {
     en: { nativeName: 'English' },
     hi: { nativeName: 'Hindi' },
   };
-  console.log(t('description.part1.0'));
-  console.log(homeObjOne);
-  homeObjOne["lngs"] = lngs;
-  homeObjOne["t"] = t;
-  homeObjOne["i18n"] = i18n;
-  homeObjTwo["lngs"] = lngs;
-  homeObjTwo["t"] = t;
-  homeObjTwo["i18n"] = i18n;
-  homeObjThree["lngs"] = lngs;
-  homeObjThree["t"] = t;
-  homeObjThree["i18n"] = i18n;
+  homeObjOne["t"] = t('description.home', {returnObjects: true}).slice(0, 4);
+  homeObjTwo["t"] = t('description.home', {returnObjects: true}).slice(4, 8);
+  homeObjThree["t"] = t('description.home', {returnObjects: true}).slice(8, 12);
 
   return (
     <>
