@@ -49,11 +49,11 @@ function App() {
       {/* <GoogleTranslate/> */}
       <LoadingBar color='#22E089' ref={ref} height='3px' />
       <Navbar />
-      {Object.keys(lngs).map((lng) => (
+      {/*Object.keys(lngs).map((lng) => (
         <button key={lng} style={{ fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal' }} type="submit" onClick={() => i18n.changeLanguage(lng)}>
           {lngs[lng].nativeName}
         </button>
-        ))}
+      ))*/}
       <div className="flex flex-grow">
         <div className="col p-0 m-0 w-full">
           <Routes>

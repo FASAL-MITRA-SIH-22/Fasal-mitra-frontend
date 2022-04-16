@@ -8,16 +8,11 @@ import { logout } from "../../store/features/userSlice"
 import { axiosInstance } from '../../axios.config'
 import { useNavigate } from "react-router-dom";
 import LanguageSelector from '../LangaugeSelector'
+import { useTranslation, Trans } from 'react-i18next';
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
-
-const navigation = [
-  { name: "Home", href: "/", current: true },
-  { name: "Dashboard", href: "/dashboard", current: false },
-  { name: "Detection", href: "/disease-detection", current: false },
-  { name: "Teleconsulting", href: "/teleconsulting", current: false },
-];
 
 
 export default function Navbar() {
@@ -25,7 +20,14 @@ export default function Navbar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   console.log(user);
+  const { t, i18n } = useTranslation();
 
+  const navigation = [
+    { name: t('description.nav.0'), href: "/", current: true },
+    { name: t('description.nav.1'), href: "/dashboard", current: false },
+    { name: t('description.nav.2'), href: "/disease-detection", current: false },
+    { name: t('description.nav.3'), href: "/teleconsulting", current: false },
+  ];
   const handleLogout = async () => {
     await axiosInstance.get('/auth/logout')
       .then(response => {
