@@ -60,7 +60,7 @@ export default function Navbar() {
                   <Link to='/'>
                     <img
                       className="block h-8 w-auto"
-                      src={user?.avatar || `https://uilogos.co/img/logotype/circle.png`}
+                      src={`https://uilogos.co/img/logotype/circle.png`}
                       alt="test logo"
                     /></Link>
                 </div>
