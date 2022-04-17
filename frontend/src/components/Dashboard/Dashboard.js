@@ -3,11 +3,11 @@ import Map from "./Map";
 import { axiosInstance } from "../../axios.config";
 import CustomBar from "./CustomBar";
 import CountUp, { useCountUp } from "react-countup";
-import ApexChart from "./ApexChart";
+import ApexChart1 from "./ApexChart1";
+import ApexChart2 from "./ApexChart2";
 import ApexBarChart from "./ApexBarChart";
-import PieChart from './PieChart';
-import { GiCorn } from 'react-icons/gi'
-
+import PieChart from "./PieChart";
+import { GiCorn } from "react-icons/gi";
 const defaultMaps = [
   {
     _id: "MH",
@@ -98,116 +98,86 @@ function Dashboard() {
   }, []);
 
   return (
-    <>
-      <div>
-        <h2 className="text-3xl font-semibold text-center">
-          Outbreak Detection
-        </h2>
-        <br />
-        <div className="grid grid-cols-2 gap-x-4">
-          {/* <CustomBar
-            data={diseaseData}
-            labelName="Disease"
-            legendName="Distribution of Disease Wise Detection"
-          />
-          <CustomBar
-            data={plantData}
-            labelName="Plant"
-            legendName="Distribution of Plant Wise Detection"
-          /> */}
-        </div>
-      </div>
-      <div>
-        <div>
-          <div className=" bg-slate-900 rounded-xl m-2 shado shadow-slate-900w-xl p-4 flex items-stretch justify-around gap-2">
-            <div className="flex flex-col p-4 rounded-xl bg-gradient-to-r from-green-700 to-emerald-300 text-white">
-              <p className="text-center flex justify-center">
-                <span className="text-6xl font-bold font-mono my-auto">
-                  <CountUp end={127} />
-                </span>
-              </p>
-              <p className="text-center">
-                <span className="text text-3xl font-mono"> Total Visitors</span>
-              </p>
-            </div>
-            <div className="flex flex-col p-4 rounded-xl bg-gradient-to-r from-sky-700 to-slate-600 text-white">
-              <p className="text-center flex justify-center">
-                <span className="text-6xl font-bold font-mono my-auto">
-                  <CountUp end={450} />
-                </span>
-              </p>
-              <p className="text-center">
-                <span className="text text-3xl font-mono"> Total Predictions</span>
-              </p>
-            </div>
-            <div className="flex flex-col p-4 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-400 text-white">
-              <p className="text-center flex justify-center">
-                <span className="text-5xl font-bold font-mono my-auto">
-                  <GiCorn className="inline" /> Corn
-                </span>
-              </p>
-              <p className="text-center">
-                <span className="text text-3xl font-mono"> Plant With most <br/> Diseases Today</span>
-              </p>
-            </div>
-            <div className="flex flex-col p-4 rounded-xl bg-gradient-to-r from-red-700 to-pink-400 text-white">
-              <p className="text-center flex justify-center">
-                <span className="text-6xl font-bold font-mono my-auto">
-                  <CountUp end={127} />
-                </span>
-              </p>
-              <p className="text-center">
-                <span className="text text-3xl font-mono"> Total Visitors</span>
-              </p>
-            </div>
+    <div>
+      <h2 className="text-5xl font-semibold text-center my-5">Dashboard</h2>
 
-            <div>
-            </div>
+      <div className="rounded-xl m-2 shado shadow-slate-900w-xl p-4 flex items-stretch justify-evenly gap-2">
+        <div className="flex flex-col p-4 rounded-xl bg-gradient-to-r from-green-700 to-emerald-300 text-white shadow-xl shadow-slate-300">
+          <p className="text-center flex justify-center">
+            <span className="text-6xl font-bold font-mono my-auto">
+              <CountUp end={127} />
+            </span>
+          </p>
+          <p className="text-center">
+            <span className="text text-3xl font-mono"> Total Visitors</span>
+          </p>
+        </div>
+        <div className="flex flex-col p-4 rounded-xl bg-gradient-to-r from-sky-700 to-slate-600 text-white shadow-xl shadow-slate-300">
+          <p className="text-center flex justify-center">
+            <span className="text-6xl font-bold font-mono my-auto">
+              <CountUp end={450} />
+            </span>
+          </p>
+          <p className="text-center">
+            <span className="text text-3xl font-mono">Total Predictions</span>
+          </p>
+        </div>
+        <div className="flex flex-col p-4 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-400 text-white shadow-xl shadow-slate-300">
+          <p className="text-center flex justify-center">
+            <span className="text-5xl font-bold font-mono my-auto">
+              <GiCorn className="inline" /> Corn
+            </span>
+          </p>
+          <p className="text-center">
+            <span className="text text-3xl font-mono">
+              Plant With most <br /> Diseases Today
+            </span>
+          </p>
+        </div>
+        <div className="flex flex-col p-4 rounded-xl bg-gradient-to-r from-red-700 to-pink-400 text-white shadow-xl shadow-slate-300">
+          <p className="text-center flex justify-center">
+            <span className="text-6xl font-bold font-mono my-auto">
+              <CountUp end={127} />
+            </span>
+          </p>
+          <p className="text-center">
+            <span className="text text-3xl font-mono"> Total Visitors</span>
+          </p>
+        </div>
+
+        <div></div>
+      </div>
+      <div className="grid grid-rows-2 grid-flow-col">
+        <div className="row-span-2 col-span-12 rounded-xl m-2 shadow-xl grid grid-cols-12 grid-flow-row gap-8">
+          <div className=" rounded-xl shadow-xl shadow-slate-300 col-span-6">
+            <h1 className="text-center p-6">Plant Affected by Diseases</h1>
+            <ApexBarChart />
           </div>
-          <div className="grid grid-rows-2 grid-flow-col">
-            <div className="row-span-2 col-span-12 rounded-xl m-2 shadow-xl grid grid-cols-12 grid-flow-row gap-8">
-              <div className=" bg-slate-900 rounded-xl shadow-xl shadow-slate-900 col-span-2">
-              </div>
-              <div className=" bg-slate-900 rounded-xl shadow-xl shadow-slate-900 col-span-5">
-                <ApexBarChart />
-              </div>
-              <div className=" bg-slate-900 rounded-xl shadow-xl shadow-slate-900 col-span-5">
-                <ApexChart />
-              </div>
-              <div className=" bg-slate-900 rounded-xl shadow-xl shadow-slate-900 col-span-4 flex justify-center items-center">
-                <PieChart />
-              </div>
-              <div className=" bg-slate-900 rounded-xl shadow-xl shadow-slate-900 col-span-4 flex justify-center items-center">
-                <ApexChart />
-              </div>
-              <div className=" bg-slate-900 rounded-xl shadow-xl shadow-slate-900 col-span-4">
-                <Map mapData={mapData} />
-              </div>
+          <div className=" rounded-xl shadow-xl shadow-slate-300 col-span-6">
+            <h1 className="text-center p-6">Disease Detection by Month</h1>
+            <ApexChart1 />
+          </div>
+          <div className=" rounded-xl shadow-xl shadow-slate-300 row-span-2 col-span-4">
+            <h1 className="text-center p-6">
+              Distribution of Prediction over plants
+            </h1>
+            <PieChart />
+          </div>
+          <div className=" rounded-xl shadow-xl shadow-slate-300 row-span-2 col-span-4">
+            <h1 className="text-center p-6">Disease Detection by Day</h1>
+            <ApexChart2 />
+          </div>
+          <div className=" rounded-xl shadow-xl shadow-slate-300 row-span-2 col-span-4 ">
+            <h1 className="text-center p-6">Disease per State</h1>
+
+            <div className=" rounded-xl shadow-xl shadow-slate-300 col-span-4">
+              <Map mapData={mapData} />
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
 export default Dashboard;
-
-{
-  /* <CustomBar
-                  data={plantData}
-                  labelName="Plant"
-                  legendName="Distribution of Plant Wise Detection"
-                /> */
-}
-
-{
-  /* <CustomBar
-                  data={diseaseData}
-                  labelName="Disease"
-                  legendName="Distribution of Disease Wise Detection"
-                /> */
-}
-{
-  /* <Map mapData={mapData} /> */
-}

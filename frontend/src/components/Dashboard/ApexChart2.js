@@ -1,7 +1,7 @@
 import React from "react";
 import Chart from 'react-apexcharts'
 
-class ApexChart extends React.Component {
+class ApexChart1 extends React.Component {
     constructor(props) {
         super(props);
         const arr = Array.from({ length: 20 }, () => Math.floor(Math.random() * 30))
@@ -62,4 +62,4 @@ class ApexChart extends React.Component {
     }
 }
 
-export default ApexChart
+export default ApexChart1
