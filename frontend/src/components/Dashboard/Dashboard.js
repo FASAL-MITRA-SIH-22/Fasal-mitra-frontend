@@ -104,7 +104,7 @@ function Dashboard() {
         <div className="flex flex-col p-4 rounded-xl bg-gradient-to-r from-green-700 to-emerald-300 text-white shadow-xl shadow-slate-300">
           <p className="text-center flex justify-center">
             <span className="text-6xl font-bold font-mono my-auto">
-              <CountUp end={127} />
+              <CountUp end={527} />
             </span>
           </p>
           <p className="text-center">
@@ -114,7 +114,7 @@ function Dashboard() {
         <div className="flex flex-col p-4 rounded-xl bg-gradient-to-r from-sky-700 to-slate-600 text-white shadow-xl shadow-slate-300">
           <p className="text-center flex justify-center">
             <span className="text-6xl font-bold font-mono my-auto">
-              <CountUp end={450} />
+              <CountUp end={261} />
             </span>
           </p>
           <p className="text-center">
@@ -136,11 +136,13 @@ function Dashboard() {
         <div className="flex flex-col p-4 rounded-xl bg-gradient-to-r from-red-700 to-pink-400 text-white shadow-xl shadow-slate-300">
           <p className="text-center flex justify-center">
             <span className="text-6xl font-bold font-mono my-auto">
-              <CountUp end={127} />
+              <CountUp end={17} />
             </span>
           </p>
           <p className="text-center">
-            <span className="text text-3xl font-mono"> Total Visitors</span>
+            <span className="text text-3xl font-mono">
+              Predictions done <br /> Today
+            </span>
           </p>
         </div>
 
