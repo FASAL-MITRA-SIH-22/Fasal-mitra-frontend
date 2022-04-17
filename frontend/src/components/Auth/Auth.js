@@ -23,7 +23,7 @@ function Auth() {
       }}
     >
       <div
-        className="bg-gradient-to-r bg-emerald-700 rounded-r-[900px] absolute h-full"
+        className="bg-gradient-to-r bg-emerald-700 rounded-r-[900px] absolute h-full "
         style={{
           borderRadius: "54% 46% 100% 0% / 0% 100% 0% 100% ",
           width: "45%",
@@ -37,7 +37,7 @@ function Auth() {
         }}
       ></div>
       <div className="col-span-4 md:col-start-3 md:col-span-2 py-auto flex justify-center align-middle">
-        <div className="mx-auto w-3/4 sm:w-1/2 md:w-3/5 xl:w-2/3 my-auto">
+        <div className="mx-auto w-5/6 sm:w-1/2 md:w-3/5 xl:w-1/2 my-auto " style={{zIndex:'1'}}>
           <div className="grid grid-rows-6 grid-flow-col gap-4 h-1/2 rounded-lg border-1 bg-slate-800 bg-opacity-90 border-black px-4">
             <div className="row-span-1 flex justify-center">
               <Switch checked={enabled} onChange={setEnabled}>
@@ -48,9 +48,8 @@ function Auth() {
                     {t("description.auth.2")}
                   </span>
                   <span
-                    className={`absolute flex justify-center items-center h-full w-1/2 rounded-full transition duration-300 ease-in-out transform bg-emerald-500 text-white ${
-                      enabled ? " translate-x-full" : ""
-                    }`}
+                    className={`absolute flex justify-center items-center h-full w-1/2 rounded-full transition duration-300 ease-in-out transform bg-emerald-500 text-white ${enabled ? " translate-x-full" : ""
+                      }`}
                   >
                     {enabled
                       ? t("description.auth.3")
@@ -66,9 +65,9 @@ function Auth() {
             </div>
             <div className="row-span-4">
               {enabled ? <Login /> : <Signup />}
-              <hr />
             </div>
-            <div className="row-span-1">
+            <div className="row-span-1 ">
+              <hr />
               <div className="grid grid-cols-12 content-around p-4">
                 <div className="col-span-4 cursor-pointer hover:opacity-75">
                   <img

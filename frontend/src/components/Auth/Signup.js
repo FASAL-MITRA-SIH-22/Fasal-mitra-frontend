@@ -52,7 +52,7 @@ function Signup() {
       autoComplete="true"
       onSubmit={handleSubmit(submitHandler)}
     >
-      <div className="row-span-1 grid grid-cols-6 gap-4">
+      <div className="row-span-1 grid grid-cols-6 gap-4 mb-3">
         <label className="block col-span-3">
           <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-white">
             {t("description.auth.4")}
