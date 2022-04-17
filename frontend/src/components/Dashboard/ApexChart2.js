@@ -16,9 +16,6 @@ class ApexChart1 extends React.Component {
                 data: arr
             }],
             options: {
-                title: {
-                    text: 'Disease Detection by Day'
-                },
                 toolbar: {
                     show: false
                 },
@@ -30,7 +27,7 @@ class ApexChart1 extends React.Component {
                     zoom: {
                         enabled: false,
                     },
-                    foreColor: '#ffffff'
+                    foreColor: '#000'
                 },
                 dataLabels: {
                     enabled: false

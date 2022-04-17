@@ -28,16 +28,13 @@ class PieChart extends React.Component {
                 },
                 chart: {
                     type: 'donut',
-                    foreColor: '#ffffff'
+                    foreColor: '#000'
                 },
                 stroke: {
-                    width: 10,
-                    colors: ['#334155']
+                    width: 5,
+                    colors: ['#fff']
                 },
                 innerRadius: "2%",
-                title: {
-                    text: 'Distribution of Prediction over plants'
-                },
                 responsive: [{
                     breakpoint: 480,
                     options: {

@@ -16,9 +16,7 @@ class ApexChart2 extends React.Component {
                 data: arr
             }],
             options: {
-                title: {
-                    text: 'Disease Detection by Month'
-                },
+                colors: ["#1c9757", "#53df97"],
                 toolbar: {
                     show: false
                 },
@@ -30,7 +28,7 @@ class ApexChart2 extends React.Component {
                     zoom: {
                         enabled: false,
                     },
-                    foreColor: '#ffffff'
+                    foreColor: '#000'
                 },
                 dataLabels: {
                     enabled: false

@@ -78,7 +78,7 @@ class ApexBarChart extends React.Component {
                     zoom: {
                         enabled: false,
                     },
-                    foreColor: '#ffffff',
+                    foreColor: '#000',
                     stacked: true,
                 },
                 plotOptions: {
@@ -88,10 +88,7 @@ class ApexBarChart extends React.Component {
                 },
                 stroke: {
                     width: 1,
-                    colors: ['#fff']
-                },
-                title: {
-                    text: 'Plant Affected by Diseases'
+                    colors: ['#000']
                 },
                 xaxis: {
                     categories: ["Apple", "Potato", "Grape", "Tomato", "Corn", "Strawberry", "Pepper_bell"],
