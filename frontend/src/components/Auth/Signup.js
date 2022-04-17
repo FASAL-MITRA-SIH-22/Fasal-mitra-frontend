@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { useTranslation, Trans } from "react-i18next";
 import { axiosInstance } from "../../axios.config";
-import { login } from "../../store/features/userSlice";
+import { signup } from "../../store/features/userSlice";
 import { useDispatch } from "react-redux";
 
 const phoneRegex = /^\d{10}$/;
@@ -32,7 +32,7 @@ function Signup() {
       .post("auth/account", data)
       .then((response) => {
         console.log(response);
-        dispatch(login(response.data.user));
+        dispatch(signup(response.data.user));
         navigate("/disease-detection");
       })
       .catch((error) => {
@@ -207,7 +207,7 @@ function Signup() {
       <div className="flex row-span-1 mt-4">
         <input
           type="submit"
-          value={t("description.auth.3")}
+          value={t("description.auth.2")}
           className="mx-auto h-11 w-44 bg-emerald-500 text-white rounded-xl hover:bg-emerald-600 cursor-pointer"
         />
       </div>

@@ -97,7 +97,7 @@ function Login() {
         <input
           type="submit"
           value={t("description.auth.3")}
-          className="mx-auto h-11 w-44 bg-teal-500 text-white rounded-xl hover:bg-teal-600 cursor-pointer"
+          className="mx-auto h-11 w-44 bg-emerald-500 text-white rounded-xl hover:bg-emerald-600 cursor-pointer"
         />
       </div>
     </form>
