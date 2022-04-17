@@ -48,11 +48,11 @@ function Signup() {
 
   return (
     <form
-      className="grid grid-rows-6 grid-flow-col h-full"
+      className="grid grid-flow-row h-full"
       autoComplete="true"
       onSubmit={handleSubmit(submitHandler)}
     >
-      <div className="row-span-1 grid grid-cols-6 gap-4 mb-3">
+      <div className="row-span-1 grid grid-cols-6 gap-4 m-1">
         <label className="block col-span-3">
           <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-white">
             {t("description.auth.4")}
@@ -100,7 +100,7 @@ function Signup() {
           <></>
         )}
       </div>
-      <div className="row-span-1">
+      <div className="row-span-1 m-1">
         <label className="block">
           <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-white">
             {t("description.auth.0")}
@@ -125,7 +125,7 @@ function Signup() {
           <></>
         )}
       </div>
-      <div className="row-span-1">
+      <div className="row-span-1 m-1">
         <label className="block">
           <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-white">
             {t("description.auth.1")}
@@ -150,8 +150,8 @@ function Signup() {
           <></>
         )}
       </div>
-      <div className="row-span-1">
-        <label className="block">
+      <div className="row-span-1 grid grid-cols-6 gap-4 m-1">
+      <label className="block col-span-3">
           <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-white">
             {t("description.auth.6")}
           </span>
@@ -174,9 +174,8 @@ function Signup() {
         ) : (
           <></>
         )}
-      </div>
-      <div className="row-span-1">
-        <label className="block">
+
+        <label className="block col-span-3">
           <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-white">
             Type
           </span>
@@ -184,7 +183,7 @@ function Signup() {
             name="type"
             id="type"
             defaultValue="farmer"
-            className={`mt-1 px-3 py-2  focus:outline-none  block w-full rounded-md sm:text-sm focus:ring-1 ${
+            className={`mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none  block w-full rounded-md sm:text-sm focus:ring-1 ${
               errors && errors.type
                 ? "border-red-400 focus:border-red-500 focus:ring-red-500"
                 : "focus:border-emerald-500 focus:ring-emerald-500"
