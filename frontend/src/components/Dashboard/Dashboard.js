@@ -2,19 +2,22 @@ import React, { useEffect, useState, useRef } from "react";
 import Map from "./Map";
 import { axiosInstance } from "../../axios.config";
 import CustomBar from "./CustomBar";
-import CountUp, { useCountUp } from 'react-countup';
+import CountUp, { useCountUp } from "react-countup";
 import ApexChart from "./ApexChart";
 import ApexBarChart from "./ApexBarChart";
 import PieChart from './PieChart';
 import { GiCorn } from 'react-icons/gi'
+
 const defaultMaps = [
   {
     _id: "MH",
     numberOfValue: 24,
-  }, {
+  },
+  {
     _id: "GJ",
     numberOfValue: 46,
-  }, {
+  },
+  {
     _id: "TN",
     numberOfValue: 44,
   },
@@ -68,7 +71,6 @@ const defaultDisease = {
   data: [2, 2, 4, 1, 4, 1, 2, 1, 7],
 };
 
-
 function Dashboard() {
   const [mapData, setMapData] = useState(defaultMaps);
   const [plantData, setPlantData] = useState(defaultPlants);
@@ -98,7 +100,9 @@ function Dashboard() {
   return (
     <>
       <div>
-        <h2 className="text-3xl font-semibold text-center">Outbreak Detection</h2>
+        <h2 className="text-3xl font-semibold text-center">
+          Outbreak Detection
+        </h2>
         <br />
         <div className="grid grid-cols-2 gap-x-4">
           {/* <CustomBar
@@ -187,21 +191,23 @@ function Dashboard() {
   );
 }
 
-
-
 export default Dashboard;
 
-
-{/* <CustomBar
+{
+  /* <CustomBar
                   data={plantData}
                   labelName="Plant"
                   legendName="Distribution of Plant Wise Detection"
-                /> */}
+                /> */
+}
 
-
-{/* <CustomBar
+{
+  /* <CustomBar
                   data={diseaseData}
                   labelName="Disease"
                   legendName="Distribution of Disease Wise Detection"
-                /> */}
-{/* <Map mapData={mapData} /> */ }
+                /> */
+}
+{
+  /* <Map mapData={mapData} /> */
+}
