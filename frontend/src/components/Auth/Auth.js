@@ -5,7 +5,8 @@ import Signup from "./Signup";
 import google from "../../assets/images/loginSignupPage/google.png";
 import facebook from "../../assets/images/loginSignupPage/facebook.png";
 import twitter from "../../assets/images/loginSignupPage/twitter.png";
-import cropbg from "../../assets/images/loginSignupPage/crop-background.jpg";
+import cropbg from "../../assets/images/loginSignupPage/background4.png";
+
 import { useTranslation, Trans } from "react-i18next";
 
 function Auth() {
@@ -17,8 +18,8 @@ function Auth() {
       style={{
         backgroundImage: "url(" + cropbg + ")",
         backgroundPosition: "center",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
+        // backgroundSize: "cover",
+        // backgroundRepeat: "no-repeat",
       }}
     >
       <div
@@ -37,7 +38,7 @@ function Auth() {
       ></div>
       <div className="col-span-4 md:col-start-3 md:col-span-2 py-auto flex justify-center align-middle z-10">
         <div className="mx-auto w-3/4 sm:w-1/2 md:w-3/5 xl:w-2/3 my-auto">
-          <div className="grid grid-rows-6 grid-flow-col gap-4 h-1/2 rounded-lg border-1 bg-gray-800 bg-opacity-50 border-black px-4">
+          <div className="grid grid-rows-6 grid-flow-col gap-4 h-1/2 rounded-lg border-1 bg-slate-800 bg-opacity-90 border-black px-4">
             <div className="row-span-1 flex justify-center">
               <Switch checked={enabled} onChange={setEnabled}>
                 <span className="bg-gray-500 rounded-full h-10 w-48 flex relative shadow-inner shadow-black">
