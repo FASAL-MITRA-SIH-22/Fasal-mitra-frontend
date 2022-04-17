@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import Map from "./Map";
 import { axiosInstance } from "../../axios.config";
-import CustomBar from "./CustomBar";
 import CountUp, { useCountUp } from "react-countup";
 import ApexChart1 from "./ApexChart1";
 import ApexChart2 from "./ApexChart2";
