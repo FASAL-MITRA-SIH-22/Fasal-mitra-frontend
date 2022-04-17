@@ -119,44 +119,44 @@ function Dashboard() {
       </div>
       <div>
         <div>
-          <div className="col-span-12 row-span-1 bg-slate-900 rounded-xl m-2 shado shadow-slate-900w-xl p-4 flex items-center justify-around gap-2">
-            <div className="h-full w-1/6 rounded-xl grid grid-rows-6 bg-gradient-to-r from-green-700 to-emerald-300 text-white">
-              <p className="row-span-3 text-center flex justify-center">
+          <div className=" bg-slate-900 rounded-xl m-2 shado shadow-slate-900w-xl p-4 flex items-stretch justify-around gap-2">
+            <div className="flex flex-col p-4 rounded-xl bg-gradient-to-r from-green-700 to-emerald-300 text-white">
+              <p className="text-center flex justify-center">
                 <span className="text-6xl font-bold font-mono my-auto">
                   <CountUp end={127} />
                 </span>
               </p>
-              <p className="h-full row-span-3 text-center">
+              <p className="text-center">
                 <span className="text text-3xl font-mono"> Total Visitors</span>
               </p>
             </div>
-            <div className="h-full w-1/6 rounded-xl grid grid-rows-6 bg-gradient-to-r from-sky-700 to-slate-600 text-white">
-              <p className="row-span-3 text-center flex justify-center">
+            <div className="flex flex-col p-4 rounded-xl bg-gradient-to-r from-sky-700 to-slate-600 text-white">
+              <p className="text-center flex justify-center">
                 <span className="text-6xl font-bold font-mono my-auto">
                   <CountUp end={450} />
                 </span>
               </p>
-              <p className="row-span-3 text-center">
+              <p className="text-center">
                 <span className="text text-3xl font-mono"> Total Predictions</span>
               </p>
             </div>
-            <div className="h-full w-1/6 rounded-xl grid grid-rows-6 bg-gradient-to-r from-amber-500 to-yellow-400 text-white">
-              <p className="row-span-3 text-center flex justify-center">
-                <span className="text-7xl font-bold font-mono my-auto">
+            <div className="flex flex-col p-4 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-400 text-white">
+              <p className="text-center flex justify-center">
+                <span className="text-5xl font-bold font-mono my-auto">
                   <GiCorn className="inline" /> Corn
                 </span>
               </p>
-              <p className="row-span-3 text-center">
-                <span className="text text-3xl font-mono"> Plant With most Diseases Today</span>
+              <p className="text-center">
+                <span className="text text-3xl font-mono"> Plant With most <br/> Diseases Today</span>
               </p>
             </div>
-            <div className="h-full w-1/6 rounded-xl grid grid-rows-6 bg-gradient-to-r from-red-700 to-pink-400 text-white">
-              <p className="row-span-3 text-center flex justify-center">
+            <div className="flex flex-col p-4 rounded-xl bg-gradient-to-r from-red-700 to-pink-400 text-white">
+              <p className="text-center flex justify-center">
                 <span className="text-6xl font-bold font-mono my-auto">
                   <CountUp end={127} />
                 </span>
               </p>
-              <p className="row-span-3 text-center">
+              <p className="text-center">
                 <span className="text text-3xl font-mono"> Total Visitors</span>
               </p>
             </div>
