@@ -1,8 +1,5 @@
 import { Fragment, useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/solid";
-import { ObjectSchema } from "yup";
-import { changeLanguage } from "i18next";
 import { useTranslation, Trans } from "react-i18next";
 
 function classNames(...classes) {

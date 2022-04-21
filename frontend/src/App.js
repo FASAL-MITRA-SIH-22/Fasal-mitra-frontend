@@ -1,21 +1,21 @@
+import "./App.css";
 import React, { useEffect, useRef } from "react";
+import { axiosInstance } from "./axios.config";
+import { Route, Routes } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { login } from "./store/features/userSlice";
 import Home from "./components/Home/Home";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Navbar from "./components/Navbar/Navbar";
 import Auth from "./components/Auth/Auth";
 import Footer from "./components/Footer/Footer";
 import DiseaseDetection from "./components/DiseaseDetection/DiseaseDetection";
-import { axiosInstance } from "./axios.config";
-import { Route, Routes} from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { login } from "./store/features/userSlice";
-import "./App.css";
 import Teleconsulting from "./components/Teleconsulting/Teleconsulting";
-import GoogleTranslate from "./components/GoogleTranslate";
+import Forum from "./components/Forum/Forum";
+// import GoogleTranslate from "./components/GoogleTranslate";
 import LoadingBar from "react-top-loading-bar";
-
-import "./components/i18n/i18n";
 import { useTranslation, Trans } from "react-i18next";
+import "./components/i18n/i18n";
 
 function App() {
   const dispatch = useDispatch();
@@ -36,12 +36,12 @@ function App() {
         ref.current.complete();
       });
   }, []);
-  const { t, i18n } = useTranslation();
-  const lngs = {
-    en: { nativeName: "English" },
-    hi: { nativeName: "Hindi" },
-    mr: { nativeName: "Marathi" },
-  };
+  // const { t, i18n } = useTranslation();
+  // const lngs = {
+  //   en: { nativeName: "English" },
+  //   hi: { nativeName: "Hindi" },
+  //   mr: { nativeName: "Marathi" },
+  // };
   return (
     <div className="min-h-screen flex flex-col">
       {/* <GoogleTranslate/> */}
@@ -64,6 +64,7 @@ function App() {
               <></>
             )}
             <Route path="/teleconsulting" element={<Teleconsulting />} />
+            <Route path="/forum" element={<Forum />} />
           </Routes>
         </div>
       </div>

@@ -2,7 +2,6 @@ import { useEffect, useState, Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { Link, NavLink } from "react-router-dom";
-// import logo from '../../assets/Images/logo.png'
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../store/features/userSlice";
 import { axiosInstance } from "../../axios.config";

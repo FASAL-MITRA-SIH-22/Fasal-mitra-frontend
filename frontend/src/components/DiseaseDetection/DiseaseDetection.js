@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import default_crop from "./crop.jpg";
+import default_crop from "../../assets/images/DiseaseDetectionPage/crop.jpg";
 import { axiosInstance } from "../../axios.config";
 import { useTranslation, Trans } from "react-i18next";
 import LoadingBar from "react-top-loading-bar";
