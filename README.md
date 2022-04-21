@@ -46,12 +46,12 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 - Frontend
-   - To install dependencies, run `npm install` [React](https://reactjs.org/)
+   - [React](https://reactjs.org/)
 
 - Backend
- - [Node](https://nodejs.org/)
- - [Flask](https://flask.palletsprojects.com/en/2.1.x/)
- - [Docker](https://www.docker.com/)
+   - [Node](https://nodejs.org/)
+   - [Flask](https://flask.palletsprojects.com/en/2.1.x/)
+   - [Docker](https://www.docker.com/)
 
 ### Installing
 
