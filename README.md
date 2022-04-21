@@ -21,7 +21,7 @@
 
 ## 🧐 About <a name = "about"></a>
 
-<b>Fasal-Mitra</b> is an automated plant disease detection app.
+<b>Fasal-Mitra</b> is a Progrssive Web APP (PWA) designed for automated plant disease detection and proposal of method for the prevention and cure of the disease.
 
 - This app will help farmers to detect the diseases and how can they overcome it. 
 
@@ -32,9 +32,7 @@
 - The collected data will help our system to predict the diseases in more accurate way due to self-learning mechanism.
 
 - The system will be easy to use with some basics functionalities which will make it user friendly for farmers.
-- 
-Progrssive Web APP (PWA) designed to accept the input about the states and transtions of a Non-Deterministic Automata (NFA) and to convert it into an equivalent Deterministic Finite Automata (DFA) and visualize it.
-<br/>
+
 <br/>
 <a href="#">Click here to view the website</a>
 <br/>
