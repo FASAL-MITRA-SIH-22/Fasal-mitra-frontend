@@ -45,12 +45,16 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-- Frontend
+- [Modern Web Architecture](https://litslink.com/blog/web-application-architecture) 
+- [Web API's](https://www.geeksforgeeks.org/what-is-web-api-and-why-we-use-it/)
+- [Frontend](https://en.wikipedia.org/wiki/Front-end_web_development)
    - [React](https://reactjs.org/)
-
-- Backend
+- [Backend](https://en.wikibooks.org/wiki/Web_Development/What_is_a_backend%3F)
    - [Node](https://nodejs.org/)
    - [Flask](https://flask.palletsprojects.com/en/2.1.x/)
+- [Database](https://www.techtarget.com/searchdatamanagement/definition/database#:~:text=A%20database%20is%20information%20that,data%2C%20financials%20and%20product%20information.)
+   - [MongoDB](https://www.mongodb.com/)
+- [Containerization](https://www.ibm.com/in-en/cloud/learn/containerization)
    - [Docker](https://www.docker.com/)
 
 ### Installing
