@@ -45,8 +45,13 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-- [React](https://reactjs.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
+- Frontend
+ - [React](https://reactjs.org/)
+
+- Backend
+ - [Node](https://nodejs.org/)
+ - [Flask](https://flask.palletsprojects.com/en/2.1.x/)
+ - [Docker](https://www.docker.com/)
 
 ### Installing
 
