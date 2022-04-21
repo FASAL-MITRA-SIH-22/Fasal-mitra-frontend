@@ -119,6 +119,9 @@ A step by step series of examples that tell you how to get a development env run
 
 - [Ishan Kulkarni](https://www.linkedin.com/in/anurag-g-a01531198)
 - [Anurag Ghosh](https://www.linkedin.com/in/kulkarniishan)
+- [Dhruv Solanki](#)
+- [Rajas Bondale](#)
+- [Aditi Pawar](#)
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#-built-using-a-name--built_usinga)
 
