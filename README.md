@@ -46,7 +46,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 - Frontend
- - [React](https://reactjs.org/)
+   - To install dependencies, run `npm install` [React](https://reactjs.org/)
 
 - Backend
  - [Node](https://nodejs.org/)
