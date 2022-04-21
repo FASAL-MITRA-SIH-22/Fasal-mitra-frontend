@@ -21,11 +21,22 @@
 
 ## 🧐 About <a name = "about"></a>
 
+<b>Fasal-Mitra</b> is an automated plant disease detection app.
+
+- This app will help farmers to detect the diseases and how can they overcome it. 
+
+- It will generate a detail report which will contain the disease names in number of species.
+
+- If required, they can also verify it by the government authorities who will verify the report generated and will help with the input if required.
+
+- The collected data will help our system to predict the diseases in more accurate way due to self-learning mechanism.
+
+- The system will be easy to use with some basics functionalities which will make it user friendly for farmers.
+- 
 Progrssive Web APP (PWA) designed to accept the input about the states and transtions of a Non-Deterministic Automata (NFA) and to convert it into an equivalent Deterministic Finite Automata (DFA) and visualize it.
 <br/>
 <br/>
-<a href="https://automatonx.herokuapp.com/">Click here to view the website</a>
-</a>
+<a href="#">Click here to view the website</a>
 <br/>
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#-getting-started-a-name--getting_starteda)
@@ -134,16 +145,3 @@ A step by step series of examples that tell you how to get a development env run
 </div>
 
 
-# Fasal-Mitra
-
-An automated plant disease detection app
-
-- This app will help farmers to detect the diseases and how can they overcome it. ​
-
-- It will generate a detail report which will contain the disease names in number of species.​
-
-- If required, they can also verify it by the government authorities who will verify the report generated and will help with the input if required.​
-
-- The collected data will help our system to predict the diseases in more accurate way due to self-learning mechanism.​
-
-- The system will be easy to use with some basics functionalities which will make it user friendly for farmers.
