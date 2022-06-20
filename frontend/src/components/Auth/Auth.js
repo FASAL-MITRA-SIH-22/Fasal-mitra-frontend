@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { Switch } from "@headlessui/react";
 import Login from "./Login";
 import Signup from "./Signup";
-import google from "../../assets/images/LoginSignupPage/google.png";
-import facebook from "../../assets/images/LoginSignupPage/facebook.png";
-import twitter from "../../assets/images/LoginSignupPage/twitter.png";
-import cropbg from "../../assets/images/LoginSignupPage/background4.png";
+import google from "../../assets/images/loginSignupPage/google.png";
+import facebook from "../../assets/images/loginSignupPage/facebook.png";
+import twitter from "../../assets/images/loginSignupPage/twitter.png";
+import cropbg from "../../assets/images/loginSignupPage/background4.png";
 
 import { useTranslation, Trans } from "react-i18next";
 
