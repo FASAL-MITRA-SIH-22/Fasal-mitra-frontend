@@ -1,7 +1,7 @@
 <h1 align="center">Fasal-Mitra App</h1>
 
 <p align="center">
-<a href="#"><img width=200px src="./frontend/public/favicon.ico"  alt="Project logo"/></a></a>
+<a href="#"><img width=200px src="./frontend/public/logo512.png"  alt="Project logo"/></a></a>
  
 </p>
 
