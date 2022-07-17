@@ -61,20 +61,26 @@ The key features of the project are: 
 
 The system architecture for the application is as followed:
 
-<a href="https://github.com/FASAL-MITRA-SIH-22/Fasal-mitra-frontend"><img width=200px src="./AboutProject/ArchitectureDiagram.svg"  alt="Project logo"/></a></a>
+<a href="https://github.com/FASAL-MITRA-SIH-22/Fasal-mitra-frontend"><img width="auto" src="./AboutProject/ArchitectureDiagram.svg"  alt="System Architecture"/></a></a>
 
 ## 1.4 Activity Diagram
 
 The activity diagram for the application is as followed:
 
-<a href="https://github.com/FASAL-MITRA-SIH-22/Fasal-mitra-frontend"><img width=200px src="./AboutProject/ActivityDiagram.svg"  alt="Project logo"/></a></a>
+<a href="https://github.com/FASAL-MITRA-SIH-22/Fasal-mitra-frontend"><img width="auto" src="./AboutProject/ActivityDiagram.svg"  alt="Activity Diagram"/></a></a>
 
 ## 1.5 Tech-Stack Used
 
-| Packages  | Versions |
+| Technology used  | Purpose |
 | ------------- |:-------------:|
-| @craco/craco      | 6.4.0 |
-| @headlessui/react     | 1.4.1 |
+| React, TailwindCSS, MaterialUI, ApexCharts  | Frontend Development |
+| Flask, NodeJS | Backend Development |
+| MongoDB, Redis | Database |
+| OpenCV | Image Processing |
+| PyTorch, Deep Learning model (ResNet9) Architecture | Deep Learning Model Development |
+| Selenium, Requests| Web Scraping for Data Collection (in addition to dataset)|
+| Docker| Containerization|
+| Nginx| Reverse Proxying and for authentication gateway|
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#-getting-started-a-name--getting_starteda)
 
