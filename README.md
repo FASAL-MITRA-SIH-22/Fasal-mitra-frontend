@@ -11,8 +11,6 @@
 
 - [About](#about)
 - [Getting Started ](#getting_started)
-- [Built Using](#built_using)
-- [Packages](#packages)
 - [Authors](#authors)
 - [Contribution](#contribution)
 
@@ -20,18 +18,7 @@
 
 ## 🧐 About <a name = "about"></a>
 
-<b>Fasal-Mitra</b> is a Progrssive Web APP (PWA) designed for automated plant disease detection and proposal of method for the prevention and cure of the disease.
-
-- This app will help farmers to detect the diseases and how can they overcome it. 
-
-- It will generate a detail report which will contain the disease names in number of species.
-
-- If required, they can also verify it by the government authorities who will verify the report generated and will help with the input if required.
-
-- The collected data will help our system to predict the diseases in more accurate way due to self-learning mechanism.
-
-- The system will be easy to use with some basics functionalities which will make it user friendly for farmers.
-
+<b>Fasal-Mitra</b> is a Progrssive Web APP (PWA) designed for automated plant disease detection and proposal of method for the prevention and cure of the disease. This app will help farmers to detect the diseases and how can they overcome it. It will also generate a detail report which will contain the disease names in number of species. If required, they can also verify it by the government authorities who will verify the report generated and will help with the input if required. The collected data will help our system to predict the diseases in more accurate way due to self-learning mechanism. The system will be easy to use with some basics functionalities which will make it user friendly for farmers.
 <br/>
 
 ## 1.1 Problem Definition
@@ -50,12 +37,12 @@ The project outcome is a **Progressive Web Application** that will provide a **p
 5. The collected data will help our system detect and predict plant/crop diseases with increasing accuracy by way of its self-learning and continuous improvement mechanism.
 
 The key features of the project are: 
-          (i) Language selection option (Indian regional languages)
-          (ii) Tracking of IP addresses to detect possible outbreaks and issuing alerts for the same
-          (iii) Prediction of upcoming outbreaks (over time, via self-learning)
-          (iv) A statistics dashboard with analytics
-          (v) A community forum for farmers
-          (vi) A chatbot for personal communication (alerts, updates, etc.)
+i. Language selection option (Indian regional languages)
+ii. Tracking of IP addresses to detect possible outbreaks and issuing alerts for the same
+iii. Prediction of upcoming outbreaks (over time, via self-learning)
+iv. A statistics dashboard with analytics
+v. A community forum for farmers
+vi. A chatbot for personal communication (alerts, updates, etc.)
 
 ## 1.4 System Architecture
 
@@ -71,16 +58,20 @@ The activity diagram for the application is as followed:
 
 ## 1.5 Tech-Stack Used
 
+<div align="center">
+ 
 | Technology used  | Purpose |
 | ------------- |:-------------:|
-| React, TailwindCSS, MaterialUI, ApexCharts  | Frontend Development |
+| React, TailwindCSS, MaterialUI, ApexCharts | Frontend Development |
 | Flask, NodeJS | Backend Development |
 | MongoDB, Redis | Database |
 | OpenCV | Image Processing |
 | PyTorch, Deep Learning model (ResNet9) Architecture | Deep Learning Model Development |
-| Selenium, Requests| Web Scraping for Data Collection (in addition to dataset)|
-| Docker| Containerization|
-| Nginx| Reverse Proxying and for authentication gateway|
+| Selenium, Requests | Web Scraping for Data Collection (in addition to dataset) |
+| Docker | Containerization |
+| Nginx | Reverse Proxying and for authentication gateway |
+ 
+ </div>
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#-getting-started-a-name--getting_starteda)
 
@@ -106,60 +97,16 @@ These instructions will get you a copy of the project up and running on your loc
 
 A step by step series of examples that tell you how to get a development env running.
 
-- Clone this repository
+- Clone the frontend and backend repositories
 - Open command line in the cloned folder,
 
   - To install dependencies, run `npm install`
 
   - To run the application for development,
 
-    - then run `npm start` in the client folder to start the app
+    - then run `npm start` in the client folder to start the app for the frontend and `docker-compose up` in the backend.
 
 - Open [localhost:3000](localhost:3000) in the browser
-
-or else it can also be executed by using `docker-compose up` respectively with the frontend and the backend.
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#-built-using-a-name--built_usinga)
-
-## :hammer_and_wrench: Built Using <a name = "built_using"></a>
-
-- [React](https://reactjs.org/) - Web Framework
-- [Tailwind CSS](https://tailwindcss.com/) - CSS Framework
-- [Redux](https://github.com/DomParfitt/graphviz-react#readme) - Library for visualization of the DFA
-- [MaterialUI](https://quickchart.io/documentation/graphviz-api/) - API for visualization
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#-authors-a-name--authorsa)
-
-## 📦 Packages Used <a name = "packages"></a>
-
-<div align="center">
- 
-| Packages  | Versions |
-| ------------- |:-------------:|
-| @craco/craco      | 6.4.0 |
-| @headlessui/react     | 1.4.1 |
-| @heroicons/react      | 1.0.5    |
-|@hookform/resolvers|2.8.3|
-|autoprefixer| 9.8.8|
-|axios|0.23.0|
-|bootstrap|5.1.3|
-|cra-template|1.1.2|
-|gh-pages|3.2.3|
-|postcss|7.0.39|
-|react|17.0.2|
-|react-bootstrap|2.0.0|
-|react-dom|17.0.2|
-|react-fullscreen-image|0.0.3|
-|react-hook-form|7.19.3|
-|react-icons|4.3.1|
-|react-router-dom|5.3.0|
-|react-scripts|4.0.3|
-|npm:@tailwindcss/postcss7-compat|2.2.17|
-|svg-to-jsx|1.0.4|
-|yup|0.32.11|
- 
-</div>
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#-authors-a-name--authorsa)
 
