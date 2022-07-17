@@ -37,12 +37,14 @@ The project outcome is a **Progressive Web Application** that will provide a **p
 5. The collected data will help our system detect and predict plant/crop diseases with increasing accuracy by way of its self-learning and continuous improvement mechanism.
 
 The key features of the project are: 
-i. Language selection option (Indian regional languages)
-ii. Tracking of IP addresses to detect possible outbreaks and issuing alerts for the same
-iii. Prediction of upcoming outbreaks (over time, via self-learning)
-iv. A statistics dashboard with analytics
-v. A community forum for farmers
-vi. A chatbot for personal communication (alerts, updates, etc.)
+<ol type="i">
+ <li>Language selection option (Indian regional languages)</li>
+ <li>Tracking of IP addresses to detect possible outbreaks and issuing alerts for the same</li>
+ <li>Prediction of upcoming outbreaks (over time, via self-learning)</li>
+ <li>A statistics dashboard with analytics</li>
+ <li>A community forum for farmers</li>
+ <li>A chatbot for personal communication (alerts, updates, etc.)</li>
+</ol>
 
 ## 1.4 System Architecture
 
