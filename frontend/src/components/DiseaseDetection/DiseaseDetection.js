@@ -77,9 +77,9 @@ const DiseaseDetection = () => {
     // this is required to convert FileList object to array
     if (ev.dataTransfer.items) {
       console.log(ev.dataTransfer.items);
-      if (ev.dataTransfer.items["length"] == 1) {
+      if (ev.dataTransfer.items["length"] === 1) {
         var file = ev.dataTransfer.items[0].getAsFile();
-        if (file && file["type"].split("/")[0] != "image") {
+        if (file && file["type"].split("/")[0] !== "image") {
           return;
         }
         var image = URL.createObjectURL(file);
@@ -144,6 +144,7 @@ const DiseaseDetection = () => {
                         <img
                           src={default_crop}
                           className="p-1 bg-white border rounded max-w-sm opacity-50"
+                          alt="Default"
                           required
                         ></img>
                       )}
@@ -151,6 +152,7 @@ const DiseaseDetection = () => {
                         <img
                           src={preview}
                           className="p-1 bg-white border rounded max-w-sm"
+                          alt="Preview"
                           required
                         ></img>
                       )}
