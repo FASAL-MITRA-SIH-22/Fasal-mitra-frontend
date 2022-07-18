@@ -2,8 +2,12 @@
 
 <p align="center">
 <a href="https://github.com/FASAL-MITRA-SIH-22/Fasal-mitra-frontend"><img width=200px src="https://github.com/FASAL-MITRA-SIH-22/Fasal-mitra-frontend/blob/main/frontend/public/android-chrome-512x512.png"  alt="Project logo"/></a></a>
- 
+
 </p>
+
+<br/>
+
+[![Watch the video](https://img.youtube.com/vi/T-D1KVIuvjA/maxresdefault.jpg)](https://youtu.be/T-D1KVIuvjA)
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#-table-of-contents)
 
@@ -21,9 +25,6 @@
 <b>Fasal-Mitra</b> is a Progrssive Web APP (PWA) designed for automated plant disease detection and proposal of method for the prevention and cure of the disease. This app will help farmers to detect the diseases and how can they overcome it. It will also generate a detail report which will contain the disease names in number of species. If required, they can also verify it by the government authorities who will verify the report generated and will help with the input if required. The collected data will help our system to predict the diseases in more accurate way due to self-learning mechanism. The system will be easy to use with some basics functionalities which will make it user friendly for farmers.
 <br/>
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/gDaStPFfytY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<br/>
 ## 1.1 Problem Definition
 
 To develop an **App-Based solution** to identify & solve disease in plants/crops and also provide additional features such as teleconsulting to help farmers to overcome the difficulties in farming thus increasing the economic yeild.
